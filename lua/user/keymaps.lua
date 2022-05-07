@@ -21,14 +21,17 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
 
 -- Resize with arrows
-keymap("n", "<C-S-Up>", ":resize +2<CR>", opts)
-keymap("n", "<C-S-Down>", ":resize -2<CR>", opts)
+keymap("n", "<C-S-Up>", ":resize +3<CR>", opts)
+keymap("n", "<C-S-Down>", ":resize -3<CR>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -3<CR>", opts)
 keymap("n", "<C-S-Right>", ":vertical resize +3<CR>", opts)
 
+-- Misc Actions
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>s", ":nohl<CR>", opts)
 
+-- Telescope
+keymap("n", "<leader>fg", ":Telescope git_files<CR>", opts)
 -- VISUAL
 
 -- Stay in ident mode
