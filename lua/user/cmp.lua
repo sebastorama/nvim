@@ -110,6 +110,7 @@ cmp.setup {
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
+    { name = 'spell' },
     { name = "calc" }
   },
   confirm_opts = {

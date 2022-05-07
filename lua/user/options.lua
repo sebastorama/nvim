@@ -34,6 +34,10 @@ vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = "monospace:h17"               -- the font used in graphical neovim applications
 
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us', 'pt' }
+
+
 
 vim.opt.shortmess:append "c"
 
