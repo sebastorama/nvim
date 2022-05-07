@@ -1,5 +1,7 @@
-require "options"
-require "plugins"
-require "ntree"
-require "keymaps"
+require "user.options"
+require "user.plugins"
+require "user.ntree"
+require "user.keymaps"
+require "user.cmp"
+require "user.lsp"
 
