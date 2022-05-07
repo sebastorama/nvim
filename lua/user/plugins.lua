@@ -27,11 +27,13 @@ return packer.startup(function(use)
     }
   }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use 'windwp/nvim-autopairs'
 
   -- Colorschemes
   use 'navarasu/onedark.nvim'
   use 'tomasiser/vim-code-dark'
   use 'NLKNguyen/papercolor-theme'
+  use 'folke/tokyonight.nvim'
 
   -- Completion
   use 'hrsh7th/nvim-cmp'
@@ -42,6 +44,7 @@ return packer.startup(function(use)
   use 'saadparwaiz1/cmp_luasnip'
   use 'hrsh7th/cmp-calc'
   use 'f3fora/cmp-spell'
+  use 'ray-x/lsp_signature.nvim'
 
   -- LSP
   use "neovim/nvim-lspconfig"           -- enable LSP

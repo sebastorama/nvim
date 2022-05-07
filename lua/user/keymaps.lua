@@ -23,8 +23,8 @@ keymap("n", "<S-h>", ":bprevious<CR>", opts)
 -- Resize with arrows
 keymap("n", "<C-S-Up>", ":resize +3<CR>", opts)
 keymap("n", "<C-S-Down>", ":resize -3<CR>", opts)
-keymap("n", "<C-S-Left>", ":vertical resize -3<CR>", opts)
-keymap("n", "<C-S-Right>", ":vertical resize +3<CR>", opts)
+keymap("n", "_", ":vertical resize -3<CR>", opts)
+keymap("n", "+", ":vertical resize +3<CR>", opts)
 
 -- Misc Actions
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
@@ -32,6 +32,9 @@ keymap("n", "<leader>s", ":nohl<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>fg", ":Telescope git_files<CR>", opts)
+keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
+keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
+
 -- VISUAL
 
 -- Stay in ident mode
@@ -39,4 +42,8 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 keymap("v", "p", '"_dP', opts)
+
+-- INSERT
+keymap("i", "<C-f>", "<Right>", opts)
+keymap("i", "<C-b>", "<Left>", opts)
 

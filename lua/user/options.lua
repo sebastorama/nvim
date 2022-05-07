@@ -25,7 +25,7 @@ vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
 vim.opt.cursorline = false                      -- highlight the current line
-vim.opt.number = false                          -- set numbered lines
+vim.opt.number = true                           -- set numbered lines
 vim.opt.relativenumber = false                  -- set relative numbered lines
 vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
@@ -37,11 +37,16 @@ vim.opt.guifont = "monospace:h17"               -- the font used in graphical ne
 vim.opt.spell = false
 vim.opt.spelllang = { 'en_us', 'pt' }
 
-
-
 vim.opt.shortmess:append "c"
 
-vim.cmd "color codedark"
+vim.g.tokyonight_style = "night"
+vim.g.tokyonight_italic_functions = 1
+vim.g.tokyonight_colors = {
+  hint = 'orange',
+  error = '#ff0000'
+}
+
+vim.cmd "color tokyonight"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
 vim.cmd [[set iskeyword+=-]]

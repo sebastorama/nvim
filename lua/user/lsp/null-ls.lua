@@ -11,10 +11,16 @@ local diagnostics = null_ls.builtins.diagnostics
 null_ls.setup({
 	debug = false,
 	sources = {
-		formatting.prettier.with({ extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote" } }),
+		formatting.prettier.with({ extra_args = {"--single-quote", "--jsx-single-quote" } }),
 		formatting.black.with({ extra_args = { "--fast" } }),
 		formatting.stylua,
     -- diagnostics.cspell
     -- diagnostics.flake8
 	},
 })
+
+vim.cmd [[autocmd BufWritePre *.js :Format]]
+vim.cmd [[autocmd BufWritePre *.jsx :Format]]
+
+vim.cmd [[autocmd BufWritePre *.ts :Format]]
+vim.cmd [[autocmd BufWritePre *.tsx :Format]]

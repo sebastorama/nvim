@@ -17,8 +17,6 @@ local servers = {
   "tsserver"
 }
 
-
-
 lsp_installer.setup {
   ensure_installed = servers
 }
