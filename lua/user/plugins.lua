@@ -28,9 +28,10 @@ return packer.startup(function(use)
   }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
+  -- Colorschemes
   use 'navarasu/onedark.nvim'
   use 'tomasiser/vim-code-dark'
-
+  use 'NLKNguyen/papercolor-theme'
 
   -- Completion
   use 'hrsh7th/nvim-cmp'
