@@ -32,6 +32,7 @@ keymap("n", "<leader>s", ":nohl<CR>", opts)
 
 -- Telescope
 keymap("n", "<leader>fg", ":Telescope git_files<CR>", opts)
+keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
 

@@ -39,14 +39,14 @@ vim.opt.spelllang = { 'en_us', 'pt' }
 
 vim.opt.shortmess:append "c"
 
-vim.g.tokyonight_style = "night"
-vim.g.tokyonight_italic_functions = 1
-vim.g.tokyonight_colors = {
-  hint = 'orange',
-  error = '#ff0000'
-}
+-- vim.g.tokyonight_style = "night"
+-- vim.g.tokyonight_italic_functions = 1
+-- vim.g.tokyonight_colors = {
+--   hint = 'orange',
+--   error = '#ff0000'
+-- }
 
-vim.cmd "color tokyonight"
+vim.cmd "color base16-irblack"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
 vim.cmd [[set iskeyword+=-]]
