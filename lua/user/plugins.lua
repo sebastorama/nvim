@@ -26,8 +26,13 @@ return packer.startup(function(use)
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     }
   }
+  use 'tpope/vim-dadbod'
+  use 'kristijanhusak/vim-dadbod-ui'
+
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'windwp/nvim-autopairs'
+
+  use 'vimwiki/vimwiki'
 
   -- Colorschemes
   use 'navarasu/onedark.nvim'
@@ -36,6 +41,7 @@ return packer.startup(function(use)
   use 'folke/tokyonight.nvim'
   use 'chriskempson/base16-vim'
   use 'xiyaowong/nvim-transparent'
+  use 'tanvirtin/monokai.nvim'
 
   -- Completion
   use 'hrsh7th/nvim-cmp'

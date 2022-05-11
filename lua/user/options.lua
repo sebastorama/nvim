@@ -25,7 +25,7 @@ vim.opt.expandtab = true                        -- convert tabs to spaces
 vim.opt.shiftwidth = 2                          -- the number of spaces inserted for each indentation
 vim.opt.tabstop = 2                             -- insert 2 spaces for a tab
 vim.opt.cursorline = false                      -- highlight the current line
-vim.opt.number = true                           -- set numbered lines
+vim.opt.number = false                           -- set numbered lines
 vim.opt.relativenumber = false                  -- set relative numbered lines
 vim.opt.numberwidth = 4                         -- set number column width to 2 {default 4}
 vim.opt.signcolumn = "yes"                      -- always show the sign column, otherwise it would shift the text each time
@@ -38,6 +38,7 @@ vim.opt.spell = false
 vim.opt.spelllang = { 'en_us', 'pt' }
 
 vim.opt.shortmess:append "c"
+vim.opt.list = true
 
 -- vim.g.tokyonight_style = "night"
 -- vim.g.tokyonight_italic_functions = 1
@@ -46,9 +47,13 @@ vim.opt.shortmess:append "c"
 --   error = '#ff0000'
 -- }
 
-vim.cmd "color base16-irblack"
+vim.cmd [[
+  let g:vimwiki_list = [{ 'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md' }]
+]]
+
+vim.cmd "set bg=light"
+vim.cmd "color PaperColor"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
-vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]]
+vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]] -- Always strip trailing whitespaces
 vim.cmd [[set iskeyword+=-]]
 vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
-
