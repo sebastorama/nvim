@@ -35,8 +35,11 @@ keymap("n", "<leader>fg", ":Telescope git_files<CR>", opts)
 keymap("n", "<leader>ff", ":Telescope find_files<CR>", opts)
 keymap("n", "<leader>fb", ":Telescope buffers<CR>", opts)
 keymap("n", "<leader>fd", ":Telescope diagnostics<CR>", opts)
+
+-- LSP
 keymap("n", "gd", ":Telescope lsp_definitions<CR>", opts)
 keymap("n", "gr", ":Telescope lsp_references<CR>", opts)
+keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = false, noremap = false})
 
 -- VISUAL
 
@@ -45,6 +48,9 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 keymap("v", "p", '"_dP', opts)
+
+-- CLIPBOARD Actions
+keymap("v", "<leader>y", "+y", opts)
 
 -- INSERT
 keymap("i", "<C-f>", "<Right>", opts)
