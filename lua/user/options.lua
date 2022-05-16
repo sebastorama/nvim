@@ -51,8 +51,8 @@ vim.cmd [[
   let g:vimwiki_list = [{ 'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md' }]
 ]]
 
-vim.cmd "set bg=light"
-vim.cmd "color tokyonight"
+vim.cmd "set bg=dark"
+vim.cmd "color codedark"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]] -- Always strip trailing whitespaces
 vim.cmd [[set iskeyword+=-]]
