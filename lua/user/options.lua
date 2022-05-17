@@ -52,7 +52,7 @@ vim.cmd [[
 ]]
 
 vim.cmd "set bg=dark"
-vim.cmd "color codedark"
+vim.cmd "color onedark"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]] -- Always strip trailing whitespaces
 vim.cmd [[set iskeyword+=-]]

@@ -12,12 +12,18 @@ return packer.startup(function(use)
     'nvim-lualine/lualine.nvim',
     requires = { 'kyazdani42/nvim-web-devicons', opt = true }
   }
-
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} }
+    requires = 'nvim-lua/plenary.nvim'
   }
-
+  use {
+    'TimUntersberger/neogit',
+    requires = 'nvim-lua/plenary.nvim'
+  }
+  use {
+    'sindrets/diffview.nvim',
+    requires = 'nvim-lua/plenary.nvim'
+  }
 
   use 'tpope/vim-surround'
   use {
@@ -26,13 +32,12 @@ return packer.startup(function(use)
       'kyazdani42/nvim-web-devicons', -- optional, for file icon
     }
   }
-  use 'tpope/vim-dadbod'
-  use 'kristijanhusak/vim-dadbod-ui'
 
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'windwp/nvim-autopairs'
 
   use 'vimwiki/vimwiki'
+  use 'windwp/nvim-ts-autotag'
 
   -- Colorschemes
   use 'navarasu/onedark.nvim'
@@ -42,6 +47,7 @@ return packer.startup(function(use)
   use 'chriskempson/base16-vim'
   use 'xiyaowong/nvim-transparent'
   use 'tanvirtin/monokai.nvim'
+  use 'romgrk/github-light.vim'
 
   -- Completion
   use 'hrsh7th/nvim-cmp'
