@@ -38,6 +38,8 @@ return packer.startup(function(use)
 
   use 'vimwiki/vimwiki'
   use 'windwp/nvim-ts-autotag'
+  use 'folke/which-key.nvim'
+
 
   -- Colorschemes
   use 'navarasu/onedark.nvim'
@@ -61,15 +63,15 @@ return packer.startup(function(use)
   use 'ray-x/lsp_signature.nvim'
 
   -- LSP
-  use "neovim/nvim-lspconfig"           -- enable LSP
-  use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-  use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-  use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
-  use "nvim-lua/plenary.nvim"
+  use 'neovim/nvim-lspconfig'           -- enable LSP
+  use 'williamboman/nvim-lsp-installer' -- simple to use language server installer
+  use 'tamago324/nlsp-settings.nvim' -- language server settings defined in json for
+  use 'jose-elias-alvarez/null-ls.nvim' -- for formatters and linters
+  use 'nvim-lua/plenary.nvim'
 
   -- snippets
-  use "L3MON4D3/LuaSnip"
-  use "rafamadriz/friendly-snippets"
+  use 'L3MON4D3/LuaSnip'
+  use 'rafamadriz/friendly-snippets'
 end)
 
 
