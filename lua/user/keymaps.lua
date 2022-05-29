@@ -19,6 +19,7 @@ keymap('n', '<leader>S', ':setlocal spell!<CR>', opts)
 -- Navigate buffers
 keymap('n', '<S-l>', ':bnext<CR>', opts)
 keymap('n', '<S-h>', ':bprevious<CR>', opts)
+keymap('n', '<leader>bd', ':bp | sp | bn | bd<CR>', opts)
 
 -- Resize with arrows
 keymap('n', '<C-S-Up>', ':resize +3<CR>', opts)

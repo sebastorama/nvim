@@ -39,6 +39,7 @@ return packer.startup(function(use)
   use 'vimwiki/vimwiki'
   use 'windwp/nvim-ts-autotag'
   use 'folke/which-key.nvim'
+  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
 
 
   -- Colorschemes
