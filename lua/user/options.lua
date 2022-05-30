@@ -33,6 +33,7 @@ vim.opt.wrap = false                            -- display lines as one long lin
 vim.opt.scrolloff = 8                           -- is one of my fav
 vim.opt.sidescrolloff = 8
 vim.opt.guifont = 'monospace:h17'               -- the font used in graphical neovim applications
+vim.opt.cursorline = true
 
 vim.opt.spell = false
 vim.opt.spelllang = { 'en_us', 'pt' }
@@ -57,7 +58,7 @@ vim.cmd [[
   let g:vimwiki_list = [{ 'path': '~/Dropbox/vimwiki/', 'syntax': 'markdown', 'ext': '.md' }]
 ]]
 
-vim.cmd 'set bg=light'
+vim.cmd 'set bg=dark'
 vim.cmd 'color gruvbox'
 vim.cmd 'set whichwrap+=<,>,[,],h,l'
 vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]] -- Always strip trailing whitespaces

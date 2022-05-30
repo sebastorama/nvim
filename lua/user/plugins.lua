@@ -1,7 +1,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 -- Use a protected call so we don't error out on first use
-local status_ok, packer = pcall(require, "packer")
+local status_ok, packer = pcall(require, 'packer')
 if not status_ok then
   return
 end
@@ -39,7 +39,7 @@ return packer.startup(function(use)
   use 'vimwiki/vimwiki'
   use 'windwp/nvim-ts-autotag'
   use 'folke/which-key.nvim'
-  use { 'akinsho/bufferline.nvim', tag = "v2.*", requires = 'kyazdani42/nvim-web-devicons' }
+  use { 'akinsho/bufferline.nvim', tag = 'v2.*', requires = 'kyazdani42/nvim-web-devicons' }
 
 
   -- Colorschemes

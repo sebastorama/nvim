@@ -3,8 +3,8 @@ local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
-vim.g.mapleader = ","
-vim.g.maploaclleader = ","
+vim.g.mapleader = ','
+vim.g.maploaclleader = ','
 
 -- NORMAL
 
@@ -41,7 +41,7 @@ keymap('n', '<leader>lr', '<cmd>lua vim.lsp.buf.rename()<CR>', { silent = false,
 keymap('v', '<', '<gv', opts)
 keymap('v', '>', '>gv', opts)
 
-keymap('v', 'p', '"_dP', opts)
+keymap('v', 'p', "'_dP", opts)
 
 -- CLIPBOARD Actions
 keymap('v', '<leader>y', '+y', opts)
