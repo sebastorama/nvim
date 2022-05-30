@@ -47,10 +47,11 @@ return packer.startup(function(use)
   use 'tomasiser/vim-code-dark'
   use 'NLKNguyen/papercolor-theme'
   use 'folke/tokyonight.nvim'
-  use 'chriskempson/base16-vim'
   use 'xiyaowong/nvim-transparent'
   use 'tanvirtin/monokai.nvim'
   use 'romgrk/github-light.vim'
+  use 'ellisonleao/gruvbox.nvim'
+
 
   -- Completion
   use 'hrsh7th/nvim-cmp'

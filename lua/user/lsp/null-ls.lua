@@ -9,14 +9,14 @@ local formatting = null_ls.builtins.formatting
 local diagnostics = null_ls.builtins.diagnostics
 
 null_ls.setup({
-	debug = false,
-	sources = {
-		formatting.prettier.with({ extra_args = {"--single-quote" } }),
-		formatting.black.with({ extra_args = { "--fast" } }),
-		formatting.stylua,
+  debug = false,
+  sources = {
+    formatting.prettier.with({ extra_args = {"--single-quote" } }),
+    formatting.black.with({ extra_args = { "--fast" } }),
+    formatting.stylua,
     -- diagnostics.cspell
     -- diagnostics.flake8
-	},
+  },
 })
 
 vim.cmd [[autocmd BufWritePre *.js :Format]]
