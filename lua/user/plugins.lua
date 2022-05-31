@@ -51,7 +51,10 @@ return packer.startup(function(use)
   use "tanvirtin/monokai.nvim"
   use "romgrk/github-light.vim"
   use "ellisonleao/gruvbox.nvim"
-
+  use({
+    "catppuccin/nvim",
+    as = "catppuccin"
+  })
 
   -- Completion
   use "hrsh7th/nvim-cmp"

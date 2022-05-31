@@ -40,6 +40,7 @@ vim.opt.spelllang = { "en_us", "pt" }
 
 vim.opt.shortmess:append "c"
 vim.opt.list = true
+vim.opt.listchars = { trail = "‿", tab = " ⇝" }
 
 -- folding options
 vim.opt.fillchars = "fold: "
@@ -47,19 +48,12 @@ vim.opt.foldlevel = 99
 vim.o.foldmethod = "expr"
 vim.o.foldexpr = "nvim_treesitter#foldexpr()"
 
--- vim.g.tokyonight_style = "night"
--- vim.g.tokyonight_italic_functions = 1
--- vim.g.tokyonight_colors = {
---   hint = "orange",
---   error = "#ff0000"
--- }
+vim.o.laststatus = 3
 
 vim.cmd [[
   let g:vimwiki_list = [{ "path": "~/Dropbox/vimwiki/", "syntax": "markdown", "ext": ".md" }]
 ]]
 
-vim.cmd "set bg=dark"
-vim.cmd "color gruvbox"
 vim.cmd "set whichwrap+=<,>,[,],h,l"
 vim.cmd [[autocmd BufWritePre * :%s/\s\+$//e]] -- Always strip trailing whitespaces
 vim.cmd [[set iskeyword+=-]]

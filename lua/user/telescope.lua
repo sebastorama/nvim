@@ -1,26 +1,20 @@
-local telescope_status_ok, telescope = pcall(require, "lualine")
+local telescope_status_ok, telescope = pcall(require, "telescope")
 if not telescope_status_ok then
   return
 end
 
 local actions = telescope.actions
 
-telescope.setup{
+telescope.setup({
   defaults = {
     -- Default configuration for telescope goes here:
     -- config_key = value,
-    mappings = {
-      i = {
-        ["<C-n>"] = actions.cycle_history_next,
-        ["<C-p>"] = actions.cycle_history_prev,
-        ["<C-j>"] = actions.move_selection_next,
-        ["<C-k>"] = actions.move_selection_previous,
-        ["<C-c>"] = actions.close,
-        -- map actions.which_key to <C-h> (default: <C-/>)
-        -- actions.which_key shows the mappings for your picker,
-        -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-      }
-    }
+    layout_config = {
+      horizontal = { width = 0.9 }
+      -- other layout configuration here
+    },
+    layout_strategy = "vertical",
+    mappings = {}
   },
   pickers = {
     -- Default configuration for builtin pickers goes here:
@@ -38,4 +32,4 @@ telescope.setup{
     -- }
     -- please take a look at the readme of the extension you want to configure
   }
-}
+})

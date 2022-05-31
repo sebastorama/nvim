@@ -31,6 +31,7 @@ keymap("n", "+", ":vertical resize +3<CR>", opts)
 -- Misc Actions
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>s", ":nohl<CR>", opts)
+keymap("n", "<leader><leader>s", ":source ~/.config/nvim/lua/user/luasnip.lua<CR>", opts)
 
 -- LSP
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = false, noremap = false})
@@ -40,8 +41,6 @@ keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = false,
 -- Stay in ident mode
 keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
-
-keymap("v", "p", "'_dP", opts)
 
 -- CLIPBOARD Actions
 keymap("v", "<leader>y", "+y", opts)
