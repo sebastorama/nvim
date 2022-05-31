@@ -24,6 +24,7 @@ wk.register ({
     },
     d = { "<cmd>Telescope lsp_definitions<cr>", "Find Definitions" },
     r = { "<cmd>Telescope lsp_references<cr>", "Find References" },
+    o = { "<cmd>SymbolsOutline<cr>", "Toggle Outline" }
   },
 
   -- GIT

@@ -41,6 +41,10 @@ return packer.startup(function(use)
   use "folke/which-key.nvim"
   use { "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" }
 
+  -- dadbod
+  use "tpope/vim-dadbod"
+  use "kristijanhusak/vim-dadbod-ui"
+  use "kristijanhusak/vim-dadbod-completion"
 
   -- Colorschemes
   use "navarasu/onedark.nvim"
@@ -73,6 +77,7 @@ return packer.startup(function(use)
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
   use "nvim-lua/plenary.nvim"
+  use "simrat39/symbols-outline.nvim"
 
   -- snippets
   use "L3MON4D3/LuaSnip"

@@ -10,10 +10,10 @@ telescope.setup({
     -- Default configuration for telescope goes here:
     -- config_key = value,
     layout_config = {
-      horizontal = { width = 0.9 }
+      horizontal = { width = 0.99 }
       -- other layout configuration here
     },
-    layout_strategy = "vertical",
+    layout_strategy = "horizontal",
     mappings = {}
   },
   pickers = {
