@@ -1,4 +1,4 @@
-local ok, neogit = pcall(require, 'neogit')
+local ok, neogit = pcall(require, "neogit")
 
 neogit.setup {
   disable_signs = false,
@@ -11,16 +11,16 @@ neogit.setup {
   disable_builtin_notifications = false,
   use_magit_keybindings = false,
   commit_popup = {
-      kind = 'split',
+      kind = "split",
   },
   -- Change the default way of opening neogit
-  kind = 'tab',
+  kind = "tab",
   -- customize displayed signs
   signs = {
     -- { CLOSED, OPENED }
-    section = { '>', 'v' },
-    item = { '>', 'v' },
-    hunk = { '', '' },
+    section = { ">", "v" },
+    item = { ">", "v" },
+    hunk = { "", "" },
   },
   integrations = {
     -- Neogit only provides inline diffs. If you want a more traditional way to look at diffs, you can use `sindrets/diffview.nvim`.
@@ -28,10 +28,10 @@ neogit.setup {
     --
     -- Requires you to have `sindrets/diffview.nvim` installed.
     -- use {
-    --   'TimUntersberger/neogit',
+    --   "TimUntersberger/neogit",
     --   requires = {
-    --     'nvim-lua/plenary.nvim',
-    --     'sindrets/diffview.nvim'
+    --     "nvim-lua/plenary.nvim",
+    --     "sindrets/diffview.nvim"
     --   }
     -- }
     --
@@ -65,10 +65,10 @@ neogit.setup {
   mappings = {
     -- modify status buffer mappings
     status = {
-      -- Adds a mapping with 'B' as key that does the 'BranchPopup' command
-      --['B'] = 'BranchPopup',
-      -- Removes the default mapping of 's'
-      --['s'] = '',
+      -- Adds a mapping with "B" as key that does the "BranchPopup" command
+      --["B"] = "BranchPopup",
+      -- Removes the default mapping of "s"
+      --["s"] = "",
     }
   }
 }

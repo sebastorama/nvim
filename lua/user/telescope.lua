@@ -1,4 +1,4 @@
-local telescope_status_ok, telescope = pcall(require, 'lualine')
+local telescope_status_ok, telescope = pcall(require, "lualine")
 if not telescope_status_ok then
   return
 end
@@ -11,15 +11,14 @@ telescope.setup{
     -- config_key = value,
     mappings = {
       i = {
-        ['<C-n>'] = actions.cycle_history_next,
-        ['<C-p>'] = actions.cycle_history_prev,
-        ['<C-j>'] = actions.move_selection_next,
-        ['<C-k>'] = actions.move_selection_previous,
-        ['<C-c>'] = actions.close,
+        ["<C-n>"] = actions.cycle_history_next,
+        ["<C-p>"] = actions.cycle_history_prev,
+        ["<C-j>"] = actions.move_selection_next,
+        ["<C-k>"] = actions.move_selection_previous,
+        ["<C-c>"] = actions.close,
         -- map actions.which_key to <C-h> (default: <C-/>)
         -- actions.which_key shows the mappings for your picker,
         -- e.g. git_{create, delete, ...}_branch for the git_branches picker
-        ['<C-h>'] = 'which_key'
       }
     }
   },
