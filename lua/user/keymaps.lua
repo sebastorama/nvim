@@ -6,6 +6,8 @@ local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = ","
 vim.g.maploaclleader = ","
 
+keymap("", "<F1>", "<Nop>", opts)
+
 -- NORMAL
 
 -- Better window navigation
