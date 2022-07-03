@@ -37,6 +37,8 @@ for _, server in pairs(servers) do
     on_attach = require("user.lsp.handlers").on_attach,
     capabilities = require("user.lsp.handlers").capabilities,
   }
+
+  -- search for custom options defined on user.lsp.settings
   local has_custom_opts, server_custom_opts = pcall(require, "user.lsp.settings." .. server)
   if has_custom_opts then
     opts = vim.tbl_deep_extend("force", server_custom_opts, opts)

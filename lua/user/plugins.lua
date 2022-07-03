@@ -33,8 +33,17 @@ return packer.startup(function(use)
     }
   }
 
+  use "github/copilot.vim"
+
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
   use "windwp/nvim-autopairs"
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
+  }
+
 
   use "vimwiki/vimwiki"
   use "windwp/nvim-ts-autotag"
@@ -59,6 +68,7 @@ return packer.startup(function(use)
     "catppuccin/nvim",
     as = "catppuccin"
   })
+  use ({ 'projekt0n/github-nvim-theme' })
 
   -- Completion
   use "hrsh7th/nvim-cmp"
@@ -72,7 +82,7 @@ return packer.startup(function(use)
   use "ray-x/lsp_signature.nvim"
 
   -- LSP
-  use "neovim/nvim-lspconfig"           -- enable LSP
+  use "neovim/nvim-lspconfig" -- enable LSP
   use "williamboman/nvim-lsp-installer" -- simple to use language server installer
   use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
   use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
@@ -83,5 +93,3 @@ return packer.startup(function(use)
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"
 end)
-
-

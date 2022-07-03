@@ -77,4 +77,5 @@ local options = {
 
 catppuccin.setup(options)
 vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd [[set bg=dark]]
+vim.cmd [[colorscheme codedark]]
