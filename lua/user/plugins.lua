@@ -68,7 +68,8 @@ return packer.startup(function(use)
     "catppuccin/nvim",
     as = "catppuccin"
   })
-  use ({ 'projekt0n/github-nvim-theme' })
+  use 'projekt0n/github-nvim-theme'
+  use 'doums/darcula'
 
   -- Completion
   use "hrsh7th/nvim-cmp"

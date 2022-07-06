@@ -5,6 +5,11 @@ if not ok then
 end
 
 wk.register({
+  -- QUICKFIX
+  c = {
+    name ="Quickfix",
+    c = { "<cmd>ccl<cr>", "Close Quickfix"}
+  },
   -- FIND
   f = {
     name = "Find",
