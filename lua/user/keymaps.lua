@@ -21,6 +21,7 @@ keymap("n", "<leader>S", ":setlocal spell!<CR>", opts)
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<leader>bb", ":buffers<CR>", opts)
 keymap("n", "<leader>bd", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<leader>bD", ":%bd|e#<CR>", opts)
 
@@ -34,6 +35,7 @@ keymap("n", "+", ":vertical resize +3<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>s", ":nohl<CR>", opts)
 keymap("n", "<leader><leader>s", ":source ~/.config/nvim/lua/user/luasnip.lua<CR>", opts)
+keymap("n", "<leader><leader>r", ":luafile $MYVIMRC<CR>", opts)
 
 -- LSP
 keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = false, noremap = false})

@@ -90,6 +90,10 @@ return packer.startup(function(use)
   use "nvim-lua/plenary.nvim"
   use "simrat39/symbols-outline.nvim"
 
+  -- DAP
+  use 'mfussenegger/nvim-dap'
+  use 'nvim-telescope/telescope-dap.nvim'
+
   -- snippets
   use "L3MON4D3/LuaSnip"
   use "rafamadriz/friendly-snippets"

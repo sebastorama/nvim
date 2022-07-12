@@ -8,8 +8,14 @@ wk.register({
   -- QUICKFIX
   c = {
     name ="Quickfix",
-    c = { "<cmd>ccl<cr>", "Close Quickfix"}
+    c = { "<cmd>ccl<cr>", "Close Quickfix"},
+    o = { "<cmd>copen<cr>", "Open Quickfix"}
   },
+  d = {
+    name ="Debug",
+    b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint"}
+  },
+
   -- FIND
   f = {
     name = "Find",
