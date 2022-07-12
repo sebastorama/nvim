@@ -75,7 +75,7 @@ local options = {
   }
 }
 catppuccin.setup(options)
-vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
+vim.g.catppuccin_flavour = "macchiato" -- latte, frappe, macchiato, mocha
 
 -- vim.g.tokyonight_style = "storm"
 -- vim.g.tokyonight_italic_functions = true
@@ -84,4 +84,4 @@ vim.g.catppuccin_flavour = "mocha" -- latte, frappe, macchiato, mocha
 -- vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 
 vim.cmd [[set bg=dark]]
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd [[colorscheme github_dark_colorblind]]
