@@ -15,6 +15,7 @@ wk.register({
     name = "Debug",
     b = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
     c = { "<cmd>lua require'dap'.continue()<cr>", "Continue/Run" },
+    k = { "<cmd>lua require'dapui'.eval()<cr>", "DapUI Eval" },
   },
 
   -- FIND

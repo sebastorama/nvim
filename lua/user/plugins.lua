@@ -66,6 +66,9 @@ return packer.startup(function(use)
   use 'projekt0n/github-nvim-theme'
   use 'doums/darcula'
   use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
+  use 'tjdevries/gruvbuddy.nvim'
+  use 'Yazeed1s/minimal.nvim'
+  use 'ishan9299/modus-theme-vim'
 
   -- Completion
   use "hrsh7th/nvim-cmp"
@@ -89,6 +92,7 @@ return packer.startup(function(use)
   -- DAP
   use 'mfussenegger/nvim-dap'
   use 'nvim-telescope/telescope-dap.nvim'
+  use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
 
   -- snippets
   use "L3MON4D3/LuaSnip"
