@@ -21,4 +21,4 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 -- })
 
 vim.cmd [[set bg=light]]
-vim.cmd [[colorscheme codedark]]
+vim.cmd [[colorscheme modus-operandi]]

@@ -8,7 +8,7 @@ end
 
 -- Color table for highlights
 -- stylua: ignore
-local colors = {
+local dark_colors = {
   bg       = '#202328',
   fg       = '#bbc2cf',
   yellow   = '#ECBE7B',
@@ -21,6 +21,22 @@ local colors = {
   blue     = '#51afef',
   red      = '#ec5f67',
 }
+
+local light_colors = {
+  bg       = '#bbc2cf',
+  fg       = '#202328',
+  yellow   = '#ECBE7B',
+  cyan     = '#008080',
+  darkblue = '#081633',
+  green    = '#98be65',
+  orange   = '#FF8800',
+  violet   = '#a9a1e1',
+  magenta  = '#c678dd',
+  blue     = '#51afef',
+  red      = '#ec5f67',
+}
+
+local colors = light_colors
 
 local conditions = {
   buffer_not_empty = function()
