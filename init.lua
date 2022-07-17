@@ -1,7 +1,6 @@
 --require "user.lualine"
 require "user.autocmd"
 require "user.autopairs"
-require "user.bufferline"
 require "user.cmp"
 require "user.color"
 require "user.dadbodui"

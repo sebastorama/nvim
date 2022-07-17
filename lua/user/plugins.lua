@@ -48,7 +48,6 @@ return packer.startup(function(use)
   use "vimwiki/vimwiki"
   use "windwp/nvim-ts-autotag"
   use "folke/which-key.nvim"
-  use { "akinsho/bufferline.nvim", tag = "v2.*", requires = "kyazdani42/nvim-web-devicons" }
 
   -- dadbod
   use "tpope/vim-dadbod"
@@ -64,12 +63,9 @@ return packer.startup(function(use)
   use "tanvirtin/monokai.nvim"
   use "romgrk/github-light.vim"
   use "ellisonleao/gruvbox.nvim"
-  use({
-    "catppuccin/nvim",
-    as = "catppuccin"
-  })
   use 'projekt0n/github-nvim-theme'
   use 'doums/darcula'
+  use { 'lalitmee/cobalt2.nvim', requires = 'tjdevries/colorbuddy.nvim' }
 
   -- Completion
   use "hrsh7th/nvim-cmp"
