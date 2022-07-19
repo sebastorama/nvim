@@ -20,5 +20,6 @@ vim.g.tokyonight_colors = { hint = "orange", error = "#ff0000" }
 --   exclude = {}, -- table: groups you don't want to clear
 -- })
 
-vim.cmd [[set bg=light]]
-vim.cmd [[colorscheme modus-operandi]]
+vim.cmd([[set bg=dark]])
+--require("colorbuddy").colorscheme("gruvbuddy")
+vim.cmd([[colorscheme tokyonight]])

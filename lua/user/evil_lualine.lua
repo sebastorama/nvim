@@ -36,7 +36,7 @@ local light_colors = {
   red      = '#ec5f67',
 }
 
-local colors = light_colors
+local colors = dark_colors
 
 local conditions = {
   buffer_not_empty = function()
