@@ -7,7 +7,6 @@ vim.g.mapleader = ","
 vim.g.maploaclleader = ","
 
 keymap("", "<F1>", "<Nop>", opts)
-
 -- NORMAL
 
 -- Better window navigation
@@ -36,9 +35,12 @@ keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<leader>s", ":nohl<CR>", opts)
 keymap("n", "<leader><leader>s", ":source ~/.config/nvim/lua/user/luasnip.lua<CR>", opts)
 keymap("n", "<leader><leader>r", ":luafile $MYVIMRC<CR>", opts)
-
--- LSP
-keymap("n", "<leader>lr", "<cmd>lua vim.lsp.buf.rename()<CR>", { silent = false, noremap = false})
+keymap(
+  "n",
+  "<leader>/",
+  ":lua require(\"telescope.builtin\").current_buffer_fuzzy_find({ sorter = require('telescope.sorters').get_substr_matcher({})})<cr>",
+  opts
+)
 
 -- VISUAL
 
@@ -47,9 +49,9 @@ keymap("v", "<", "<gv", opts)
 keymap("v", ">", ">gv", opts)
 
 -- CLIPBOARD Actions
-keymap("v", "<leader>y", "+y", opts)
+keymap("v", "<leader>y", '"+y', opts)
+keymap("n", "<leader>p", '"+p', opts)
 
 -- INSERT
 keymap("i", "<C-f>", "<Right>", opts)
 keymap("i", "<C-b>", "<Left>", opts)
-

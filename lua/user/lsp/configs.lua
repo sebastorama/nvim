@@ -6,15 +6,14 @@ end
 local lspconfig = require("lspconfig")
 
 -- Emmet support
-local configs = require("lspconfig/configs")
+lsp_installer.setup({ ensure_installed = "emmet_ls" })
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 lspconfig.emmet_ls.setup({
-    -- on_attach = on_attach,
-    capabilities = capabilities,
-    filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
+  -- on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
 })
-
 
 local servers = {
   "cssls",
@@ -25,12 +24,12 @@ local servers = {
   "jsonls",
   "solargraph",
   "sumneko_lua",
-  "tsserver"
+  "tsserver",
 }
 
-lsp_installer.setup {
-  ensure_installed = servers
-}
+lsp_installer.setup({
+  ensure_installed = servers,
+})
 
 for _, server in pairs(servers) do
   local opts = {
