@@ -1,6 +1,6 @@
 local ok, neogit = pcall(require, "neogit")
 
-neogit.setup {
+neogit.setup({
   disable_signs = false,
   disable_hint = false,
   disable_context_highlighting = false,
@@ -11,7 +11,7 @@ neogit.setup {
   disable_builtin_notifications = false,
   use_magit_keybindings = false,
   commit_popup = {
-      kind = "split",
+    kind = "split",
   },
   -- Change the default way of opening neogit
   kind = "tab",
@@ -35,30 +35,30 @@ neogit.setup {
     --   }
     -- }
     --
-    diffview = true
+    diffview = true,
   },
   -- Setting any section to `false` will make the section not render at all
   sections = {
     untracked = {
-      folded = false
+      folded = false,
     },
     unstaged = {
-      folded = false
+      folded = false,
     },
     staged = {
-      folded = false
+      folded = false,
     },
     stashes = {
-      folded = true
+      folded = true,
     },
     unpulled = {
-      folded = true
+      folded = true,
     },
     unmerged = {
-      folded = false
+      folded = false,
     },
     recent = {
-      folded = true
+      folded = true,
     },
   },
   -- override/add mappings
@@ -69,6 +69,6 @@ neogit.setup {
       --["B"] = "BranchPopup",
       -- Removes the default mapping of "s"
       --["s"] = "",
-    }
-  }
-}
+    },
+  },
+})

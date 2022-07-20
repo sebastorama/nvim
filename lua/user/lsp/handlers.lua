@@ -14,7 +14,7 @@ M.setup = function()
   end
 
   local config = {
-    -- disable virtual text
+    -- enable/disable virtual text
     virtual_text = false,
     -- show signs
     signs = {
@@ -24,7 +24,7 @@ M.setup = function()
     underline = true,
     severity_sort = true,
     float = {
-      focusable = false,
+      focusable = true,
       style = "minimal",
       border = "rounded",
       source = "always",
@@ -46,6 +46,14 @@ end
 
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
+  vim.o.updatetime = 250
+  vim.cmd([[
+    augroup lsp_open_float
+    autocmd! * <buffer>
+    autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
+    augroup END
+  ]])
+
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec(
       [[
@@ -91,8 +99,8 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 
-  local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
   if client.server_capabilities.documentFormattingProvider then
+    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
 
     local callback
