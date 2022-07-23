@@ -2,7 +2,7 @@
 
 -- setup with all defaults
 -- each of these are documented in `:help nvim-tree.OPTION_NAME`
-require"nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
+require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
   auto_reload_on_write = true,
   disable_netrw = true,
   hijack_cursor = false,
@@ -113,4 +113,4 @@ require"nvim-tree".setup { -- BEGIN_DEFAULT_OPTS
       profile = false,
     },
   },
-} -- END_DEFAULT_OPTS
+}) -- END_DEFAULT_OPTS

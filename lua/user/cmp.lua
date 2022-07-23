@@ -10,7 +10,7 @@ end
 
 local check_backspace = function()
   local col = vim.fn.col(".") - 1
-  return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
+  return col == 0 or vim.fn.getline("."):sub(col, col):match("%s")
 end
 
 --   פּ ﯟ   some other good icons
@@ -39,7 +39,7 @@ local kind_icons = {
   Struct = "",
   Event = "",
   Operator = "",
-  TypeParameter = ""
+  TypeParameter = "",
 }
 
 local mapping = {
@@ -47,15 +47,15 @@ local mapping = {
   ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
   ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
   ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
-  ["<C-e>"] = cmp.mapping {
+  ["<C-e>"] = cmp.mapping({
     i = cmp.mapping.abort(),
-    c = cmp.mapping.close()
-  },
+    c = cmp.mapping.close(),
+  }),
   -- Accept currently selected item. If none selected, `select` first item.
   -- Set `select` to `false` to only confirm explicitly selected items.
-  ["<CR>"] = cmp.mapping.confirm {
-    select = true
-  },
+  ["<CR>"] = cmp.mapping.confirm({
+    select = true,
+  }),
   ["<Tab>"] = cmp.mapping(function(fallback)
     if cmp.visible() then
       cmp.select_next_item()
@@ -77,14 +77,14 @@ local mapping = {
     else
       fallback()
     end
-  end, { "i", "s" })
+  end, { "i", "s" }),
 }
 
-cmp.setup {
+cmp.setup({
   snippet = {
     expand = function(args)
       luasnip.lsp_expand(args.body) -- For `luasnip` users.
-    end
+    end,
   },
   mapping = mapping,
   formatting = {
@@ -96,10 +96,10 @@ cmp.setup {
       vim_item.menu = ({
         luasnip = "[Snippet]",
         buffer = "[Buffer]",
-        path = "[Path]"
+        path = "[Path]",
       })[entry.source.name]
       return vim_item
-    end
+    end,
   },
   sources = {
     { name = "nvim_lsp" },
@@ -107,20 +107,19 @@ cmp.setup {
     { name = "buffer" },
     { name = "path" },
     { name = "spell" },
-    { name = "calc" }
+    { name = "calc" },
   },
   confirm_opts = {
     behavior = cmp.ConfirmBehavior.Replace,
-    select = false
+    select = false,
   },
   window = {
     documentation = {
-      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
-    }
+      border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" },
+    },
   },
   experimental = {
     ghost_text = false,
-    native_menu = false
-  }
-}
-
+    native_menu = false,
+  },
+})

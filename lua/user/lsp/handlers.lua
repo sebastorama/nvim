@@ -99,6 +99,10 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 
+  if client.name == "sumneko_lua" then
+    client.server_capabilities.documentFormattingProvider = nil
+  end
+
   if client.server_capabilities.documentFormattingProvider then
     local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
     vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })

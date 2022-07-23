@@ -18,6 +18,7 @@ lspconfig.emmet_ls.setup({
 local servers = {
   "cssls",
   "cssmodules_ls",
+  "cssls",
   "dockerls",
   "eslint",
   "html",

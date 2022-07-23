@@ -9,7 +9,6 @@ dap.adapters.chrome = {
   args = { os.getenv("HOME") .. "/dev/dap/vscode-chrome-debug/out/src/chromeDebug.js" }, -- TODO set as ENV VAR?
 }
 
-
 -- change this to javascript if needed
 dap.configurations.javascriptreact = {
   {

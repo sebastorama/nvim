@@ -1,7 +1,7 @@
 return {
   settings = {
     solargraph = {
-      diagnostics = true
-    }
-  }
+      diagnostics = true,
+    },
+  },
 }
