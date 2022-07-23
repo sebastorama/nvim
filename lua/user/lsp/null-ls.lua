@@ -21,9 +21,7 @@ null_ls.setup({
     -- diagnostics.flake8
   },
 
-  on_attach = function(client, buffno)
-    local ft = vim.filetype.match({ buf = buffno })
-
+  on_attach = function(client)
     if client.server_capabilities.documentFormattingProvider then
       local augroup = vim.api.nvim_create_augroup("NullLsFormatting", {})
       vim.api.nvim_clear_autocmds({ group = augroup, buffer = 0 })

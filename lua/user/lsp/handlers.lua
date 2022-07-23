@@ -79,7 +79,7 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
   vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
 
-  vim.keymap.set("n", "[d", function()
+  vim.keymap.set("n", "<c-p>", function()
     vim.diagnostic.goto_prev({ border = "rounded" })
   end, opts)
 
@@ -87,7 +87,7 @@ local function lsp_keymaps(bufnr)
     vim.diagnostic.open_float({ border = "rounded" })
   end, opts)
 
-  vim.keymap.set("n", "]d", function()
+  vim.keymap.set("n", "<c-n>", function()
     vim.diagnostic.goto_next({ border = "rounded" })
   end, opts)
 
