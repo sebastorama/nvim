@@ -17,10 +17,12 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 
 keymap("n", "<leader>S", ":setlocal spell!<CR>", opts)
 
--- Navigate buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
-keymap("n", "<leader>bb", ":buffers<CR>:b<space>", opts)
+-- Navigate tabs
+keymap("n", "<S-l>", ":tabp<CR>", opts)
+keymap("n", "<S-h>", ":tabn<CR>", opts)
+
+-- Buffers
+keymap("n", "<leader>bb", "<cmd>Telescope buffers<cr>", opts)
 keymap("n", "<leader>bd", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<leader>bD", ":%bd|e#<CR>", opts)
 

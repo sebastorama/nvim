@@ -76,7 +76,7 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
   vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, opts)
   vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-  vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+  vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<cr>", opts)
   vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
 
   vim.keymap.set("n", "<c-p>", function()
