@@ -1,23 +1,30 @@
 --require "user.lualine"
-require("user.autocmd")
-require("user.autopairs")
-require("user.cmp")
-require("user.color")
-require("user.dadbodui")
-require("user.diffview")
-require("user.evil_lualine")
-require("user.keymaps")
-require("user.lsp")
-require("user.luasnip")
-require("user.neogit")
-require("user.ntree")
-require("user.nvim-dap")
-require("user.nvim-dap-ui")
-require("user.options")
-require("user.plugins")
-require("user.symbols_outline")
-require("user.telescope")
-require("user.transparent")
-require("user.treesitter")
-require("user.ts-autotag")
-require("user.which-key")
+local modules = {
+  "user.autocmd",
+  "user.autopairs",
+  "user.cmp",
+  "user.color",
+  "user.dadbodui",
+  "user.diffview",
+  "user.evil_lualine",
+  "user.keymaps",
+  "user.lsp",
+  "user.luasnip",
+  "user.neogit",
+  "user.ntree",
+  "user.nvim-dap",
+  "user.nvim-dap-ui",
+  "user.options",
+  "user.plugins",
+  "user.symbols_outline",
+  "user.telescope",
+  "user.transparent",
+  "user.treesitter",
+  "user.ts-autotag",
+  "user.which-key",
+}
+
+for k, v in pairs(modules) do
+  package.loaded[v] = nil
+  require(v)
+end
