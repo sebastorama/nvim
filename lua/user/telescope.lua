@@ -15,8 +15,18 @@ telescope.setup({
     },
     layout_strategy = "horizontal",
     mappings = {},
+    border = true,
   },
   pickers = {
+    buffers = {
+      theme = "dropdown",
+      previewer = false,
+      border = false,
+    },
+    lsp_references = {
+      disable_coordinates = true,
+      show_line = false,
+    },
     -- Default configuration for builtin pickers goes here:
     -- picker_name = {
     --   picker_config_key = value,

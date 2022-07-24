@@ -21,4 +21,5 @@ vim.g.tokyonight_sidebars = { "qf", "vista_kind", "terminal", "packer" }
 vim.cmd([[set bg=dark]])
 -- require("colorbuddy").colorscheme("gruvbuddy")
 vim.cmd([[colorscheme tokyonight]])
-vim.cmd([[hi Comment  guifg=#6874A9]])
+vim.cmd([[hi Comment guifg=#6874A9]])
+vim.cmd([[hi LineNr guifg=#202435]])
