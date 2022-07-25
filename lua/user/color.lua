@@ -6,6 +6,7 @@ vim.g.tokyonight_transparent = false
 
 vim.cmd([[set bg=dark]])
 -- require("colorbuddy").colorscheme("gruvbuddy")
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme github_light_colorblind]])
 vim.cmd([[hi Comment guifg=#6874A9]])
-vim.cmd([[hi LineNr guifg=#4d4f5d]])
+vim.cmd([[hi LineNr guifg=#cccccc]])
+vim.cmd([[hi Substitute guibg=#ffaaaa guifg=#666666]])

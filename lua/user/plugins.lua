@@ -45,6 +45,7 @@ return packer.startup(function(use)
       require("Comment").setup()
     end,
   })
+  use("junegunn/vim-easy-align")
 
   use("vimwiki/vimwiki")
   use("windwp/nvim-ts-autotag")

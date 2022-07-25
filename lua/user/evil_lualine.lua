@@ -7,7 +7,7 @@ if not lualine_status_ok then
 end
 
 -- Color table for highlights
--- stylua: ignore
+-- stylua: ignore start
 local dark_colors = {
   bg       = '#202328',
   fg       = '#bbc2cf',
@@ -23,20 +23,21 @@ local dark_colors = {
 }
 
 local light_colors = {
-  bg = "#CBCCCC",
-  fg = "#202328",
-  yellow = "#ECBE7B",
-  cyan = "#008080",
+  bg       = "#CBCCCC",
+  fg       = "#202328",
+  yellow   = "#ECBE7B",
+  cyan     = "#008080",
   darkblue = "#081633",
-  green = "#3D630A",
-  orange = "#BE6500",
-  violet = "#64449F",
-  magenta = "#9E376B",
-  blue = "#51afef",
-  red = "#ec5f67",
+  green    = "#3D630A",
+  orange   = "#BE6500",
+  violet   = "#64449F",
+  magenta  = "#9E376B",
+  blue     = "#51afef",
+  red      = "#ec5f67",
 }
+-- stylua: ignore end
 
-local colors = dark_colors
+local colors = light_colors
 
 local conditions = {
   buffer_not_empty = function()
