@@ -33,6 +33,8 @@ return packer.startup(function(use)
     },
   })
 
+  use("norcalli/nvim-colorizer.lua")
+
   -- use "github/copilot.vim"
 
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })

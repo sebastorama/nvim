@@ -4,6 +4,7 @@ local modules = {
   "user.autopairs",
   "user.cmp",
   "user.color",
+  "user.colorizer",
   "user.dadbodui",
   "user.diffview",
   "user.evil_lualine",
@@ -22,6 +23,7 @@ local modules = {
   "user.treesitter",
   "user.ts-autotag",
   "user.which-key",
+  --"user.lualine",
 }
 
 for k, v in pairs(modules) do
