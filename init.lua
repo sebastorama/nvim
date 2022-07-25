@@ -1,4 +1,5 @@
---require "user.lualine"
+ require("user.globals")
+
 local modules = {
   "user.autocmd",
   "user.autopairs",
