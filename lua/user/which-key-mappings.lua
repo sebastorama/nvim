@@ -27,6 +27,11 @@ wk.register({
     l = { "<cmd>Telescope live_grep<cr>", "LiveGrep" },
   },
 
+  F = {
+    name = "Global Find",
+    F = { "<cmd>lua require('telescope.builtin').find_files({ cwd='~/dev'})<cr>", "Find File" },
+  },
+
   -- LSP
   l = {
     name = "LSP",

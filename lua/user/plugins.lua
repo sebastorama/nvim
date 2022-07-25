@@ -55,6 +55,8 @@ return packer.startup(function(use)
   use("kristijanhusak/vim-dadbod-ui")
   use("kristijanhusak/vim-dadbod-completion")
 
+  use("vim-scripts/dbext.vim")
+
   -- Colorschemes
   use("navarasu/onedark.nvim")
   use("tomasiser/vim-code-dark")
