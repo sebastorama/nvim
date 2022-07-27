@@ -1,4 +1,4 @@
- require("user.globals")
+require("user.globals")
 
 local modules = {
   "user.autocmd",

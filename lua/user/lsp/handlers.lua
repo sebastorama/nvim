@@ -103,28 +103,41 @@ M.on_attach = function(client, bufnr)
     client.server_capabilities.documentFormattingProvider = nil
   end
 
-  if client.server_capabilities.documentFormattingProvider then
-    local augroup = vim.api.nvim_create_augroup("LspFormatting", {})
-    vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-
-    local callback
-
-    if client.name == "tsserver" or client.name == "eslint" then
-      callback = function()
-        vim.cmd([[EslintFixAll]])
-      end
-    else
-      callback = function()
-        vim.lsp.buf.format({ bufnr = bufnr })
-      end
-    end
-
-    vim.api.nvim_create_autocmd("BufWritePre", {
-      group = augroup,
-      buffer = bufnr,
-      callback = callback,
-    })
+  if client.name == "tsserver" then
+    vim.api.nvim_exec(
+      [[
+      augroup lsp_tsserver_format_on_save
+      autocmd! * <buffer>
+      autocmd BufWritePre <buffer> lua require('user.lsp.handlers').format_if_not_present('eslint')
+      augroup END
+      ]],
+      false
+    )
   end
+
+  if client.name == "eslint" then
+    vim.api.nvim_exec(
+      [[
+      augroup lsp_eslint_format_on_save
+      autocmd! * <buffer>
+      autocmd BufWritePre <buffer> EslintFixAll
+      augroup END
+      ]],
+      false
+    )
+  end
+end
+
+M.format_if_not_present = function(client)
+  local active_clients = MAP(vim.lsp.get_active_clients(), function(v)
+    return v.name
+  end)
+
+  if HAS_VALUE(active_clients, client) then
+    return
+  end
+
+  vim.lsp.buf.format()
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
