@@ -25,6 +25,7 @@ return packer.startup(function(use)
     "sindrets/diffview.nvim",
     requires = "nvim-lua/plenary.nvim",
   })
+  use("lukas-reineke/indent-blankline.nvim")
 
   use("tpope/vim-surround")
   use({
