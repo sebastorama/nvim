@@ -5,18 +5,11 @@ if not ok then
 end
 
 vim.opt.termguicolors = true
-vim.cmd([[highlight IndentBlanklineIndent1 guibg=#282D42 gui=nocombine]])
-vim.cmd([[highlight IndentBlanklineIndent2 guibg=#2E344C gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent1 guibg=#252525 gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent2 guibg=#303030 gui=nocombine]])
 
-require("indent_blankline").setup({
-  char = "",
-  char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-  },
-  space_char_highlight_list = {
-    "IndentBlanklineIndent1",
-    "IndentBlanklineIndent2",
-  },
-  show_trailing_blankline_indent = false,
+indent_blankline.setup({
+  -- for example, context is off by default, use this to turn it on
+  show_current_context = true,
+  show_current_context_start = true,
 })
