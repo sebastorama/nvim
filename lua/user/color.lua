@@ -7,7 +7,7 @@ vim.g.tokyonight_colors = { border = "yellow" }
 
 vim.cmd([[set bg=dark]])
 -- require("colorbuddy").colorscheme("gruvbuddy")
-vim.cmd([[colorscheme codedark]])
+vim.cmd([[colorscheme tokyonight]])
 -- vim.cmd([[hi Comment guifg=#6874A9]])
 vim.cmd([[hi LineNr guifg=#cccccc]])
 vim.cmd([[hi Substitute guibg=#ffaaaa guifg=#666666]])
