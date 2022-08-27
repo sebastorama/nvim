@@ -70,7 +70,11 @@ require("nvim-tree").setup({ -- BEGIN_DEFAULT_OPTS
   filters = {
     dotfiles = false,
     custom = {},
-    exclude = {},
+    exclude = {
+      ".env*",
+      ".prettier*",
+      ".eslint*",
+    },
   },
   git = {
     enable = true,

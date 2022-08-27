@@ -75,6 +75,7 @@ return packer.startup(function(use)
   use("tjdevries/gruvbuddy.nvim")
   use("Yazeed1s/minimal.nvim")
   use("ishan9299/modus-theme-vim")
+  use("marko-cerovac/material.nvim")
 
   -- Completion
   use("hrsh7th/nvim-cmp")

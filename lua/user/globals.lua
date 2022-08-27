@@ -26,3 +26,29 @@ function HAS_VALUE(tab, val)
 
   return false
 end
+
+function shell_cmd_to_buf(cmd, bufno)
+  vim.api.nvim_buf_set_lines(bufno, 0, -1, false, {})
+
+  local write_data = function(_, data)
+    if data then
+      vim.api.nvim_buf_set_lines(bufno, -1, -1, false, data)
+      vim.api.nvim_buf_call(bufno, function()
+        vim.cmd("$")
+      end)
+    end
+  end
+
+  local tail_buffer = function()
+    vim.api.nvim_buf_call(bufno, function()
+      vim.cmd("$")
+    end)
+  end
+
+  vim.fn.jobstart(cmd, {
+    stdout_buffered = true,
+    on_stdout = write_data,
+    on_stderr = write_data,
+    on_exit = tail_buffer,
+  })
+end

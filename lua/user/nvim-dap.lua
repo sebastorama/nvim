@@ -48,3 +48,28 @@ dap.configurations.typescript = { -- change to typescript if needed
     webRoot = "${workspaceFolder}",
   },
 }
+
+dap.adapters.ruby = function(callback, config)
+  callback({
+    type = "server",
+    host = "127.0.0.1",
+    port = 38697,
+  })
+end
+
+dap.adapters.ruby = {
+  type = "executable",
+  command = "bundle",
+  args = { "exec", "readapt", "stdio" },
+}
+
+dap.configurations.ruby = {
+  {
+    type = "ruby",
+    request = "launch",
+    name = "Rails",
+    program = "bundle",
+    programArgs = { "exec", "rails", "s" },
+    useBundler = true,
+  },
+}

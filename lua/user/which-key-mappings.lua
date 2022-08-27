@@ -24,7 +24,7 @@ wk.register({
     f = { "<cmd>Telescope find_files hidden=false<cr>", "Find File" },
     b = { "<cmd>Telescope buffers<cr>", "Find Buffers" },
     g = { "<cmd>Telescope git_files hidden=true<cr>", "Find GIT files" },
-    l = { "<cmd>Telescope live_grep<cr>", "LiveGrep" },
+    l = { "<cmd>Telescope live_grep use_regex=true<cr>", "LiveGrep" },
   },
 
   F = {
