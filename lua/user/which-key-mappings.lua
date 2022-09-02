@@ -38,6 +38,12 @@ wk.register({
     a = {
       name = "Actions",
       r = { "<cmd>lua vim.lsp.buf.rename()<cr>", silent = false, noremap = false, "Rename with LSP" },
+      o = {
+        '<cmd>lua vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")<cr>',
+        silent = false,
+        noremap = false,
+        "Typescript organize imports",
+      },
     },
     f = { "<cmd>lua vim.lsp.buf.format({ async = true })<cr>", "Format File" },
     d = { "<cmd>Telescope lsp_definitions<cr>", "Find Definitions" },

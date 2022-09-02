@@ -5,7 +5,7 @@ if not ok then
 end
 
 vim.opt.termguicolors = true
-vim.cmd([[highlight IndentBlanklineIndent1 guifg=#404040 gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent1 guifg=#333333 gui=nocombine]])
 
 indent_blankline.setup({
   -- for example, context is off by default, use this to turn it on
