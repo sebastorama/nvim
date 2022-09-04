@@ -21,7 +21,7 @@ telescope.setup({
     buffers = {
       theme = "dropdown",
       previewer = false,
-      border = false,
+      border = true,
     },
     lsp_references = {
       disable_coordinates = true,
