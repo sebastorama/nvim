@@ -25,7 +25,6 @@ local servers = {
   "jsonls",
   "solargraph",
   "sumneko_lua",
-  "tsserver",
 }
 
 lsp_installer.setup({

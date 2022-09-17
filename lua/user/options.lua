@@ -1,7 +1,7 @@
 -- :help options
 -- vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
 vim.opt.backup = false -- creates a backup file
-vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
+vim.opt.cmdheight = 1 -- more space in the neovim command line for displaying messages
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
 vim.opt.conceallevel = 0 -- so that `` is visible in markdown files
 vim.opt.cursorline = false -- highlight the current line
@@ -14,10 +14,10 @@ vim.opt.ignorecase = true -- ignore case in search patterns
 vim.opt.list = true
 vim.opt.listchars = { trail = "‿", tab = " ⇝", eol = "↴" }
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
-vim.opt.number = false -- set numbered lines
+vim.opt.number = true -- set numbered lines
+vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.numberwidth = 4 -- set number column width to 2 {default 4}
 vim.opt.pumheight = 10 -- pop up menu height
-vim.opt.relativenumber = false -- set relative numbered lines
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
 vim.opt.shortmess:append("c")

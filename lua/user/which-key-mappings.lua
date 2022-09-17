@@ -32,6 +32,15 @@ wk.register({
     F = { "<cmd>lua require('telescope.builtin').find_files({ cwd='~/dev'})<cr>", "Find File" },
   },
 
+  -- GIT
+  g = {
+    name = "GIT",
+    g = { "<cmd>Neogit<cr>", "Open Neogit" },
+    s = { "<cmd>DiffviewOpen<cr>", "File History" },
+    h = { "<cmd>DiffviewFileHistory<cr>", "File History" },
+    x = { "<cmd>DiffviewClose<cr>", "Close Diffview" },
+  },
+
   -- LSP
   l = {
     name = "LSP",
@@ -39,7 +48,7 @@ wk.register({
       name = "Actions",
       r = { "<cmd>lua vim.lsp.buf.rename()<cr>", silent = false, noremap = false, "Rename with LSP" },
       o = {
-        '<cmd>lua vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")<cr>',
+        '<cmd>lua vim.lsp.buf.execute_command({command = "_typescript.organizeImports", arguments = {vim.fn.expand("%:p")}})<cr>',
         silent = false,
         noremap = false,
         "Typescript organize imports",
@@ -49,15 +58,11 @@ wk.register({
     d = { "<cmd>Telescope lsp_definitions<cr>", "Find Definitions" },
     l = { "<cmd>Telescope diagnostics<cr>", "Show Diagnostics" },
     r = { "<cmd>Telescope lsp_references<cr>", "Find References" },
-    o = { "<cmd>SymbolsOutline<cr>", "Toggle Outline" },
+    o = { "<cmd>AerialToggle<cr>", "Toggle Outline" },
   },
 
-  -- GIT
-  g = {
-    name = "GIT",
-    g = { "<cmd>Neogit<cr>", "Open Neogit" },
-    s = { "<cmd>DiffviewOpen<cr>", "File History" },
-    h = { "<cmd>DiffviewFileHistory<cr>", "File History" },
-    x = { "<cmd>DiffviewClose<cr>", "Close Diffview" },
+  t = {
+    name = "Typescript",
+    o = { "<cmd>TypescriptOrganizeImports<cr>", "Organize Imports" },
   },
 }, { prefix = "<leader>" })

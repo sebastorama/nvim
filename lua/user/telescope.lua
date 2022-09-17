@@ -16,6 +16,22 @@ telescope.setup({
     layout_strategy = "horizontal",
     mappings = {},
     border = true,
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--case-sensitive",
+    },
+    find_command = {
+      "fd",
+      "--type",
+      "f",
+      "--color",
+      "never",
+    },
   },
   pickers = {
     buffers = {

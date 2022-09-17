@@ -1,6 +1,7 @@
 require("user.globals")
 
 local modules = {
+  "user.aerial",
   "user.autocmd",
   "user.autopairs",
   "user.cmp",
@@ -19,7 +20,6 @@ local modules = {
   "user.nvim-dap-ui",
   "user.options",
   "user.plugins",
-  "user.symbols_outline",
   "user.telescope",
   "user.transparent",
   "user.treesitter",
