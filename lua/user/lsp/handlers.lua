@@ -130,7 +130,6 @@ M.on_attach = function(client, bufnr)
   end
 
   if aerial_ok then
-    print("Aerial OK")
     aerial.on_attach(client, bufnr)
   end
 end
