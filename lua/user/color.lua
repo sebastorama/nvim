@@ -35,9 +35,12 @@ require("tokyonight").setup({
   on_highlights = function(highlights, colors) end,
 })
 
-vim.cmd([[set bg=light]])
+vim.cmd([[set bg=dark]])
 -- require("colorbuddy").colorscheme("gruvbuddy")
-vim.cmd([[colorscheme modus-operandi]])
+vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[hi TablineFill guibg=#FFFFFF]])
+vim.cmd([[hi TablineSel guibg=#FFFFFF]])
+vim.cmd([[hi Tabline guifg=#000000 guibg=#FFFFFF]])
 vim.cmd([[hi Comment guifg=#6874A9]])
 vim.cmd([[hi LineNr guifg=#6874A9]])
 vim.cmd([[hi Substitute guibg=#ffaaaa guifg=#666666]])
