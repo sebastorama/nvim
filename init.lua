@@ -20,6 +20,7 @@ local modules = {
   "user.nvim-dap-ui",
   "user.options",
   "user.plugins",
+  "user.tabby",
   "user.telescope",
   "user.transparent",
   "user.treesitter",

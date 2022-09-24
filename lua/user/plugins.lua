@@ -23,12 +23,15 @@ return packer.startup(function(use)
     requires = "nvim-lua/plenary.nvim",
   })
   use("lukas-reineke/indent-blankline.nvim")
+  use("nanozuki/tabby.nvim")
 
   use("tpope/vim-surround")
   use("kyazdani42/nvim-tree.lua")
   use("kyazdani42/nvim-web-devicons")
 
   use("norcalli/nvim-colorizer.lua")
+  use("tpope/vim-fugitive")
+  use("tpope/vim-rhubarb")
 
   -- use "github/copilot.vim"
 
