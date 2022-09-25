@@ -92,6 +92,7 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim")
   use("jose-elias-alvarez/typescript.nvim")
   use("stevearc/aerial.nvim")
+  use("github/copilot.vim")
 
   -- DAP
   use("mfussenegger/nvim-dap")

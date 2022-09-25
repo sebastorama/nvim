@@ -17,7 +17,7 @@ M.setup = function()
 
   local config = {
     -- enable/disable virtual text
-    virtual_text = false,
+    virtual_text = true,
     -- show signs
     signs = {
       active = signs,
@@ -49,12 +49,12 @@ end
 local function lsp_highlight_document(client)
   -- Set autocommands conditional on server_capabilities
   vim.o.updatetime = 250
-  vim.cmd([[
-    augroup lsp_open_float
-    autocmd! * <buffer>
-    autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
-    augroup END
-  ]])
+  -- vim.cmd([[
+  --   augroup lsp_open_float
+  --   autocmd! * <buffer>
+  --   autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
+  --   augroup END
+  -- ]])
 
   if client.server_capabilities.documentHighlightProvider then
     vim.api.nvim_exec(
