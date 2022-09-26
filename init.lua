@@ -25,6 +25,7 @@ local modules = {
   "user.transparent",
   "user.treesitter",
   "user.ts-autotag",
+  "user.ufo",
   "user.which-key",
   --"user.lualine",
 }

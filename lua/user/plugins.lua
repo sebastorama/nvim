@@ -33,7 +33,7 @@ return packer.startup(function(use)
   use("tpope/vim-fugitive")
   use("tpope/vim-rhubarb")
 
-  -- use "github/copilot.vim"
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use("windwp/nvim-autopairs")
