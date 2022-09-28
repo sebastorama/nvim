@@ -37,7 +37,7 @@ keymap("n", "+", ":vertical resize +3<CR>", opts)
 
 -- Misc Actions
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
-keymap("n", "<leader>s", ":nohl<CR>", opts)
+keymap("n", "<localleader><localleader>", ":nohl<CR>", opts)
 keymap("n", "<leader><leader>s", ":source ~/.config/nvim/lua/user/luasnip.lua<CR>", opts)
 keymap("n", "<leader><leader>r", ":luafile $MYVIMRC<CR>", opts)
 keymap(
