@@ -12,7 +12,7 @@ vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.opt.guifont = "Jetbrainsmono Nerd Font:h13" -- the font used in graphical neovim applications
 vim.opt.hlsearch = true -- highlight all matches on previous search pattern
-vim.opt.ignorecase = true -- ignore case in search patterns
+vim.opt.ignorecase = false -- ignore case in search patterns
 vim.opt.list = true
 vim.opt.listchars = { trail = "‿", tab = " ⇝", eol = "↴" }
 vim.opt.mouse = "a" -- allow the mouse to be used in neovim
