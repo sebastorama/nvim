@@ -29,6 +29,7 @@ local conds = require("luasnip.extras.expand_conditions")
 require("luasnip.loaders.from_vscode").lazy_load({ paths = { "./snippets" } })
 require("luasnip.loaders.from_vscode").lazy_load()
 luasnip.filetype_extend("typescript", { "javascript" })
+luasnip.filetype_extend("typescriptreact", { "typescript", "javascript" })
 
 vim.keymap.set({ "i", "s" }, "<c-j>", function()
   if luasnip.expand_or_jumpable() then
@@ -60,7 +61,7 @@ luasnip.setup({
   ext_opts = {
     [types.choiceNode] = {
       active = {
-        virt_text = { { "➡️ choice node", "Comment" } },
+        virt_text = { { " -->  choice node", "Comment" } },
       },
     },
   },
@@ -84,6 +85,12 @@ luasnip.setup({
 })
 
 luasnip.add_snippets(nil, {
+  javascript = {
+    -- function
+    s("fun", fmt("function {}({}){} {{\n  {}\n}}\n", { i(1), i(2), i(3), i(4) })),
+    -- for
+    s("for", fmt("for ({}) {{\n  {}\n}}\n", { i(1), i(2) })),
+  },
   lua = {
     -- pcall import
     s(
@@ -96,10 +103,25 @@ if not {}_ok then
   return
 end
 
-      ]],
+  ]],
         { i(1), rep(1), rep(1), rep(1) }
       )
     ),
-    --
+  },
+  typescript = {
+    -- interface snippet
+    s("iface", fmt("interface {} {{\n  {}\n}}", { i(1), i(2) })),
+
+    -- function snippet
+  },
+  zsh = {
+    s(
+      "psql",
+      fmt(
+        "psql postgres//{}:{}@{}:{}/{}",
+        { i(1, "postgres"), i(2, "password"), i(3, "localhost"), i(4, "5432"), i(5, "postgres") }
+      )
+    ),
+    s("dops", fmt("docker ps {}", { c(1, { t("-a"), t("-a --format '{{.Names}}'") }) })),
   },
 }, { key = "global_snippets" })

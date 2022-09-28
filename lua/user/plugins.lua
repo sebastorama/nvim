@@ -57,11 +57,11 @@ return packer.startup(function(use)
       vim.fn["fzf#install"]()
     end,
   })
+
   -- dadbod
   use("tpope/vim-dadbod")
   use("kristijanhusak/vim-dadbod-ui")
   use("kristijanhusak/vim-dadbod-completion")
-
   use("vim-scripts/dbext.vim")
 
   -- Colorschemes
