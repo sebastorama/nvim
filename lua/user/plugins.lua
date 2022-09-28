@@ -49,7 +49,14 @@ return packer.startup(function(use)
   use("vimwiki/vimwiki")
   use("windwp/nvim-ts-autotag")
   use("folke/which-key.nvim")
-
+  use("mhinz/vim-grepper")
+  use("kevinhwang91/nvim-bqf")
+  use({
+    "junegunn/fzf",
+    run = function()
+      vim.fn["fzf#install"]()
+    end,
+  })
   -- dadbod
   use("tpope/vim-dadbod")
   use("kristijanhusak/vim-dadbod-ui")
