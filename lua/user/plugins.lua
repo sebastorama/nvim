@@ -50,13 +50,14 @@ return packer.startup(function(use)
   use("windwp/nvim-ts-autotag")
   use("folke/which-key.nvim")
   use("mhinz/vim-grepper")
-  use("kevinhwang91/nvim-bqf")
   use({
     "junegunn/fzf",
     run = function()
       vim.fn["fzf#install"]()
     end,
   })
+
+  use("nvim-pack/nvim-spectre")
 
   -- dadbod
   use("tpope/vim-dadbod")
@@ -109,5 +110,5 @@ return packer.startup(function(use)
 
   -- snippets
   use("L3MON4D3/LuaSnip")
-  use("rafamadriz/friendly-snippets")
+  -- use("rafamadriz/friendly-snippets")
 end)
