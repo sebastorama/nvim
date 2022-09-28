@@ -8,6 +8,7 @@ vim.g.maploaclleader = ","
 
 keymap("", "<F1>", "<Nop>", opts)
 -- NORMAL
+keymap("n", "<TAB>", "za", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
