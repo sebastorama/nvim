@@ -36,6 +36,7 @@ return packer.startup(function(use)
   use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
 
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use({ "nvim-treesitter/playground" })
   use("windwp/nvim-autopairs")
   use({
     "numToStr/Comment.nvim",
