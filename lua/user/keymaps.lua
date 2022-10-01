@@ -25,7 +25,7 @@ keymap("n", "<S-Left>", ":bn<CR>", opts)
 keymap("n", "<S-Right>", ":bp<CR>", opts)
 
 -- Buffers
-keymap("n", "<leader>bb", "<cmd>Telescope buffers<cr>", opts)
+keymap("n", "<leader>bb", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>bd", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<leader>bD", ":%bd|e#<CR>", opts)
 
@@ -39,13 +39,14 @@ keymap("n", "+", ":vertical resize +3<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<localleader><localleader>", ":nohl<CR>", opts)
 keymap("n", "<leader><leader>s", ":source ~/.config/nvim/lua/user/luasnip.lua<CR>", opts)
-keymap("n", "<leader><leader>r", ":luafile $MYVIMRC<CR>", opts)
+keymap("n", "<leader><leader>r", ":luafile %<CR>", opts)
 keymap(
   "n",
   "<leader>/",
-  ":lua require(\"telescope.builtin\").current_buffer_fuzzy_find({ sorter = require('telescope.sorters').get_substr_matcher({})})<cr>",
+  ":lua require(\"telescope.builtin\").current_buffer_fuzzy_find({ sorter = require('telescope.sorters').get_substr_matcher({})})<CR>",
   opts
 )
+keymap("n", "<leader><leader>/", ":lua require('spectre').open()<CR>", opts)
 keymap("n", "zc", "<cmd>set foldmethod=expr | foldclose<CR>", opts)
 
 -- VISUAL

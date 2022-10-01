@@ -61,7 +61,7 @@ diffview.setup({
       ["<down>"] = cb("next_entry"),
       ["k"] = cb("prev_entry"), -- Bring the cursor to the previous file entry.
       ["<up>"] = cb("prev_entry"),
-      ["<cr>"] = cb("select_entry"), -- Open the diff for the selected entry.
+      ["<CR>"] = cb("select_entry"), -- Open the diff for the selected entry.
       ["o"] = cb("select_entry"),
       ["<2-LeftMouse>"] = cb("select_entry"),
       ["-"] = cb("toggle_stage_entry"), -- Stage / unstage the selected entry.
@@ -89,7 +89,7 @@ diffview.setup({
       ["<down>"] = cb("next_entry"),
       ["k"] = cb("prev_entry"),
       ["<up>"] = cb("prev_entry"),
-      ["<cr>"] = cb("select_entry"),
+      ["<CR>"] = cb("select_entry"),
       ["o"] = cb("select_entry"),
       ["<2-LeftMouse>"] = cb("select_entry"),
       ["<tab>"] = cb("select_next_entry"),
