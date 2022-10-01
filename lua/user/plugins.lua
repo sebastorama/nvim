@@ -46,7 +46,6 @@ return packer.startup(function(use)
   })
   use("junegunn/vim-easy-align")
 
-  use("vimwiki/vimwiki")
   use("windwp/nvim-ts-autotag")
   use("folke/which-key.nvim")
   use("mhinz/vim-grepper")
