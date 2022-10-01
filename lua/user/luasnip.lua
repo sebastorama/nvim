@@ -114,11 +114,19 @@ end
 
     -- function snippet
   },
+  markdown = {
+    s("t", fmt("{}", t("@today"))),
+    s("m", fmt("{}", t("@tomorrow"))),
+    s("n", fmt("{}", t("@next_week"))),
+    s("s", fmt("{}", t("@someday"))),
+    s("pm", fmt(require("user.assets.pm"), {})),
+  },
+
   zsh = {
     s(
       "psql",
       fmt(
-        "psql postgres//{}:{}@{}:{}/{}",
+        "psql postgres://{}:{}@{}:{}/{}",
         { i(1, "postgres"), i(2, "password"), i(3, "localhost"), i(4, "5432"), i(5, "postgres") }
       )
     ),
