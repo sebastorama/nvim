@@ -20,6 +20,7 @@ local modules = {
   "user.nvim-dap-ui",
   "user.options",
   "user.plugins",
+  "user.spectre",
   "user.tabby",
   "user.telescope",
   "user.transparent",
@@ -30,7 +31,7 @@ local modules = {
   --"user.lualine",
 }
 
-for k, v in pairs(modules) do
+for _, v in pairs(modules) do
   package.loaded[v] = nil
   require(v)
 end
