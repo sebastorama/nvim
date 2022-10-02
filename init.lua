@@ -10,7 +10,7 @@ local modules = {
   "user.dadbodui",
   "user.diffview",
   "user.evil_lualine",
-  "user.indent-blankline",
+  -- "user.indent-blankline",
   "user.keymaps",
   "user.lsp",
   "user.luasnip",

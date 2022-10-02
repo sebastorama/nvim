@@ -22,7 +22,6 @@ return packer.startup(function(use)
     "sindrets/diffview.nvim",
     requires = "nvim-lua/plenary.nvim",
   })
-  use("lukas-reineke/indent-blankline.nvim")
   use("nanozuki/tabby.nvim")
 
   use("tpope/vim-surround")
