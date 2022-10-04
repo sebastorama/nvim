@@ -65,6 +65,7 @@ local config = {
       -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
+      terminal = { c = { fg = colors.fg, bg = "#9E0000" } },
     },
   },
   sections = {
@@ -109,8 +110,31 @@ ins_left({
 ins_left({
   -- mode component
   function()
-    return ""
+    local mode_text = {
+      n = "NORMAL",
+      i = "INSERT",
+      v = "VISUAL",
+      [""] = "",
+      V = "VISUAL LINE",
+      c = "COMMAND",
+      no = "OP PENDING",
+      s = "SELECT",
+      S = "SELECT LINE",
+      ic = "INSERT",
+      R = "REPLACE",
+      Rv = "VIRTUAL REPLACE",
+      cv = "EX",
+      ce = "CE",
+      r = "PROMPT",
+      rm = "MORE",
+      ["r?"] = "CONFIRM",
+      ["!"] = "SHELL",
+      t = "TERMINAL",
+    }
+
+    return "" .. " " .. mode_text[vim.fn.mode()]
   end,
+
   color = function()
     -- auto change color according to neovims mode
     local mode_color = {
@@ -133,7 +157,7 @@ ins_left({
       rm = colors.cyan,
       ["r?"] = colors.cyan,
       ["!"] = colors.red,
-      t = colors.red,
+      t = colors.white,
     }
     return { fg = mode_color[vim.fn.mode()] }
   end,
@@ -192,8 +216,8 @@ ins_left({
     end
     return msg
   end,
-  icon = " LSP:",
-  color = { fg = "#ffffff", gui = "bold" },
+  icon = " ",
+  color = { fg = "#ffffff" },
 })
 
 -- Add components to right sections
