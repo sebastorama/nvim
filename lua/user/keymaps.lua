@@ -27,6 +27,7 @@ keymap("n", "<S-Right>", ":bp<CR>", opts)
 -- Buffers
 keymap("n", "<leader>bb", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>bd", ":bp | sp | bn | bd<CR>", opts)
+keymap("n", "<localleader>d", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<leader>bD", ":%bd|e#<CR>", opts)
 
 -- Resize with arrows
@@ -50,6 +51,7 @@ keymap("n", "<leader><leader>/", ":lua require('spectre').open()<CR>", opts)
 keymap("n", "<leader><leader>e", ":e %:p:h", opts)
 keymap("n", "<localleader>cd", ":Copilot disable<CR>", opts)
 keymap("n", "<localleader>ce", ":Copilot enable<CR>", opts)
+keymap("n", "<localleader>e", ":Exp<CR>", opts)
 
 -- VISUAL
 
