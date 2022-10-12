@@ -17,8 +17,6 @@ return packer.startup(function(use)
 
   use("tpope/vim-surround")
 
-  use("tpope/vim-rhubarb")
-
   use("windwp/nvim-autopairs")
   use({
     "numToStr/Comment.nvim",
@@ -72,10 +70,8 @@ return packer.startup(function(use)
   use("romgrk/github-light.vim")
   use("ellisonleao/gruvbox.nvim")
   use("projekt0n/github-nvim-theme")
-  use("doums/darcula")
   use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.nvim" })
   use("tjdevries/gruvbuddy.nvim")
-  use("Yazeed1s/minimal.nvim")
   use("ishan9299/modus-theme-vim")
   use("marko-cerovac/material.nvim")
 
