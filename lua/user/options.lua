@@ -43,7 +43,7 @@ vim.opt.wrap = false -- display lines as one long line
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 
 vim.o.laststatus = 3
-vim.o.winbar = "%f%m%=%n"
+vim.o.winbar = "%F%m%=%n"
 
 vim.cmd([[
   let g:vimwiki_list = [{ "path": "~/Dropbox/vimwiki/", "syntax": "markdown", "ext": ".md" }]

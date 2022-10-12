@@ -8,34 +8,17 @@ end
 
 return packer.startup(function(use)
   use("wbthomason/packer.nvim")
-  use("nvim-lualine/lualine.nvim")
   use({
     "nvim-telescope/telescope.nvim",
     requires = "nvim-lua/plenary.nvim",
   })
   use({ "nvim-telescope/telescope-ui-select.nvim" })
-  use({
-    "TimUntersberger/neogit",
-    requires = "nvim-lua/plenary.nvim",
-  })
-  use({
-    "sindrets/diffview.nvim",
-    requires = "nvim-lua/plenary.nvim",
-  })
   use("nanozuki/tabby.nvim")
 
   use("tpope/vim-surround")
-  use("kyazdani42/nvim-tree.lua")
-  use("kyazdani42/nvim-web-devicons")
 
-  use("norcalli/nvim-colorizer.lua")
-  use("tpope/vim-fugitive")
   use("tpope/vim-rhubarb")
 
-  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
-
-  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
-  use({ "nvim-treesitter/playground" })
   use("windwp/nvim-autopairs")
   use({
     "numToStr/Comment.nvim",
@@ -45,8 +28,6 @@ return packer.startup(function(use)
   })
   use("junegunn/vim-easy-align")
 
-  use("windwp/nvim-ts-autotag")
-  use("folke/which-key.nvim")
   use("mhinz/vim-grepper")
   use({
     "junegunn/fzf",
@@ -55,7 +36,25 @@ return packer.startup(function(use)
     end,
   })
 
+  -- GIT
+  use({
+    "TimUntersberger/neogit",
+    requires = "nvim-lua/plenary.nvim",
+  })
+  use({
+    "sindrets/diffview.nvim",
+    requires = "nvim-lua/plenary.nvim",
+  })
+  use("tpope/vim-fugitive")
+
+  -- UI
   use("nvim-pack/nvim-spectre")
+  use("folke/which-key.nvim")
+  use("kyazdani42/nvim-tree.lua")
+  use("kyazdani42/nvim-web-devicons")
+  use("norcalli/nvim-colorizer.lua")
+  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+  use("nvim-lualine/lualine.nvim")
 
   -- dadbod
   use("tpope/vim-dadbod")
@@ -91,7 +90,7 @@ return packer.startup(function(use)
   use("f3fora/cmp-spell")
   use("ray-x/lsp_signature.nvim")
 
-  -- LSP
+  -- LSP & TreeSitter
   use("neovim/nvim-lspconfig") -- enable LSP
   use("williamboman/nvim-lsp-installer") -- simple to use language server installer
   use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
@@ -99,6 +98,9 @@ return packer.startup(function(use)
   use("nvim-lua/plenary.nvim")
   use("jose-elias-alvarez/typescript.nvim")
   use("stevearc/aerial.nvim")
+  use("windwp/nvim-ts-autotag")
+  use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+  use({ "nvim-treesitter/playground" })
   use("github/copilot.vim")
 
   -- DAP
