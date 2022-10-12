@@ -3,6 +3,7 @@ local ok, ufo = pcall(require, "ufo")
 if not ok then
   return
 end
+
 local handler = function(virtText, lnum, endLnum, width, truncate)
   local newVirtText = {}
   local suffix = ("  %d "):format(endLnum - lnum)
@@ -33,4 +34,7 @@ end
 
 ufo.setup({
   fold_virt_text_handler = handler,
+  provider_selector = function(bufnr, filetype, buftype)
+    return { "treesitter", "indent" }
+  end,
 })
