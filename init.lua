@@ -7,6 +7,7 @@ local modules = {
   "user.cmp",
   "user.color",
   "user.colorizer",
+  "user.commands",
   "user.dadbodui",
   "user.diffview",
   "user.evil_lualine",
