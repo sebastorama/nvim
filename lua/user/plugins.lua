@@ -46,6 +46,7 @@ return packer.startup(function(use)
   use("tpope/vim-fugitive")
 
   -- UI
+  use("lukas-reineke/indent-blankline.nvim")
   use("nvim-pack/nvim-spectre")
   use("folke/which-key.nvim")
   use("kyazdani42/nvim-tree.lua")

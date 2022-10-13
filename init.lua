@@ -5,13 +5,11 @@ local modules = {
   "user.autocmd",
   "user.autopairs",
   "user.cmp",
-  "user.color",
   "user.colorizer",
   "user.commands",
   "user.dadbodui",
   "user.diffview",
   "user.evil_lualine",
-  -- "user.indent-blankline",
   "user.keymaps",
   "user.lsp",
   "user.luasnip",
@@ -19,7 +17,6 @@ local modules = {
   "user.ntree",
   "user.nvim-dap",
   "user.nvim-dap-ui",
-  "user.options",
   "user.plugins",
   "user.spectre",
   "user.tabby",
@@ -30,6 +27,9 @@ local modules = {
   "user.ufo",
   "user.which-key",
   --"user.lualine",
+  "user.color",
+  "user.indent-blankline",
+  "user.options",
 }
 
 for _, v in pairs(modules) do

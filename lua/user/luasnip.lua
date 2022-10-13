@@ -113,6 +113,7 @@ end
     s("iface", fmt("interface {} {{\n  {}\n}}", { i(1), i(2) })),
     s("imr", fmt("import {} from 'react';", { i(1) })),
     s("rfc", fmt("const {} = () => {{\n  {}return <></>;\n}};\n\nexport default {};", { i(1), i(2), rep(1) })),
+    s("afun", fmt("const {} = () => {{\n  {}\n}};\n", { i(1), i(2) })),
 
     -- function snippet
   },

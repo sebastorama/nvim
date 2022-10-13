@@ -13,7 +13,7 @@ null_ls.setup({
   sources = {
     formatting.prettier.with({
       extra_args = { "--single-quote" },
-      filetypes = { "css", "scss", "json", "yaml", "markdown" },
+      filetypes = { "css", "scss", "json", "yaml" },
     }),
     formatting.black.with({ extra_args = { "--fast" } }),
     formatting.stylua.with({ extra_args = { "--indent-type", "Spaces", "--indent-width", "2" } }),

@@ -6,6 +6,9 @@ local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = ","
 vim.g.maploaclleader = ","
 
+-- Command
+keymap("c", "<C-o>", "%:p:h", opts)
+
 keymap("", "<F1>", "<Nop>", opts)
 -- NORMAL
 keymap("n", "<TAB>", "za", opts)

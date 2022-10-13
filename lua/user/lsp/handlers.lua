@@ -11,11 +11,6 @@ M.setup = function()
     { name = "DiagnosticSignInfo", text = "", numhl = "DiagInfo" },
   }
 
-  vim.cmd([[hi DiagError guifg=#C52C47 guibg=#222436]])
-  vim.cmd([[hi DiagWarn guifg=#FFD200  guibg=#222436]])
-  vim.cmd([[hi DiagHint guifg=#03DB00  guibg=#222436]])
-  vim.cmd([[hi DiagInfo guifg=#0093FF  guibg=#222436]])
-
   for _, sign in ipairs(signs) do
     vim.fn.sign_define(sign.name, { texthl = sign.name, text = nil, numhl = sign.numhl })
   end
@@ -150,18 +145,5 @@ M.format_if_not_present = function(client)
 
   vim.lsp.buf.format()
 end
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
-
-local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
-if not status_ok then
-  return
-end
-
-M.capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
 
 return M

@@ -2,7 +2,7 @@ require("tokyonight").setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
   style = "moon", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
-  transparent = false, -- Enable this to disable setting the background color
+  transparent = true, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
   styles = {
     -- Style to be applied to different syntax groups
@@ -45,7 +45,13 @@ vim.cmd([[hi Comment guifg=#6874A9]])
 vim.cmd([[hi LineNr guifg=#6874A9]])
 vim.cmd([[hi Substitute guibg=#ffaaaa guifg=#666666]])
 vim.cmd([[hi Folded guibg=#2C2F45]])
+
 vim.cmd([[hi DiagnosticVirtualTextWarn guifg=#937244 guibg=#222436]])
 vim.cmd([[hi DiagnosticVirtualTextError guifg=#942C3E guibg=#222436]])
 vim.cmd([[hi DiagnosticVirtualTextInfo guifg=#0db9d7 guibg=#222436]])
 vim.cmd([[hi DiagnosticVirtualTextHint guifg=#2B7568 guibg=#222436]])
+
+vim.cmd([[hi DiagError guifg=#C52C47 guibg=#222436]])
+vim.cmd([[hi DiagWarn guifg=#FFD200  guibg=#222436]])
+vim.cmd([[hi DiagHint guifg=#03DB00  guibg=#222436]])
+vim.cmd([[hi DiagInfo guifg=#0093FF  guibg=#222436]])

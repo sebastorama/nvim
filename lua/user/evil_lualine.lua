@@ -9,7 +9,7 @@ end
 -- Color table for highlights
 -- stylua: ignore start
 local dark_colors = {
-  bg       = '#202328',
+  bg       = '#202329',
   fg       = '#bbc2cf',
   yellow   = '#ECBE7B',
   cyan     = '#008080',
@@ -65,7 +65,7 @@ local config = {
       -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
-      terminal = { c = { fg = colors.fg, bg = "#9E0000" } },
+      terminal = { c = { fg = colors.fg, bg = "#FF7F7F" } },
     },
   },
   sections = {
