@@ -6,7 +6,7 @@ end
 
 vim.opt.termguicolors = true
 
-vim.cmd([[highlight IndentBlanklineIndent1 guibg=#25283B guifg=#555B7F gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent1 guibg=#eeeeee guifg=#bbbbbb gui=nocombine]])
 
 vim.opt.list = true
 vim.opt.listchars:append("eol:↴")
