@@ -27,7 +27,7 @@ local modules = {
   "user.ufo",
   "user.which-key",
   --"user.lualine",
-  "user.color-light",
+  "user.color",
   "user.indent-blankline",
   "user.options",
 }

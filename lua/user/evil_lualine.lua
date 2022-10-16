@@ -37,7 +37,7 @@ local light_colors = {
 }
 -- stylua: ignore end
 
-local colors = light_colors
+local colors = dark_colors
 
 local conditions = {
   buffer_not_empty = function()
@@ -65,7 +65,7 @@ local config = {
       -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
-      terminal = { c = { fg = colors.fg, bg = "#FF7F7F" } },
+      terminal = { c = { fg = colors.fg, bg = "#70070D" } },
     },
   },
   sections = {
