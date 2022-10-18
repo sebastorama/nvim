@@ -20,6 +20,7 @@ local dark_colors = {
   magenta  = '#c678dd',
   blue     = '#51afef',
   red      = '#ec5f67',
+  term_bg  = '#70070D'
 }
 
 local light_colors = {
@@ -34,10 +35,11 @@ local light_colors = {
   magenta  = "#9E376B",
   blue     = "#51afef",
   red      = "#ec5f67",
+  term_bg  = '#ec5f67'
 }
 -- stylua: ignore end
 
-local colors = dark_colors
+local colors = light_colors
 
 local conditions = {
   buffer_not_empty = function()
@@ -65,7 +67,7 @@ local config = {
       -- are just setting default looks o statusline
       normal = { c = { fg = colors.fg, bg = colors.bg } },
       inactive = { c = { fg = colors.fg, bg = colors.bg } },
-      terminal = { c = { fg = colors.fg, bg = "#70070D" } },
+      terminal = { c = { fg = colors.fg, bg = colors.term_bg } },
     },
   },
   sections = {

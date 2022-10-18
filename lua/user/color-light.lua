@@ -18,3 +18,5 @@ vim.cmd([[hi DiagError guifg=#C52C47 guibg=#eeeeee]])
 vim.cmd([[hi DiagWarn guifg=#e0af68  guibg=#eeeeee]])
 vim.cmd([[hi DiagHint guifg=#2B7568  guibg=#eeeeee]])
 vim.cmd([[hi DiagInfo guifg=#0db9d7  guibg=#eeeeee]])
+
+vim.cmd([[hi VertSplit guibg=#eeeeee guifg=#005F87]])
