@@ -24,10 +24,11 @@ local modules = {
   "user.transparent",
   "user.treesitter",
   "user.ts-autotag",
-  "user.ufo",
+  -- "user.ufo",
   "user.which-key",
+  "user.neominimap",
   --"user.lualine",
-  "user.color-light",
+  "user.color",
   "user.indent-blankline",
   "user.options",
 }

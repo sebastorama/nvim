@@ -36,6 +36,8 @@ keymap("n", "<leader>bb", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>bd", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<localleader>d", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<leader>bD", ":%bd|e#<CR>", opts)
+keymap("n", "<localleader>n", ":bn<CR>", opts)
+keymap("n", "<localleader>p", ":bp<CR>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-S-Up>", ":resize +3<CR>", opts)

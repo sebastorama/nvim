@@ -19,3 +19,5 @@ end, { nargs = "*" })
 
 vim.api.nvim_create_user_command("Ao", "AerialOpen", { nargs = 0 })
 vim.api.nvim_create_user_command("Ac", "AerialClose", { nargs = 0 })
+
+vim.api.nvim_create_user_command("Toi", "TypescriptOrganizeImports", { nargs = 0 })

@@ -54,6 +54,7 @@ return packer.startup(function(use)
   use("norcalli/nvim-colorizer.lua")
   use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
   use("nvim-lualine/lualine.nvim")
+  use("ziontee113/neo-minimap")
 
   -- dadbod
   use("tpope/vim-dadbod")
