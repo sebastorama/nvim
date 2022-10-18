@@ -25,6 +25,12 @@ keymap("n", "<S-h>", ":tabp<CR>", opts)
 keymap("n", "<S-Left>", ":bn<CR>", opts)
 keymap("n", "<S-Right>", ":bp<CR>", opts)
 
+-- Arrow keys for resizing
+keymap("n", "<Left>", ":vertical resize -3<CR>", opts)
+keymap("n", "<Right>", ":vertical resize +3<CR>", opts)
+keymap("n", "<Up>", ":resize +3<CR>", opts)
+keymap("n", "<Down>", ":resize -3<CR>", opts)
+
 -- Buffers
 keymap("n", "<leader>bb", "<cmd>Telescope buffers<CR>", opts)
 keymap("n", "<leader>bd", ":bp | sp | bn | bd<CR>", opts)
