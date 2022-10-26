@@ -114,8 +114,10 @@ end
     s("imr", fmt("import {} from 'react';", { i(1) })),
     s("rfc", fmt("const {}: React.FC<{{}}> = () => {{\n  return <></>;\n}};\n\nexport default {};", { i(1), rep(1) })),
     s("afun", fmt("const {} = () => {{\n  {}\n}};\n", { i(1), i(2) })),
-
-    -- function snippet
+    s(
+      "useStyles",
+      fmt("const useStyles = createStyles((_theme, _params, _getRef) => {{\n  return {{ {} }}\n }});", { i(1) })
+    ),
   },
   markdown = {
     s("t", fmt("{}", t("@today"))),
