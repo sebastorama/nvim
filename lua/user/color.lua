@@ -25,7 +25,7 @@ require("tokyonight").setup({
   --- function will be called with a ColorScheme table
   ---@param colors ColorScheme
   on_colors = function(colors)
-    colors.border = "#555555"
+    colors.border = "#333333"
   end,
 
   --- You can override specific highlights to use other groups or a hex color
@@ -37,21 +37,21 @@ require("tokyonight").setup({
 
 vim.cmd([[set bg=dark]])
 -- require("colorbuddy").colorscheme("gruvbuddy")
-vim.cmd([[colorscheme onedark]])
-vim.cmd([[hi TablineFill guibg=#282c34]])
-vim.cmd([[hi TablineSel guifg=#e0af68 guibg=#282c34]])
-vim.cmd([[hi Tabline guifg=#555555 guibg=#282c34]])
-vim.cmd([[hi Comment guifg=#555555]])
-vim.cmd([[hi LineNr guifg=#555555]])
+vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[hi TablineFill guibg=#222436]])
+vim.cmd([[hi TablineSel guifg=#e0af68 guibg=#222436]])
+vim.cmd([[hi Tabline guifg=#6874A9 guibg=#222436]])
+vim.cmd([[hi Comment guifg=#6874A9]])
+vim.cmd([[hi LineNr guifg=#6874A9]])
 vim.cmd([[hi Substitute guibg=#ffaaaa guifg=#666666]])
 vim.cmd([[hi Folded guibg=#2C2F45]])
 
-vim.cmd([[hi DiagnosticVirtualTextWarn guifg=#937244 guibg=#282c34]])
-vim.cmd([[hi DiagnosticVirtualTextError guifg=#942C3E guibg=#282c34]])
-vim.cmd([[hi DiagnosticVirtualTextInfo guifg=#0db9d7 guibg=#282c34]])
-vim.cmd([[hi DiagnosticVirtualTextHint guifg=#2B7568 guibg=#282c34]])
+vim.cmd([[hi DiagnosticVirtualTextWarn guifg=#937244 guibg=#222436]])
+vim.cmd([[hi DiagnosticVirtualTextError guifg=#942C3E guibg=#222436]])
+vim.cmd([[hi DiagnosticVirtualTextInfo guifg=#0db9d7 guibg=#222436]])
+vim.cmd([[hi DiagnosticVirtualTextHint guifg=#2B7568 guibg=#222436]])
 
-vim.cmd([[hi DiagError guifg=#C52C47 guibg=#282c34]])
-vim.cmd([[hi DiagWarn guifg=#FFD200  guibg=#282c34]])
-vim.cmd([[hi DiagHint guifg=#03DB00  guibg=#282c34]])
-vim.cmd([[hi DiagInfo guifg=#0093FF  guibg=#282c34]])
+vim.cmd([[hi DiagError guifg=#C52C47 guibg=#222436]])
+vim.cmd([[hi DiagWarn guifg=#FFD200  guibg=#222436]])
+vim.cmd([[hi DiagHint guifg=#03DB00  guibg=#222436]])
+vim.cmd([[hi DiagInfo guifg=#0093FF  guibg=#222436]])

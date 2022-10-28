@@ -12,6 +12,7 @@ local modules = {
   "user.evil_lualine",
   "user.keymaps",
   "user.lsp",
+  "user.leap",
   "user.luasnip",
   "user.neogit",
   "user.ntree",
