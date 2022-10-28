@@ -36,7 +36,7 @@ return packer.startup(function(use)
 
   -- GIT
   use({
-    "TimUntersberger/neogit",
+    "sebastorama/neogit",
     requires = "nvim-lua/plenary.nvim",
   })
   use({
