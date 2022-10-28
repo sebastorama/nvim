@@ -25,7 +25,6 @@ return packer.startup(function(use)
     end,
   })
   use("junegunn/vim-easy-align")
-  use("ggandor/leap.nvim")
 
   use("mhinz/vim-grepper")
   use({
