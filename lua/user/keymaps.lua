@@ -63,6 +63,7 @@ keymap("n", "<leader><leader>e", ":e %:p:h", opts)
 keymap("n", "<localleader>cd", ":Copilot disable<CR>", opts)
 keymap("n", "<localleader>ce", ":Copilot enable<CR>", opts)
 keymap("n", "<localleader>e", ":Exp<CR>", opts)
+keymap("n", "<localleader>t", ":tabe term://zsh<CR>", opts)
 
 -- VISUAL
 
