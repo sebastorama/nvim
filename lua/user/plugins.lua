@@ -40,7 +40,6 @@ return packer.startup(function(use)
     "sindrets/diffview.nvim",
     requires = "nvim-lua/plenary.nvim",
   })
-  use("tpope/vim-fugitive")
 
   -- UI
   use("lukas-reineke/indent-blankline.nvim")
@@ -60,19 +59,10 @@ return packer.startup(function(use)
   use("vim-scripts/dbext.vim")
 
   -- Colorschemes
-  use("navarasu/onedark.nvim")
-  use("tomasiser/vim-code-dark")
   use("NLKNguyen/papercolor-theme")
   use("folke/tokyonight.nvim")
   use("xiyaowong/nvim-transparent")
-  use("tanvirtin/monokai.nvim")
-  use("romgrk/github-light.vim")
   use("ellisonleao/gruvbox.nvim")
-  use("projekt0n/github-nvim-theme")
-  use({ "lalitmee/cobalt2.nvim", requires = "tjdevries/colorbuddy.nvim" })
-  use("tjdevries/gruvbuddy.nvim")
-  use("ishan9299/modus-theme-vim")
-  use("marko-cerovac/material.nvim")
 
   -- Completion
   use("hrsh7th/nvim-cmp")

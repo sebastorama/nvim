@@ -28,7 +28,7 @@ local modules = {
   "user.which-key",
   "user.neominimap",
   --"user.lualine",
-  "user.color",
+  "user.color-light",
   "user.indent-blankline",
   "user.options",
 }

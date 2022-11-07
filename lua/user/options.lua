@@ -59,3 +59,4 @@ vim.cmd([[set foldmethod=indent]])
 vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
 
 vim.cmd([[let g:ftplugin_sql_omni_key = '<C-s>']])
+vim.cmd([[packadd cfilter]])
