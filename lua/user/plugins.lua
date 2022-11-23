@@ -33,6 +33,7 @@ return packer.startup(function(use)
       vim.fn["fzf#install"]()
     end,
   })
+  use("kazhala/close-buffers.nvim")
 
   -- GIT
   use({ "TimUntersberger/neogit", requires = "nvim-lua/plenary.nvim" })
@@ -48,15 +49,15 @@ return packer.startup(function(use)
   use("kyazdani42/nvim-tree.lua")
   use("kyazdani42/nvim-web-devicons")
   use("norcalli/nvim-colorizer.lua")
-  use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
+  -- use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
   use("nvim-lualine/lualine.nvim")
   use("ziontee113/neo-minimap")
 
   -- dadbod
-  use("tpope/vim-dadbod")
-  use("kristijanhusak/vim-dadbod-ui")
-  use("kristijanhusak/vim-dadbod-completion")
-  use("vim-scripts/dbext.vim")
+  -- use("tpope/vim-dadbod")
+  -- use("kristijanhusak/vim-dadbod-ui")
+  -- use("kristijanhusak/vim-dadbod-completion")
+  -- use("vim-scripts/dbext.vim")
 
   -- Colorschemes
   use("NLKNguyen/papercolor-theme")
@@ -89,9 +90,9 @@ return packer.startup(function(use)
   use("github/copilot.vim")
 
   -- DAP
-  use("mfussenegger/nvim-dap")
-  use("nvim-telescope/telescope-dap.nvim")
-  use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
+  -- use("mfussenegger/nvim-dap")
+  -- use("nvim-telescope/telescope-dap.nvim")
+  -- use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
   -- snippets
   use("L3MON4D3/LuaSnip")

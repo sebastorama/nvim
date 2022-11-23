@@ -23,9 +23,6 @@ keymap("n", "<leader>S", ":setlocal spell!<CR>", opts)
 keymap("n", "<S-l>", ":tabn<CR>", opts)
 keymap("n", "<S-h>", ":tabp<CR>", opts)
 
-keymap("n", "<Left>", ":tabm -1<CR>", opts)
-keymap("n", "<Right>", ":tabm +1<CR>", opts)
-
 keymap("n", "<S-Left>", ":bn<CR>", opts)
 keymap("n", "<S-Right>", ":bp<CR>", opts)
 
@@ -48,6 +45,8 @@ keymap("n", "_", ":vertical resize -3<CR>", opts)
 keymap("n", "+", ":vertical resize +3<CR>", opts)
 
 -- Misc Actions
+keymap("n", "<Left>", ":cp<CR>", opts)
+keymap("n", "<Right>", ":cn<CR>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<CR>", opts)
 keymap("n", "<localleader><localleader>", ":nohl<CR>", opts)
 keymap("n", "<leader><leader>s", ":source ~/.config/nvim/lua/user/luasnip.lua<CR>", opts)

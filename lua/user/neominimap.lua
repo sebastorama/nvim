@@ -10,14 +10,18 @@ nm.set("zi", "typescriptreact", { -- press `zi` to open the minimap, in `typescr
 ;; query
 ((function_declaration) @cap) ;; matches function declarations
 ((arrow_function) @cap) ;; matches arrow functions
-((identifier) @cap (#vim-match? @cap "^use.*")) ;; matches hooks (useState, useEffect, use***, etc...)
   ]],
+  width = 90,
+  height = 22,
 })
 
 nm.set("zi", "typescript", { -- press `zi` to open the minimap, in `typescript` files
   query = [[
 ;; query
+((variable_declarator) @cap)
 ((function_declaration) @cap) ;; matches function declarations
 ((arrow_function) @cap) ;; matches arrow functions
   ]],
+  width = 90,
+  height = 22,
 })
