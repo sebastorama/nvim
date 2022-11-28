@@ -2,6 +2,7 @@ require("user.globals")
 
 local modules = {
   "user.autopairs",
+  --"user.gruvbuddy",
   "user.color",
   "user.diffview",
   "user.keymaps",

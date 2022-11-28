@@ -77,3 +77,17 @@ keymap("n", "<leader>p", '"+p', opts)
 -- INSERT
 keymap("i", "<C-f>", "<Right>", opts)
 keymap("i", "<C-b>", "<Left>", opts)
+
+-- Mouse
+vim.api.nvim_set_keymap(
+  "n",
+  "<LeftMouse>",
+  '<LeftMouse><cmd>lua vim.lsp.buf.hover({border = "single"})<CR>',
+  { noremap = true, silent = true }
+)
+vim.api.nvim_set_keymap(
+  "n",
+  "<RightMouse>",
+  "<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>",
+  { noremap = true, silent = true }
+)

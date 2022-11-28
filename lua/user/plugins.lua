@@ -64,6 +64,8 @@ return packer.startup(function(use)
   use("folke/tokyonight.nvim")
   use("xiyaowong/nvim-transparent")
   use("ellisonleao/gruvbox.nvim")
+  use("tjdevries/colorbuddy.nvim")
+  use("tjdevries/gruvbuddy.nvim")
 
   -- Completion
   use("hrsh7th/nvim-cmp")
