@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
@@ -10,6 +9,7 @@ vim.g.maplocalleader = "\\"
 keymap("c", "<C-o>", "%:p:h", opts)
 
 keymap("", "<F1>", "<Nop>", opts)
+keymap("n", "<F5>", ":cclose <cr>", opts)
 
 -- Better window navigation
 keymap("n", "<C-h>", "<C-w>h", opts)
@@ -37,6 +37,7 @@ keymap("n", "<localleader>d", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<leader>bD", ":%bd|e#<CR>", opts)
 keymap("n", "<localleader>n", ":bn<CR>", opts)
 keymap("n", "<localleader>p", ":bp<CR>", opts)
+keymap("n", "<localleader>b", ":BDelete ", opts)
 
 -- Resize with arrows
 keymap("n", "<C-S-Up>", ":resize +3<CR>", opts)
