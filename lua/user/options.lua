@@ -55,7 +55,7 @@ vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 
 -- folding options
-vim.cmd([[set foldmethod=indent]])
+vim.cmd([[set foldmethod=manual]])
 vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
 
 vim.cmd([[let g:ftplugin_sql_omni_key = '<C-s>']])
