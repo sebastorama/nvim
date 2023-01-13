@@ -27,9 +27,7 @@ local modules = {
   "user.ufo",
   "user.which-key",
   "user.neominimap",
-  --"user.lualine",
-  "user.color-light",
-  "user.indent-blankline",
+  "user.gruvbuddy",
   "user.options",
 }
 
