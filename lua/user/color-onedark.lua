@@ -1,4 +1,4 @@
-require("colorbuddy").colorscheme("gruvbuddy")
+vim.cmd([[colorscheme onedark]])
 
 local ok, indent_blankline = pcall(require, "indent_blankline")
 
@@ -8,8 +8,7 @@ end
 
 vim.opt.termguicolors = true
 
-vim.cmd([[highlight indentblanklineindent1 guibg=#282c34 guifg=#333333 gui=nocombine]])
-vim.cmd([[highlight ColorColumn guibg=#2D313A guifg=#2D313A gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent1 guibg=#282C34 guifg=#444444 gui=nocombine]])
 
 vim.opt.list = true
 vim.opt.listchars:append("eol:↴")
