@@ -32,6 +32,7 @@ local handler = function(virtText, lnum, endLnum, width, truncate)
   return newVirtText
 end
 
+
 ufo.setup({
   fold_virt_text_handler = handler,
   provider_selector = function(bufnr, filetype, buftype)
