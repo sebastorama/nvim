@@ -52,6 +52,8 @@ return packer.startup(function(use)
   use({ "kevinhwang91/nvim-ufo", requires = "kevinhwang91/promise-async" })
   use("nvim-lualine/lualine.nvim")
   use("ziontee113/neo-minimap")
+  use("folke/todo-comments.nvim")
+  use("lewis6991/gitsigns.nvim")
 
   -- dadbod
   -- use("tpope/vim-dadbod")
