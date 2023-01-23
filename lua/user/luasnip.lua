@@ -118,6 +118,7 @@ end
       "useStyles",
       fmt("const useStyles = createStyles((_theme, _params, _getRef) => {{\n  return {{ {} }}\n }});", { i(1) })
     ),
+    s("cjson", fmt("console.log(JSON.stringify({}, null, 2));", { i(1) })),
   },
   markdown = {
     s("t", fmt("{}", t("@today"))),
