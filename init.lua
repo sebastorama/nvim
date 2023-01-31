@@ -31,7 +31,7 @@ local modules = {
   "user.neominimap",
   --"user.lualine",
   "user.color-light",
-  "user.indent-blankline",
+  --"user.indent-blankline",
   "user.options",
 }
 
