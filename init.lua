@@ -28,7 +28,7 @@ local modules = {
   "user.ufo",
   "user.which-key",
   "user.neominimap",
-  "user.color-light",
+  "user.color-catppuccin-frappe",
   "user.options",
 }
 
