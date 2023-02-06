@@ -1,22 +1,96 @@
-vim.cmd([[set bg=light]])
+local cat_ok, catppuccin = pcall(require, "catppuccin")
 
-vim.cmd([[color PaperColor]])
+if not cat_ok then
+  return
+end
 
-vim.cmd([[hi TablineFill guibg=#FEF7E5]])
-vim.cmd([[hi TablineSel guifg=#D65E65 guibg=#FEF7E5 cterm=bold gui=bold]])
-vim.cmd([[hi Tabline guifg=#555555 guibg=#FEF7E5]])
-vim.cmd([[hi Comment guifg=#999999]])
-vim.cmd([[hi LineNr guifg=#bbbbbb]])
-vim.cmd([[hi Substitute guibg=#ffaaaa guifg=#666666]])
-vim.cmd([[hi Folded guibg=#dddddd]])
+vim.o.background = "light"
 
-vim.cmd([[hi DiagnosticVirtualTextWarn guifg=#937244 guibg=#FEF7E5]])
-vim.cmd([[hi DiagnosticVirtualTextError guifg=#942C3E guibg=#FEF7E5]])
-vim.cmd([[hi DiagnosticVirtualTextInfo guifg=#0db9d7 guibg=#FEF7E5]])
-vim.cmd([[hi DiagnosticVirtualTextHint guifg=#2B7568 guibg=#FEF7E5]])
-vim.cmd([[hi DiagError guifg=#C52C47 guibg=#FEF7E5]])
-vim.cmd([[hi DiagWarn guifg=#e0af68  guibg=#FEF7E5]])
-vim.cmd([[hi DiagHint guifg=#2B7568  guibg=#FEF7E5]])
-vim.cmd([[hi DiagInfo guifg=#0db9d7  guibg=#FEF7E5]])
+catppuccin.setup({
+  flavour = "latte", -- latte, frappe, macchiato, mocha
+  background = { -- :h background
+    light = "latte",
+    dark = "mocha",
+  },
+  transparent_background = false,
+  show_end_of_buffer = false, -- show the '~' characters after the end of buffers
+  term_colors = false,
+  dim_inactive = {
+    enabled = false,
+    shade = "dark",
+    percentage = 0.15,
+  },
+  no_italic = false, -- Force no italic
+  no_bold = false, -- Force no bold
+  styles = {
+    comments = { "italic" },
+    conditionals = { "italic" },
+    loops = {},
+    functions = {},
+    keywords = {},
+    strings = {},
+    variables = {},
+    numbers = {},
+    booleans = {},
+    properties = {},
+    types = {},
+    operators = {},
+  },
+  color_overrides = {
+    all = {
+      text = "#000000",
+      base = "#FFFFFF",
+      lavender = "#3F56D4",
+      peach = "#D7621E",
+    },
+  },
+  custom_highlights = function()
+    return {
+      Comment = { fg = "#999999" },
+      ["@comment"] = { fg = "#999999" },
+    }
+  end,
+  integrations = {
+    cmp = true,
+    gitsigns = true,
+    nvimtree = true,
+    telescope = true,
+    notify = false,
+    mini = false,
+    -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+  },
+})
 
-vim.cmd([[hi VertSplit guibg=#eeeeee guifg=#005F87]])
+-- setup must be called before loading
+vim.cmd.colorscheme("catppuccin")
+
+vim.cmd([[hi LspReferenceText guibg=#F3F3AA]])
+vim.cmd([[hi LspReferenceRead guibg=#F3F3AA]])
+vim.cmd([[hi LspReferenceWrite guibg=#F3F3AA]])
+vim.cmd([[hi DiffviewFilePanelFileName guifg=#000000]])
+vim.cmd([[hi DiffviewFilePanelTitle guifg=#333333]])
+vim.cmd([[hi DiffviewFilePanelCounter guifg=#333333]])
+vim.cmd([[hi NeogitHunkHeader guibg=NONE]])
+vim.cmd([[hi NeogitHunkHeaderHighlight guibg=NONE]])
+vim.cmd([[hi NeogitDiffContextHighlight guibg=#F5F5F5]])
+
+local ib_ok, indent_blankline = pcall(require, "indent_blankline")
+
+vim.cmd([[hi IndentBlanklineIndent1 guibg=#FFFFFF guifg=#F3F3FA gui=nocombine]])
+vim.cmd([[hi NonText guibg=#FFFFFF guifg=#DDDDDD]])
+
+indent_blankline.setup({
+  show_end_of_line = false,
+  show_current_context = false,
+  show_current_context_start = false,
+  char_highlight_list = {
+    "IndentBlanklineIndent1",
+  },
+  space_char_highlight_list = {
+    "IndentBlanklineIndent1",
+  },
+})
+
+if not ib_ok then
+  return
+end

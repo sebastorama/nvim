@@ -23,15 +23,12 @@ local modules = {
   "user.tabby",
   "user.telescope",
   "user.todo-comments",
-  "user.transparent",
   "user.treesitter",
   "user.ts-autotag",
   "user.ufo",
   "user.which-key",
   "user.neominimap",
-  --"user.lualine",
   "user.color-light",
-  --"user.indent-blankline",
   "user.options",
 }
 

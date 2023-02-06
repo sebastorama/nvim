@@ -64,12 +64,15 @@ return packer.startup(function(use)
   -- Colorschemes
   use("NLKNguyen/papercolor-theme")
   use("folke/tokyonight.nvim")
-  use("xiyaowong/nvim-transparent")
   use("ellisonleao/gruvbox.nvim")
   use("tjdevries/colorbuddy.nvim")
   use("tjdevries/gruvbuddy.nvim")
   use("navarasu/onedark.nvim")
-  use("tomasiser/vim-code-dark")
+  use("Mofiqul/vscode.nvim")
+  use("ayu-theme/ayu-vim")
+  use("Th3Whit3Wolf/one-nvim")
+  use { "catppuccin/nvim", as = "catppuccin" }
+
 
   -- Completion
   use("hrsh7th/nvim-cmp")

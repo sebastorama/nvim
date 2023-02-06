@@ -1,12 +1,15 @@
-local ok, indent_blankline = pcall(require, "indent_blankline")
+vim.cmd([[set bg=dark]])
+vim.cmd([[colorscheme onedark]])
 
-if not ok then
+local ib_ok, indent_blankline = pcall(require, "indent_blankline")
+
+if not ib_ok then
   return
 end
 
 vim.opt.termguicolors = true
 
-vim.cmd([[highlight IndentBlanklineIndent1 guibg=#FEF7E5 guifg=#cccccc gui=nocombine]])
+vim.cmd([[highlight IndentBlanklineIndent1 guibg=#282C34 guifg=#30353F gui=nocombine]])
 
 vim.opt.list = true
 vim.opt.listchars:append("eol:↴")
