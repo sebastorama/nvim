@@ -4,7 +4,7 @@ if not ok then
   return
 end
 
-vim.opt.timeoutlen = 300
+vim.opt.timeoutlen = 200
 
 wk.setup({
   plugins = {
