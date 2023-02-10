@@ -43,7 +43,6 @@ return packer.startup(function(use)
   })
 
   -- UI
-  use("lukas-reineke/indent-blankline.nvim")
   use("nvim-pack/nvim-spectre")
   use("folke/which-key.nvim")
   use("kyazdani42/nvim-tree.lua")
@@ -71,8 +70,7 @@ return packer.startup(function(use)
   use("Mofiqul/vscode.nvim")
   use("ayu-theme/ayu-vim")
   use("Th3Whit3Wolf/one-nvim")
-  use { "catppuccin/nvim", as = "catppuccin" }
-
+  use({ "catppuccin/nvim", as = "catppuccin" })
 
   -- Completion
   use("hrsh7th/nvim-cmp")
