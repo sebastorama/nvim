@@ -66,3 +66,11 @@ wk.register({
     o = { "<cmd>TypescriptOrganizeImports<CR>", "Organize Imports" },
   },
 }, { prefix = "<leader>" })
+
+wk.register({
+  d = {
+    name = "Diffview",
+    d = { "<cmd>DiffviewOpen<CR>", "Diffview Open" },
+    c = { "<cmd>DiffviewClose<CR>", "Diffview Open" },
+  },
+}, { prefix = "," })
