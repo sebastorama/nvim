@@ -55,5 +55,3 @@ vim.cmd([[hi DiagError guifg=#C52C47 guibg=#222436]])
 vim.cmd([[hi DiagWarn guifg=#FFD200  guibg=#222436]])
 vim.cmd([[hi DiagHint guifg=#03DB00  guibg=#222436]])
 vim.cmd([[hi DiagInfo guifg=#0093FF  guibg=#222436]])
-
-vim.cmd([[hi DiffviewFilePanelFileName guifg=#000000]])
