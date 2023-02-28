@@ -68,6 +68,10 @@ wk.register({
 }, { prefix = "<leader>" })
 
 wk.register({
+  a = {
+    name = "Aerial",
+    a = { "<cmd>AerialToggle<CR>", "Diffview Open" },
+  },
   d = {
     name = "Diffview",
     d = { "<cmd>DiffviewOpen<CR>", "Diffview Open" },
