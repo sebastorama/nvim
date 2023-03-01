@@ -1,6 +1,7 @@
 require("user.globals")
 
 local modules = {
+  "user.options",
   "user.aerial",
   "user.autocmd",
   "user.autopairs",
@@ -15,6 +16,7 @@ local modules = {
   "user.lsp",
   "user.luasnip",
   "user.neogit",
+  "user.neominimap",
   "user.ntree",
   "user.nvim-dap",
   "user.nvim-dap-ui",
@@ -27,9 +29,7 @@ local modules = {
   "user.ts-autotag",
   "user.ufo",
   "user.which-key",
-  "user.neominimap",
-  "user.color",
-  "user.options",
+  "user.color-tokyonight-light",
 }
 
 for _, v in pairs(modules) do

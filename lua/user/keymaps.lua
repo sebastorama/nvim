@@ -78,6 +78,7 @@ keymap("n", "<leader>p", '"+p', opts)
 -- INSERT
 keymap("i", "<C-f>", "<Right>", opts)
 keymap("i", "<C-b>", "<Left>", opts)
+keymap("i", "<C-x>", "<Esc>:x<CR>", opts)
 
 -- Mouse
 vim.api.nvim_set_keymap(

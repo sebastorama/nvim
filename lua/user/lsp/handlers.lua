@@ -101,10 +101,6 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 
-  if client.name == "sumneko_lua" then
-    client.server_capabilities.documentFormattingProvider = nil
-  end
-
   if client.name == "tsserver" then
     vim.api.nvim_exec(
       [[

@@ -71,6 +71,7 @@ return packer.startup(function(use)
   use("ayu-theme/ayu-vim")
   use("Th3Whit3Wolf/one-nvim")
   use({ "catppuccin/nvim", as = "catppuccin" })
+  use("shaunsingh/solarized.nvim")
 
   -- Completion
   use("hrsh7th/nvim-cmp")

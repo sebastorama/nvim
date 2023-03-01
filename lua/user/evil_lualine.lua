@@ -39,7 +39,7 @@ local light_colors = {
 }
 -- stylua: ignore end
 
-local colors = dark_colors
+local colors = light_colors
 
 local conditions = {
   buffer_not_empty = function()

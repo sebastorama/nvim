@@ -28,7 +28,7 @@ local servers = {
   "html",
   "jsonls",
   "solargraph",
-  "sumneko_lua",
+  "lua_ls",
   "tailwindcss",
 }
 
