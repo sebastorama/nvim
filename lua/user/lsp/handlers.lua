@@ -1,5 +1,3 @@
-local aerial_ok, aerial = pcall(require, "aerial")
-
 local M = {}
 
 -- TODO: backfill this to template
@@ -123,10 +121,6 @@ M.on_attach = function(client, bufnr)
       ]],
       false
     )
-  end
-
-  if aerial_ok then
-    aerial.on_attach(client, bufnr)
   end
 end
 

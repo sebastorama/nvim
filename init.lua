@@ -21,15 +21,15 @@ local modules = {
   "user.nvim-dap",
   "user.nvim-dap-ui",
   "user.plugins",
+  "user.rust-tools",
   "user.spectre",
   "user.tabby",
   "user.telescope",
   "user.todo-comments",
   "user.treesitter",
   "user.ts-autotag",
-  "user.ufo",
   "user.which-key",
-  "user.color-tokyonight-light",
+  "user.color-tokyonight-dark",
 }
 
 for _, v in pairs(modules) do

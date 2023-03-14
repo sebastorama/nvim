@@ -96,6 +96,7 @@ return packer.startup(function(use)
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use({ "nvim-treesitter/playground" })
   use("github/copilot.vim")
+  use("simrat39/rust-tools.nvim")
 
   -- DAP
   -- use("mfussenegger/nvim-dap")

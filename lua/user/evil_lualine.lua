@@ -39,7 +39,7 @@ local light_colors = {
 }
 -- stylua: ignore end
 
-local colors = light_colors
+local colors = dark_colors
 
 local conditions = {
   buffer_not_empty = function()
@@ -128,14 +128,12 @@ ins_left({
 
     return "" .. " " .. mode_text[vim.fn.mode()]
   end,
-
   color = function()
     -- auto change color according to neovims mode
     local mode_color = {
       n = colors.red,
       i = colors.green,
       v = colors.blue,
-      [""] = colors.blue,
       V = colors.blue,
       c = colors.magenta,
       no = colors.red,
