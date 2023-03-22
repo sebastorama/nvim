@@ -29,7 +29,7 @@ local modules = {
   "user.treesitter",
   "user.ts-autotag",
   "user.which-key",
-  "user.color-tokyonight-dark",
+  "user.color-codedark",
 }
 
 for _, v in pairs(modules) do

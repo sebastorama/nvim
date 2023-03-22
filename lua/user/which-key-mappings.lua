@@ -17,21 +17,18 @@ wk.register({
     c = { "<cmd>lua require'dap'.continue()<CR>", "Continue/Run" },
     k = { "<cmd>lua require'dapui'.eval()<CR>", "DapUI Eval" },
   },
-
   -- FIND
   f = {
     name = "Find",
     f = { "<cmd>Telescope find_files hidden=false<CR>", "Find File" },
-    b = { "<cmd>Telescope buffers<CR>", "Find Buffers" },
+    b = { "<cmd>lua require('telescope.builtin').buffers({ layout_config={ width=0.5 }})<CR>", "Find Buffers" },
     g = { "<cmd>Telescope git_files hidden=true<CR>", "Find GIT files" },
     l = { "<cmd>Telescope live_grep use_regex=true<CR>", "LiveGrep" },
   },
-
   F = {
     name = "Global Find",
     F = { "<cmd>lua require('telescope.builtin').find_files({ cwd='~/dev'})<CR>", "Find File" },
   },
-
   -- GIT
   g = {
     name = "GIT",
@@ -40,7 +37,6 @@ wk.register({
     h = { "<cmd>DiffviewFileHistory<CR>", "File History" },
     x = { "<cmd>DiffviewClose<CR>", "Close Diffview" },
   },
-
   -- LSP
   l = {
     name = "LSP",
@@ -60,7 +56,6 @@ wk.register({
     r = { "<cmd>Telescope lsp_references<CR>", "Find References" },
     o = { "<cmd>AerialToggle<CR>", "Toggle Outline" },
   },
-
   t = {
     name = "Typescript",
     o = { "<cmd>TypescriptOrganizeImports<CR>", "Organize Imports" },

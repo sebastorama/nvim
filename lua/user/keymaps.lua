@@ -31,7 +31,7 @@ keymap("n", "<Up>", ":resize +3<CR>", opts)
 keymap("n", "<Down>", ":resize -3<CR>", opts)
 
 -- Buffers
-keymap("n", "<leader>bb", "<cmd>Telescope buffers<CR>", opts)
+keymap("n", "<leader>bb", "<cmd>lua require('telescope.builtin').buffers({ layout_config={ width=0.5 }})<CR>", opts)
 keymap("n", "<leader>bd", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<localleader>d", ":bp | sp | bn | bd<CR>", opts)
 keymap("n", "<leader>bD", ":%bd|e#<CR>", opts)
@@ -78,7 +78,6 @@ keymap("n", "<leader>p", '"+p', opts)
 -- INSERT
 keymap("i", "<C-f>", "<Right>", opts)
 keymap("i", "<C-b>", "<Left>", opts)
-keymap("i", "<C-x>", "<Esc>:x<CR>", opts)
 
 -- Mouse
 vim.api.nvim_set_keymap(
