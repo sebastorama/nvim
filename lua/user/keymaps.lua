@@ -64,6 +64,7 @@ keymap("n", "<localleader>cd", ":Copilot disable<CR>", opts)
 keymap("n", "<localleader>ce", ":Copilot enable<CR>", opts)
 keymap("n", "<localleader>e", ":Exp<CR>", opts)
 keymap("n", "<localleader>t", ":tabe term://zsh<CR>", opts)
+keymap("n", ",p", ':let @* = expand("%")<cr>', opts)
 
 -- VISUAL
 

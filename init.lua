@@ -27,6 +27,7 @@ local modules = {
   "user.telescope",
   "user.todo-comments",
   "user.treesitter",
+  "user.treesitter-context",
   "user.ts-autotag",
   "user.which-key",
   "user.color-codedark",

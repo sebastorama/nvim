@@ -85,9 +85,9 @@ return packer.startup(function(use)
   use("ray-x/lsp_signature.nvim")
 
   -- LSP & TreeSitter
-  use("neovim/nvim-lspconfig") -- enable LSP
+  use("neovim/nvim-lspconfig")           -- enable LSP
   use("williamboman/nvim-lsp-installer") -- simple to use language server installer
-  use("tamago324/nlsp-settings.nvim") -- language server settings defined in json for
+  use("tamago324/nlsp-settings.nvim")    -- language server settings defined in json for
   use("jose-elias-alvarez/null-ls.nvim") -- for formatters and linters
   use("nvim-lua/plenary.nvim")
   use("jose-elias-alvarez/typescript.nvim")
@@ -95,6 +95,7 @@ return packer.startup(function(use)
   use("windwp/nvim-ts-autotag")
   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
   use({ "nvim-treesitter/playground" })
+  use("nvim-treesitter/nvim-treesitter-context")
   use("github/copilot.vim")
   use("simrat39/rust-tools.nvim")
 
