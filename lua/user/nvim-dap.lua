@@ -6,17 +6,10 @@ end
 dap.adapters.chrome = {
   type = "executable",
   command = "node",
-  args = { os.getenv("HOME") .. "/dev/dap/vscode-chrome-debug/out/src/chromeDebug.js" }, -- TODO set as ENV VAR?
+  args = { os.getenv("HOME") .. "/dev/dap/vscode-chrome-debug/out/src/chromeDebug.js" },
 }
 
-dap.adapters.node2 = {
-  type = "executable",
-  command = "node",
-  args = { os.getenv("HOME") .. "/dev/dap/vscode-node-debug2/out/src/nodeDebug.js" },
-}
-
--- change this to javascript if needed
-dap.configurations.javascriptreact = {
+dap.configurations.javascriptreact = { -- change this to javascript if needed
   {
     type = "chrome",
     request = "attach",
@@ -42,48 +35,33 @@ dap.configurations.typescriptreact = { -- change to typescript if needed
   },
 }
 
-dap.configurations.typescript = { -- change to typescript if needed
+dap.adapters["pwa-node"] = {
+  type = "server",
+  host = "localhost",
+  port = 9222,
+  executable = {
+    command = "node",
+    -- 💀 Make sure to update this path to point to your installation
+    args = { os.getenv("HOME") .. "/dev/dap/js-debug/src/dapDebugServer.js", "${port}"},
+  }
+}
+
+dap.configurations.javascript = {
   {
-    name = "Launch",
-    type = "node2",
+    type = "pwa-node",
     request = "launch",
+    name = "Launch file",
     program = "${file}",
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = "inspector",
-    console = "integratedTerminal",
+    cwd = "${workspaceFolder}",
   },
+}
+
+dap.configurations.typescript = {
   {
-    -- For this to work you need to make sure the node process is started with the `--inspect` flag.
-    name = "Attach to process",
-    type = "node2",
-    sourceMaps = true,
+    type = "pwa-node",
     request = "attach",
+    name = "Attach",
     processId = require("dap.utils").pick_process,
-  },
-}
-
-dap.adapters.ruby = function(callback, config)
-  callback({
-    type = "server",
-    host = "127.0.0.1",
-    port = 38697,
-  })
-end
-
-dap.adapters.ruby = {
-  type = "executable",
-  command = "bundle",
-  args = { "exec", "readapt", "stdio" },
-}
-
-dap.configurations.ruby = {
-  {
-    type = "ruby",
-    request = "launch",
-    name = "Rails",
-    program = "bundle",
-    programArgs = { "exec", "rails", "s" },
-    useBundler = true,
+    cwd = "${workspaceFolder}",
   },
 }

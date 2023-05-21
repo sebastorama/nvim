@@ -10,6 +10,7 @@ local modules = {
   "user.commands",
   "user.dadbodui",
   "user.diffview",
+  "user.nvim-dap",
   "user.evil_lualine",
   "user.gitsigns",
   "user.keymaps",
@@ -30,7 +31,7 @@ local modules = {
   "user.treesitter-context",
   "user.ts-autotag",
   "user.which-key",
-  "user.color-codedark",
+  "user.color-tokyonight-dark",
 }
 
 for _, v in pairs(modules) do

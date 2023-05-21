@@ -119,6 +119,15 @@ end
       fmt("const useStyles = createStyles((_theme, _params, _getRef) => {{\n  return {{ {} }}\n }});", { i(1) })
     ),
     s("cjson", fmt("console.log(JSON.stringify({}, null, 2));", { i(1) })),
+
+    --   export type ExpandRecursively<T> = T extends (...args: infer A) => infer R
+    -- ? (...args: ExpandRecursively<A>) => ExpandRecursively<R>
+    -- : T extends object
+    -- ? T extends infer O
+    --   ? { [K in keyof O]: ExpandRecursively<O[K]> }
+    --   : never
+    -- : T;
+    s("expt", fmt(require("user.snippets.typescript.expand_type"), {})),
   },
   markdown = {
     s("t", fmt("{}", t("@today"))),
@@ -127,7 +136,6 @@ end
     s("s", fmt("{}", t("@someday"))),
     s("pm", fmt(require("user.assets.pm"), {})),
   },
-
   zsh = {
     s(
       "psql",

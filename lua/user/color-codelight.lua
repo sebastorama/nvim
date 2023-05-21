@@ -10,3 +10,5 @@ vscode.setup({
   -- Enable italic comment
   italic_comments = true,
 })
+
+vim.cmd([[colorscheme vscode]])
