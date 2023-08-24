@@ -57,9 +57,11 @@ neogit.setup({
     },
     unpulled = {
       folded = true,
+      hidden = false,
     },
     unmerged = {
       folded = false,
+      hidden = false,
     },
     recent = {
       folded = true,
