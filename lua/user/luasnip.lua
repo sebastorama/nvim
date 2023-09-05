@@ -147,3 +147,8 @@ end
     s("dops", fmt("docker ps {}", { c(1, { t("-a"), t("-a --format '{{.Names}}'") }) })),
   },
 }, { key = "global_snippets" })
+
+luasnip.add_snippets("all", {
+  s("ck", fmt("{}", t("✅"))),
+  s("uck", fmt("{}", t("❌"))),
+})
