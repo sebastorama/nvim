@@ -1,5 +1,6 @@
 -- :help options
 -- vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+vim.g.markdown_recommended_style = 0 -- disable markdown expandtab
 vim.opt.backup = false -- creates a backup file
 vim.opt.cmdheight = 1 -- stick to the standard thing
 vim.opt.completeopt = { "menuone", "noselect" } -- mostly just for cmp
