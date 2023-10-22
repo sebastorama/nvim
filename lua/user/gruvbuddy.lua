@@ -10,9 +10,6 @@ vim.opt.termguicolors = true
 
 vim.cmd([[highlight IndentBlanklineIndent1 guibg=#282C34 guifg=#333333 gui=nocombine]])
 
-vim.opt.list = true
-vim.opt.listchars:append("eol:↴")
-
 indent_blankline.setup({
   show_end_of_line = true,
   show_current_context = false,
