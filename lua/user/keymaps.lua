@@ -65,6 +65,8 @@ keymap("n", "<localleader>ce", ":Copilot enable<CR>", opts)
 keymap("n", "<localleader>e", ":Exp<CR>", opts)
 keymap("n", "<localleader>t", ":tabe term://zsh<CR>", opts)
 keymap("n", ",p", ':let @* = expand("%")<cr>', opts)
+keymap("n", "[b", ":bp<CR>", opts)
+keymap("n", "]b", ":bn<CR>", opts)
 
 -- VISUAL
 
@@ -79,6 +81,19 @@ keymap("n", "<leader>p", '"+p', opts)
 -- INSERT
 keymap("i", "<C-f>", "<Right>", opts)
 keymap("i", "<C-b>", "<Left>", opts)
+
+-- Option Do stuff like emacs in insert mode
+keymap("i", "<M-f>", "<Esc>wwi", opts)
+keymap("i", "<M-b>", "<Esc>bi", opts)
+keymap("i", "<M-d>", "<Esc>dw", opts)
+
+-- Copilot Mapping
+vim.api.nvim_set_keymap("i", "<M-i>", 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+
+-- vim.g.copilot_no_tab_map = true -- disable default tab behavior
 
 -- Mouse
 vim.api.nvim_set_keymap(
