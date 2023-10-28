@@ -62,16 +62,16 @@ require("lazy").setup({
   "ray-x/lsp_signature.nvim",
 
   -- LSP & TreeSitter
+  { "williamboman/mason.nvim", lazy = false },
+  { "williamboman/mason-lspconfig.nvim", lazy = false },
   "neovim/nvim-lspconfig", -- enable LSP
-  "williamboman/nvim-lsp-installer", -- simple to use language server installer
   "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
-  "jose-elias-alvarez/null-ls.nvim", -- for formatters and linters
   "nvim-lua/plenary.nvim",
   "jose-elias-alvarez/typescript.nvim",
   "stevearc/aerial.nvim",
   "windwp/nvim-ts-autotag",
-  { "nvim-treesitter/nvim-treesitter" },
-  { "nvim-treesitter/playground" },
+  "nvim-treesitter/nvim-treesitter",
+  "nvim-treesitter/playground",
   "nvim-treesitter/nvim-treesitter-context",
   "github/copilot.vim",
   "simrat39/rust-tools.nvim",

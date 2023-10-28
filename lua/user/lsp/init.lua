@@ -6,5 +6,4 @@ end
 require("user.lsp.configs")
 require("user.lsp.handlers").setup()
 require("user.lsp.lsp_signature")
-require("user.lsp.null-ls")
 require("user.lsp.typescript")
