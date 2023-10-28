@@ -1,6 +1,22 @@
 require("user.globals")
 
-local modules = {
+-- Lazy nvim setup
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+require("user.plugins")
+
+ local modules = {
   "user.options",
   "user.aerial",
   "user.autocmd",
@@ -21,7 +37,6 @@ local modules = {
   "user.ntree",
   "user.nvim-dap",
   "user.nvim-dap-ui",
-  "user.plugins",
   "user.rust-tools",
   "user.spectre",
   "user.tabby",
