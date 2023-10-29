@@ -39,6 +39,17 @@ keymap("n", "<localleader>n", ":bn<CR>", opts)
 keymap("n", "<localleader>p", ":bp<CR>", opts)
 keymap("n", "<localleader>b", ":BDelete ", opts)
 
+-- Folding
+keymap("n", "<localleader>1", ":set foldlevel=0<CR>", opts)
+keymap("n", "<localleader>2", ":set foldlevel=1<CR>", opts)
+keymap("n", "<localleader>3", ":set foldlevel=2<CR>", opts)
+keymap("n", "<localleader>4", ":set foldlevel=3<CR>", opts)
+keymap("n", "<localleader>5", ":set foldlevel=4<CR>", opts)
+keymap("n", "<localleader>6", ":set foldlevel=5<CR>", opts)
+keymap("n", "<localleader>7", ":set foldlevel=6<CR>", opts)
+keymap("n", "<localleader>8", ":set foldlevel=7<CR>", opts)
+keymap("n", "<localleader>9", ":set foldlevel=99<CR>", opts)
+
 -- Resize with arrows
 keymap("n", "<C-S-Up>", ":resize +3<CR>", opts)
 keymap("n", "<C-S-Down>", ":resize -3<CR>", opts)
