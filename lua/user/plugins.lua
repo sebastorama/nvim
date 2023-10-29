@@ -65,6 +65,7 @@ require("lazy").setup({
   { "williamboman/mason.nvim", lazy = false },
   { "williamboman/mason-lspconfig.nvim", lazy = false },
   "neovim/nvim-lspconfig", -- enable LSP
+  "mfussenegger/nvim-lint",
   "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
   "nvim-lua/plenary.nvim",
   "jose-elias-alvarez/typescript.nvim",

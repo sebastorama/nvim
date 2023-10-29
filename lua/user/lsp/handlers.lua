@@ -10,7 +10,7 @@ M.setup = function()
   }
 
   for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = nil, numhl = sign.numhl })
+    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.numhl })
   end
 
   local config = {
@@ -55,7 +55,7 @@ local function lsp_highlight_document(client)
   -- ]])
 
   if client.server_capabilities.documentHighlightProvider then
-    vim.api.nvim_exec(
+    vim.cmd(
       [[
       augroup lsp_document_highlight
       autocmd! * <buffer>
@@ -100,7 +100,7 @@ M.on_attach = function(client, bufnr)
   lsp_highlight_document(client)
 
   if client.name == "tsserver" then
-    vim.api.nvim_exec(
+    vim.cmd(
       [[
       augroup lsp_tsserver_format_on_save
       autocmd! * <buffer>
@@ -112,7 +112,7 @@ M.on_attach = function(client, bufnr)
   end
 
   if client.name == "eslint" then
-    vim.api.nvim_exec(
+    vim.cmd(
       [[
       augroup lsp_eslint_format_on_save
       autocmd! * <buffer>
@@ -125,7 +125,7 @@ M.on_attach = function(client, bufnr)
 end
 
 M.format_if_not_present = function(client)
-  local active_clients = MAP(vim.lsp.get_active_clients(), function(v)
+  local active_clients = MAP(vim.lsp.get_clients(), function(v)
     return v.name
   end)
 
