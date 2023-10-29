@@ -36,15 +36,9 @@ end
 
 -- Emmet support
 -- lsp_installer.setup({ ensure_installed = "emmet_ls" })
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities.textDocument.completion.completionItem.snippetSupport = true
-capabilities.textDocument.foldingRange = {
-  dynamicRegistration = false,
-  lineFoldingOnly = true,
-}
 lspconfig.emmet_ls.setup({
   on_attach = require("user.lsp.handlers").on_attach,
-  capabilities = capabilities,
+  capabilities = require("user.lsp.handlers").capabilities,
   filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less" },
 })
 

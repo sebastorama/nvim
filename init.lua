@@ -47,6 +47,7 @@ require("user.plugins")
   "user.ts-autotag",
   "user.which-key",
   "user.color-tokyonight-dark",
+  "user.ufo"
 }
 
 for _, v in pairs(modules) do

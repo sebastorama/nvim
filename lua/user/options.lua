@@ -55,9 +55,5 @@ vim.cmd([[autocmd BufWritePre * :%s/\s\+$//e]]) -- Always strip trailing whitesp
 vim.cmd([[set iskeyword+=-]])
 vim.cmd([[set formatoptions-=cro]]) -- TODO: this doesn't seem to work
 
--- folding options
-vim.cmd([[set foldmethod=expr]])
-vim.cmd([[set foldexpr=nvim_treesitter#foldexpr()]])
-
 vim.cmd([[let g:ftplugin_sql_omni_key = '<C-s>']])
 vim.cmd([[packadd cfilter]])
