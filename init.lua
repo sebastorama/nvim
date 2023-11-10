@@ -46,7 +46,7 @@ require("user.plugins")
   "user.treesitter-context",
   "user.ts-autotag",
   "user.which-key",
-  "user.color-tokyonight-dark",
+  "user.color-codedark",
   "user.ufo"
 }
 
