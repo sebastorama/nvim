@@ -1,3 +1,4 @@
+
 require("lazy").setup({
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   "nvim-telescope/telescope-ui-select.nvim",
@@ -76,6 +77,14 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter-context",
   "github/copilot.vim",
   "simrat39/rust-tools.nvim",
+
+  -- NEORG
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = require("user.neorg").setup
+  },
 
   -- DAP
   "mfussenegger/nvim-dap",
