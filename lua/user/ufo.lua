@@ -11,6 +11,9 @@ vim.o.foldenable = true
 
 ufo.setup({
   provider_selector = function(bufnr, filetype, buftype)
+    if(filetype == "norg" or filetype == "lua") then
+      return "treesitter"
+    end
     return { "lsp", "indent" }
   end,
 })

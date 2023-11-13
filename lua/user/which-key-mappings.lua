@@ -72,4 +72,7 @@ wk.register({
     d = { "<cmd>DiffviewOpen<CR>", "Diffview Open" },
     c = { "<cmd>DiffviewClose<CR>", "Diffview Open" },
   },
+  b = {
+    "<cmd>buffers<CR>", "Buffers (neovim native)"
+  },
 }, { prefix = "," })
