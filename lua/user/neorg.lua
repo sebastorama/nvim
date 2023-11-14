@@ -5,6 +5,7 @@ M.setup = function()
     load = {
       ["core.defaults"] = {}, -- Loads default behaviour
       ["core.concealer"] = {}, -- Adds pretty icons to your documents
+      ["core.tangle"] = {}, -- Tangle codeblocks to files
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
