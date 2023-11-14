@@ -134,7 +134,6 @@ end
     s("m", fmt("{}", t("@tomorrow"))),
     s("n", fmt("{}", t("@next_week"))),
     s("s", fmt("{}", t("@someday"))),
-    s("pm", fmt(require("user.assets.pm"), {})),
   },
   zsh = {
     s(
