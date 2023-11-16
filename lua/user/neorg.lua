@@ -9,7 +9,7 @@ M.setup = function()
       ["core.dirman"] = { -- Manages Neorg workspaces
         config = {
           workspaces = {
-            main = "~/neorg",
+            main = "~/norg",
           },
         },
       },
