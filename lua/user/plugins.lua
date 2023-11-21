@@ -31,6 +31,14 @@ require("lazy").setup({
   "folke/todo-comments.nvim",
   "lewis6991/gitsigns.nvim",
   "nanozuki/tabby.nvim",
+  {
+    "folke/zen-mode.nvim",
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
 
   -- dadbod
   "tpope/vim-dadbod",

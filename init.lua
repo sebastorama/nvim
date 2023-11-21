@@ -18,6 +18,7 @@ require("user.plugins")
 
  local modules = {
   "user.options",
+
   "user.aerial",
   "user.autocmd",
   "user.autopairs",
@@ -26,7 +27,6 @@ require("user.plugins")
   "user.commands",
   "user.dadbodui",
   "user.diffview",
-  "user.nvim-dap",
   "user.evil_lualine",
   "user.gitsigns",
   "user.keymaps",
@@ -36,7 +36,9 @@ require("user.plugins")
   "user.neominimap",
   "user.ntree",
   "user.nvim-dap",
+  "user.nvim-dap",
   "user.nvim-dap-ui",
+  "user.quickfix",
   "user.rust-tools",
   "user.spectre",
   "user.tabby",
@@ -46,7 +48,7 @@ require("user.plugins")
   "user.treesitter-context",
   "user.ts-autotag",
   "user.which-key",
-  "user.color-codedark",
+  "user.color-tokyonight-dark",
   "user.ufo"
 }
 
