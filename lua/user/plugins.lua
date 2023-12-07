@@ -1,5 +1,6 @@
 
 require("lazy").setup({
+  -- DX
   { "nvim-telescope/telescope.nvim", dependencies = { "nvim-lua/plenary.nvim" } },
   "nvim-telescope/telescope-ui-select.nvim",
   "tpope/vim-surround",
@@ -14,6 +15,18 @@ require("lazy").setup({
   "folke/which-key.nvim",
   "mhinz/vim-grepper",
   "kazhala/close-buffers.nvim",
+  {
+    'mikesmithgh/kitty-scrollback.nvim',
+    enabled = true,
+    lazy = true,
+    cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
+    event = { 'User KittyScrollbackLaunch' },
+    -- version = '*', -- latest stable version, may have breaking changes if major version changed
+    -- version = '^2.0.0', -- pin major version, include fixes and features that do not have breaking changes
+    config = function()
+      require('kitty-scrollback').setup()
+    end,
+  },
 
   -- GIT
   { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim" },
