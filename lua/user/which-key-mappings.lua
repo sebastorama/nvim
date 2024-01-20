@@ -56,6 +56,11 @@ wk.register({
     r = { "<cmd>Telescope lsp_references<CR>", "Find References" },
     o = { "<cmd>AerialToggle<CR>", "Toggle Outline" },
   },
+  o = {
+    name = "Obsidian",
+    n = { "<cmd>ObsidianNew<CR>", "New Note" },
+    r = { "<cmd>ObsidianRename<CR>", "Rename Note" },
+  },
   t = {
     name = "Typescript",
     o = { "<cmd>TypescriptOrganizeImports<CR>", "Organize Imports" },

@@ -108,6 +108,18 @@ require("lazy").setup({
     config = require("user.neorg").setup
   },
 
+  -- Obsidian
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      -- Required.
+      "nvim-lua/plenary.nvim",
+    },
+  },
+
   -- DAP
   "mfussenegger/nvim-dap",
   -- "nvim-telescope/telescope-dap.nvim",
