@@ -1,4 +1,5 @@
 local M = {}
+local navbuddy = require("nvim-navbuddy")
 
 -- TODO: backfill this to template
 M.setup = function()
@@ -95,6 +96,16 @@ local function lsp_keymaps(bufnr)
   vim.cmd([[ command! Format execute "lua vim.lsp.buf.format({ async = true })" ]])
 end
 
+local attach_navbuddy = function(client, bufnr)
+  local navbuddyClients = { "tsserver" }
+
+  for _, v in ipairs(navbuddyClients) do
+    if client.name == v then
+      navbuddy.attach(client, bufnr)
+    end
+  end
+end
+
 M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
@@ -122,6 +133,8 @@ M.on_attach = function(client, bufnr)
       false
     )
   end
+
+  attach_navbuddy(client, bufnr)
 end
 
 M.format_if_not_present = function(client)

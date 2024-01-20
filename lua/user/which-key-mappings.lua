@@ -80,4 +80,7 @@ wk.register({
   b = {
     "<cmd>buffers<CR>", "Buffers (neovim native)"
   },
+  n = {
+    "<cmd>Navbuddy<CR>", "Navbuddy Toggle",
+  }
 }, { prefix = "," })
