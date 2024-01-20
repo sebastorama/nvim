@@ -60,6 +60,7 @@ require("lazy").setup({
   "vim-scripts/dbext.vim",
 
   -- Colorschemes
+  { 'rose-pine/neovim', name = 'rose-pine' },
   "NLKNguyen/papercolor-theme",
   "folke/tokyonight.nvim",
   "ellisonleao/gruvbox.nvim",
