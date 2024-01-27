@@ -54,6 +54,8 @@ wk.register({
     d = { "<cmd>Telescope lsp_definitions<CR>", "Find Definitions" },
     l = { "<cmd>Telescope diagnostics<CR>", "Show Diagnostics" },
     r = { "<cmd>Telescope lsp_references<CR>", "Find References" },
+    s = { "<cmd>Telescope lsp_document_symbols<CR>", "Find Document Symbols" },
+    S = { "<cmd>Telescope lsp_dynamic_workspace_symbols<CR>", "Find Workspace Symbols" },
     o = { "<cmd>AerialToggle<CR>", "Toggle Outline" },
   },
   o = {

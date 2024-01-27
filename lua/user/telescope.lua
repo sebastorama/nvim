@@ -33,6 +33,7 @@ telescope.setup({
       "never",
     },
   },
+  file_ignore_patterns = { "node_modules" },
   pickers = {
     buffers = {
       theme = "dropdown",
@@ -52,6 +53,9 @@ telescope.setup({
     -- builtin picker
   },
   extensions = {
+    lsp = {
+      find_command = {'rg', '--hidden', '--files', '--exclude', 'node_modules'},
+    },
     ["ui-select"] = {
       require("telescope.themes").get_dropdown({
         -- even more opts
