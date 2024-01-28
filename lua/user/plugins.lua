@@ -97,6 +97,7 @@ require("lazy").setup({
   -- LSP & TreeSitter
   { "williamboman/mason.nvim", lazy = false },
   { "williamboman/mason-lspconfig.nvim", lazy = false },
+  "jay-babu/mason-nvim-dap.nvim",
   "neovim/nvim-lspconfig", -- enable LSP
   "mfussenegger/nvim-lint",
   "tamago324/nlsp-settings.nvim", -- language server settings defined in json for
@@ -133,8 +134,7 @@ require("lazy").setup({
 
   -- DAP
   "mfussenegger/nvim-dap",
-  -- "nvim-telescope/telescope-dap.nvim",
-  -- { "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
+  "rcarriga/nvim-dap-ui",
 
   -- snippets
   "L3MON4D3/LuaSnip",

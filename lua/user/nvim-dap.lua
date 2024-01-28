@@ -3,65 +3,37 @@ if not dap_status_ok then
   return
 end
 
-dap.adapters.chrome = {
-  type = "executable",
-  command = "node",
-  args = { os.getenv("HOME") .. "/dev/dap/vscode-chrome-debug/out/src/chromeDebug.js" },
-}
-
-dap.configurations.javascriptreact = { -- change this to javascript if needed
-  {
-    type = "chrome",
-    request = "attach",
-    program = "${file}",
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = "inspector",
-    port = 9222,
-    webRoot = "${workspaceFolder}",
-  },
-}
-
-dap.configurations.typescriptreact = { -- change to typescript if needed
-  {
-    type = "chrome",
-    request = "attach",
-    program = "${file}",
-    cwd = vim.fn.getcwd(),
-    sourceMaps = true,
-    protocol = "inspector",
-    port = 9222,
-    webRoot = "${workspaceFolder}",
-  },
-}
+local exts = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
 
 dap.adapters["pwa-node"] = {
   type = "server",
   host = "localhost",
-  port = 9222,
+  port = "${port}", --let both ports be the same for now...
   executable = {
     command = "node",
-    -- 💀 Make sure to update this path to point to your installation
-    args = { os.getenv("HOME") .. "/dev/dap/js-debug/src/dapDebugServer.js", "${port}"},
+    -- -- 💀 Make sure to update this path to point to your installation
+    args = { vim.fn.stdpath('data') .. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js", "${port}" },
+    -- command = "js-debug-adapter",
+    -- args = { "${port}" },
+  },
+}
+
+for i, ext in ipairs(exts) do
+  dap.configurations[ext] = {
+    {
+      type = 'pwa-node',
+      request = 'attach',
+      name = 'Attach Program (pwa-node)',
+      cwd = vim.fn.getcwd(),
+      processId = require('dap.utils').pick_process,
+      skipFiles = { '<node_internals>/**' },
+    },
+    {
+      type = "pwa-node",
+      request = "attach",
+      name = "Auto Attach",
+      cwd = vim.fn.getcwd()
+    }
   }
-}
+end
 
-dap.configurations.javascript = {
-  {
-    type = "pwa-node",
-    request = "launch",
-    name = "Launch file",
-    program = "${file}",
-    cwd = "${workspaceFolder}",
-  },
-}
-
-dap.configurations.typescript = {
-  {
-    type = "pwa-node",
-    request = "attach",
-    name = "Attach",
-    processId = require("dap.utils").pick_process,
-    cwd = "${workspaceFolder}",
-  },
-}

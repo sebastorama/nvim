@@ -15,7 +15,11 @@ wk.register({
     name = "Debug",
     b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
     c = { "<cmd>lua require'dap'.continue()<CR>", "Continue/Run" },
-    k = { "<cmd>lua require'dapui'.eval()<CR>", "DapUI Eval" },
+    d = { "<cmd>lua require'dapui'.eval()<CR>", "DapUI Eval" },
+    u = { "<cmd>lua require'dapui'.toggle()<CR>", "DapUI Toggle" },
+    j = { "<cmd>lua require'dap'.step_into()<CR>", "Step Into" },
+    k = { "<cmd>lua require'dap'.step_out()<CR>", "Step Out" },
+    l = { "<cmd>lua require'dap'.step_over()<CR>", "Step Over" },
   },
   -- FIND
   f = {

@@ -4,7 +4,7 @@ if not dapui_ok then
   return
 end
 
-require("dapui").setup({
+dapui.setup({
   icons = { expanded = "▾", collapsed = "▸" },
   mappings = {
     -- Use a table to apply multiple mappings
