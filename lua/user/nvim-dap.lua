@@ -18,6 +18,13 @@ dap.adapters["pwa-node"] = {
   },
 }
 
+dap.adapters["pwa-chrome"] = {
+  type = "executable",
+  command = "node",
+  port = "${port}",
+  args = { vim.fn.stdpath('data') .. "/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js", "${port}" },
+}
+
 for i, ext in ipairs(exts) do
   dap.configurations[ext] = {
     {
@@ -33,6 +40,13 @@ for i, ext in ipairs(exts) do
       request = "attach",
       name = "Auto Attach",
       cwd = vim.fn.getcwd()
+    },
+    {
+      type = "pwa-chrome",
+      request = "launch",
+      name = "Launch Chrome with \"localhost\"",
+      url = "http://localhost:3000",
+      webRoot = "${workspaceFolder}"
     }
   }
 end

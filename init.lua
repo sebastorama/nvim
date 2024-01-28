@@ -50,7 +50,7 @@ require("user.plugins")
   "user.treesitter-textobjects",
   "user.ts-autotag",
   "user.which-key",
-  "user.color-tokyonight-dark",
+  "user.color-rosepine",
   "user.ufo"
 }
 
