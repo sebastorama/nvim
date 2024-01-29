@@ -135,6 +135,7 @@ require("lazy").setup({
   -- DAP
   "mfussenegger/nvim-dap",
   "rcarriga/nvim-dap-ui",
+  "theHamsta/nvim-dap-virtual-text",
 
   -- snippets
   "L3MON4D3/LuaSnip",
