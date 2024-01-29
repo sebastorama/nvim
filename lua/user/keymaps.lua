@@ -70,7 +70,7 @@ keymap(
   opts
 )
 keymap("n", "<leader><leader>/", ":lua require('spectre').open()<CR>", opts)
-keymap("n", "<leader><leader>e", ":e %:p:h", opts)
+keymap("n", "<leader><leader>e", ':e <C-r>=expand("%:p:h")<CR>/', opts)
 keymap("n", "<localleader>cd", ":Copilot disable<CR>", opts)
 keymap("n", "<localleader>ce", ":Copilot enable<CR>", opts)
 keymap("n", "<localleader>e", ":Exp<CR>", opts)

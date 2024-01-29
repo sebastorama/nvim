@@ -61,6 +61,7 @@ dapui.setup({
 })
 
 --- option+k
+vim.api.nvim_set_keymap("n", "<M-b>", "<cmd>lua require('dap').toggle_breakpoint()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-CR>", "<cmd>lua require('dapui').eval()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-h>", "<cmd>lua require('dap').continue()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-j>", "<cmd>lua require('dap').step_into()<CR>", { noremap = true, silent = true })

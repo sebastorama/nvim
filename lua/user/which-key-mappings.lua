@@ -88,5 +88,5 @@ wk.register({
   },
   n = {
     "<cmd>Navbuddy<CR>", "Navbuddy Toggle",
-  }
+  },
 }, { prefix = "," })

@@ -35,7 +35,7 @@ require("tokyonight").setup({
 
 vim.cmd([[set bg=dark]])
 -- require("colorbuddy").colorscheme("gruvbuddy")
-vim.cmd([[colorscheme tokyonight]])
+vim.cmd([[colorscheme tokyonight-night]])
 vim.cmd([[hi TablineFill guibg=#222436]])
 vim.cmd([[hi TablineSel guifg=#e0af68 guibg=#222436]])
 vim.cmd([[hi Tabline guifg=#6874A9 guibg=#222436]])

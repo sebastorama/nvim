@@ -51,3 +51,16 @@ for i, ext in ipairs(exts) do
   }
 end
 
+vim.cmd([[hi DapBreakpointLine ctermbg=0 guibg=#222436]])
+vim.cmd([[hi DapLogPointLine ctermbg=0 guibg=#222436]])
+vim.cmd([[hi DapStoppedLine ctermbg=0 guibg=#222436]])
+
+vim.cmd([[hi DapBreakpointNum ctermbg=0 guifg=#993939 guibg=#222436]])
+vim.cmd([[hi DapLogPointNum ctermbg=0 guifg=#61afef guibg=#222436]])
+vim.cmd([[hi DapStoppedNum ctermbg=0 guifg=#98c379 guibg=#222436]])
+
+vim.fn.sign_define('DapBreakpoint', { text='', texthl='DapBreakpointNum', linehl='DapBreakpointLine', numhl='DapBreakpointNum' })
+vim.fn.sign_define('DapBreakpointCondition', { text='ﳁ', texthl='DapBreakpointNum', linehl='DapBreakpointLine', numhl='DapBreakpointNum' })
+vim.fn.sign_define('DapBreakpointRejected', { text='', texthl='DapBreakpointNum', linehl='DapBreakpointLine', numhl= 'DapBreakpointNum' })
+vim.fn.sign_define('DapLogPoint', { text='', texthl='DapLogPointNum', linehl='DapLogPointLine', numhl= 'DapLogPointNum' })
+vim.fn.sign_define('DapStopped', { text='', texthl='DapStoppedNum', linehl='DapStoppedLine', numhl= 'DapStoppedNum' })
