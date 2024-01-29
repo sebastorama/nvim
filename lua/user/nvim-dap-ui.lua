@@ -47,8 +47,8 @@ dapui.setup({
     },
   },
   floating = {
-    max_height = nil, -- These can be integers or a float between 0 and 1.
-    max_width = nil, -- Floats will be treated as percentage of your screen.
+    max_height = nil,  -- These can be integers or a float between 0 and 1.
+    max_width = nil,   -- Floats will be treated as percentage of your screen.
     border = "single", -- Border style. Can be "single", "double" or "rounded"
     mappings = {
       close = { "q", "<Esc>" },
@@ -61,10 +61,8 @@ dapui.setup({
 })
 
 --- option+k
-vim.api.nvim_set_keymap("n", "<M-b>", "<cmd>lua require('dap').toggle_breakpoint()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<M-CR>", "<cmd>lua require('dapui').eval()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-h>", "<cmd>lua require('dap').continue()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-j>", "<cmd>lua require('dap').step_into()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-k>", "<cmd>lua require('dap').step_out()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<M-l>", "<cmd>lua require('dap').step_over()<CR>", { noremap = true, silent = true })
-
+vim.api.nvim_set_keymap("n", "<M-S-h>", "<cmd>lua require('dap').continue()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-S-j>", "<cmd>lua require('dap').step_into()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-S-k>", "<cmd>lua require('dap').step_out()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-S-l>", "<cmd>lua require('dap').step_over()<CR>", { noremap = true, silent = true })

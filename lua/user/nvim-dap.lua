@@ -28,14 +28,6 @@ dap.adapters["pwa-chrome"] = {
 for i, ext in ipairs(exts) do
   dap.configurations[ext] = {
     {
-      type = 'pwa-node',
-      request = 'attach',
-      name = 'Attach Program (pwa-node)',
-      cwd = vim.fn.getcwd(),
-      processId = require('dap.utils').pick_process,
-      skipFiles = { '<node_internals>/**' },
-    },
-    {
       type = "pwa-node",
       request = "attach",
       name = "Auto Attach",
@@ -47,7 +39,15 @@ for i, ext in ipairs(exts) do
       name = "Launch Chrome with \"localhost\"",
       url = "http://localhost:3000",
       webRoot = "${workspaceFolder}"
-    }
+    },
+    {
+      type = 'pwa-node',
+      request = 'attach',
+      name = 'Attach Program (pwa-node)',
+      cwd = vim.fn.getcwd(),
+      processId = require('dap.utils').pick_process,
+      skipFiles = { '<node_internals>/**' },
+    },
   }
 end
 
