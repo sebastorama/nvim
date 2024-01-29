@@ -38,7 +38,6 @@ require("user.plugins")
   "user.ntree",
   "user.nvim-dap",
   "user.nvim-dap-ui",
-  "user.nvim-dap-virtual-text",
   "user.obsidian",
   "user.quickfix",
   "user.rust-tools",

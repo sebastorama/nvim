@@ -59,3 +59,11 @@ dapui.setup({
     max_type_length = nil, -- Can be integer or nil.
   },
 })
+
+--- option+k
+vim.api.nvim_set_keymap("n", "<M-CR>", "<cmd>lua require('dapui').eval()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-h>", "<cmd>lua require('dap').continue()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-j>", "<cmd>lua require('dap').step_into()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-k>", "<cmd>lua require('dap').step_out()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<M-l>", "<cmd>lua require('dap').step_over()<CR>", { noremap = true, silent = true })
+
