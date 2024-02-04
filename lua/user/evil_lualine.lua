@@ -209,7 +209,7 @@ ins_left({
     return msg
   end,
   icon = " ",
-  color = { fg = "#ffffff" },
+  color = { fg = "#666666" },
 })
 
 -- Add components to right sections
@@ -223,7 +223,7 @@ ins_right({
 ins_right({
   "fileformat",
   fmt = string.upper,
-  icons_enabled = false, -- I think icons are cool but Eviline doesn't have them. sigh
+  icons_enabled = true, -- I think icons are cool but Eviline doesn't have them. sigh
   color = { fg = colors.green, gui = "bold" },
 })
 
@@ -236,7 +236,7 @@ ins_right({
 ins_right({
   "diff",
   -- Is it me or the symbol for modified us really weird
-  symbols = { added = " ", modified = "柳 ", removed = " " },
+  symbols = { added = " ", modified = " ", removed = " " },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },
