@@ -20,12 +20,13 @@ local servers = {
   "html",
   "jsonls",
   "lua_ls",
-  "tsserver",
+  "tailwindcss",
+  "tsserver"
 }
 
-mason_lspconfig.setup({
+--[[ mason_lspconfig.setup({
   ensure_installed = servers,
-})
+}) ]]
 
 
 local lspconfig_ok, lspconfig = pcall(require, "lspconfig")

@@ -118,7 +118,8 @@ end
       "useStyles",
       fmt("const useStyles = createStyles((_theme, _params, _getRef) => {{\n  return {{ {} }}\n }});", { i(1) })
     ),
-    s("cjson", fmt("console.log(JSON.stringify({}, null, 2));", { i(1) })),
+    s("cjson", fmt("console.log(JSON.stringify({}, null, 2))", { i(1) })),
+    s("jss", fmt("JSON.stringify({}, null, 2)", { i(1) })),
 
     --   export type ExpandRecursively<T> = T extends (...args: infer A) => infer R
     -- ? (...args: ExpandRecursively<A>) => ExpandRecursively<R>

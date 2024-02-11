@@ -111,6 +111,10 @@ require("lazy").setup({
   "nvim-treesitter/nvim-treesitter-textobjects",
   "github/copilot.vim",
   "simrat39/rust-tools.nvim",
+  {
+    'stevearc/conform.nvim',
+    opts = {},
+  },
 
   -- NEORG
   {

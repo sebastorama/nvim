@@ -25,6 +25,7 @@ require("user.plugins")
   "user.cmp",
   "user.colorizer",
   "user.commands",
+  "user.conform",
   "user.dadbodui",
   "user.diffview",
   "user.evil_lualine",
@@ -50,7 +51,7 @@ require("user.plugins")
   "user.treesitter-textobjects",
   "user.ts-autotag",
   "user.which-key",
-  "user.color-rosepine",
+  "user.color-tokyonight-dark",
   "user.ufo"
 }
 

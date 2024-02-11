@@ -110,30 +110,6 @@ M.on_attach = function(client, bufnr)
   lsp_keymaps(bufnr)
   lsp_highlight_document(client)
 
-  if client.name == "tsserver" then
-    vim.cmd(
-      [[
-      augroup lsp_tsserver_format_on_save
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> lua require('user.lsp.handlers').format_if_not_present('eslint')
-      augroup END
-      ]],
-      false
-    )
-  end
-
-  if client.name == "eslint" then
-    vim.cmd(
-      [[
-      augroup lsp_eslint_format_on_save
-      autocmd! * <buffer>
-      autocmd BufWritePre <buffer> EslintFixAll
-      augroup END
-      ]],
-      false
-    )
-  end
-
   attach_navbuddy(client, bufnr)
 end
 
