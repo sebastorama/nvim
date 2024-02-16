@@ -1,5 +1,5 @@
 -- :help options
--- vim.opt.clipboard = "unnamedplus"               -- allows neovim to access the system clipboard
+
 vim.g.markdown_recommended_style = 0 -- disable markdown expandtab
 vim.opt.backup = false -- creates a backup file
 vim.opt.cmdheight = 1 -- stick to the standard thing
@@ -23,7 +23,6 @@ vim.opt.numberwidth = 2 -- set number column width to 2 {default 4}
 vim.opt.pumheight = 10 -- pop up menu height
 vim.opt.scrolloff = 8 -- is one of my fav
 vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
-vim.opt.shortmess:append("c")
 vim.opt.showmode = false -- we don't need to see things like -- INSERT -- anymore
 vim.opt.showtabline = 1 -- always show tabs
 vim.opt.sidescrolloff = 8
@@ -42,7 +41,7 @@ vim.opt.undofile = true -- enable persistent undo
 vim.opt.updatetime = 300 -- faster completion (4000ms default)
 vim.opt.wrap = false -- display lines as one long line
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
-
+vim.opt.shortmess:append({ I = true })
 vim.o.winbar = "%f%m%=%n"
 vim.o.laststatus = 3
 

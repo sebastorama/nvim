@@ -145,6 +145,7 @@ end
       )
     ),
     s("dops", fmt("docker ps {}", { c(1, { t("-a"), t("-a --format '{{.Names}}'") }) })),
+    s("njd", fmt("node --inspect-brk node_modules/.bin/jest --runInBand --watch {}", { i(1) })),
   },
 }, { key = "global_snippets" })
 

@@ -47,4 +47,8 @@ local skip_tags = {
 autotag.setup({
   filetypes = filetypes,
   skip_tags = skip_tags,
+  enable = true,
+  enable_rename = true,
+  enable_close = true,
+  enable_close_on_slash = true,
 })

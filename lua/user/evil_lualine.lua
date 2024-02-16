@@ -24,7 +24,7 @@ local dark_colors = {
 }
 
 local light_colors = {
-  bg       = "#CBCCCC",
+  bg       = "#ECD5BA",
   fg       = "#202328",
   yellow   = "#ECBE7B",
   cyan     = "#008080",

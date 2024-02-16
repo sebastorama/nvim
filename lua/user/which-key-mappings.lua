@@ -14,6 +14,7 @@ wk.register({
   d = {
     name = "Debug",
     b = { "<cmd>lua require'dap'.toggle_breakpoint()<CR>", "Toggle Breakpoint" },
+    B = { "<cmd>lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>", "Set Conditional Breakpoint" },
     c = { "<cmd>lua require'dap'.continue()<CR>", "Continue/Run" },
     d = { "<cmd>lua require'dapui'.eval()<CR>", "DapUI Eval" },
     u = { "<cmd>lua require'dapui'.toggle()<CR>", "DapUI Toggle" },
@@ -75,13 +76,13 @@ wk.register({
 
 wk.register({
   a = {
-    name = "Aerial",
-    a = { "<cmd>AerialToggle<CR>", "Diffview Open" },
+    "<cmd>AerialToggle<CR>", "Aerial Toggle"
   },
   d = {
     name = "Diffview",
     d = { "<cmd>DiffviewOpen<CR>", "Diffview Open" },
     c = { "<cmd>DiffviewClose<CR>", "Diffview Open" },
+    t = { "<cmd>DiffviewToggleFiles<CR>", "Diffview Toggle Files" },
   },
   b = {
     "<cmd>buffers<CR>", "Buffers (neovim native)"
