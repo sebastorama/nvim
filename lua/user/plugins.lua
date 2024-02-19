@@ -78,7 +78,7 @@ require("lazy").setup({
   "tjdevries/gruvbuddy.nvim",
   "navarasu/onedark.nvim",
   "Mofiqul/vscode.nvim",
-  "ayu-theme/ayu-vim",
+  "Shatur/neovim-ayu",
   "Th3Whit3Wolf/one-nvim",
   { "catppuccin/nvim", as = "catppuccin" },
   "shaunsingh/solarized.nvim",
@@ -122,18 +122,6 @@ require("lazy").setup({
     build = ":Neorg sync-parsers",
     dependencies = { "nvim-lua/plenary.nvim" },
     config = require("user.neorg").setup
-  },
-
-  -- Obsidian
-  {
-    "epwalsh/obsidian.nvim",
-    version = "*",
-    lazy = true,
-    ft = "markdown",
-    dependencies = {
-      -- Required.
-      "nvim-lua/plenary.nvim",
-    },
   },
 
   -- DAP
