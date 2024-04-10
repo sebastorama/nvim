@@ -29,7 +29,7 @@ require("lazy").setup({
   },
 
   -- GIT
-  { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim" },
+  { "TimUntersberger/neogit", dependencies = "nvim-lua/plenary.nvim", branch = "nightly" },
   { "sindrets/diffview.nvim", dependencies = "nvim-lua/plenary.nvim" },
 
   -- UI
@@ -114,14 +114,6 @@ require("lazy").setup({
   {
     'stevearc/conform.nvim',
     opts = {},
-  },
-
-  -- NEORG
-  {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" },
-    config = require("user.neorg").setup
   },
 
   -- DAP
