@@ -1,7 +1,7 @@
 return {
   {
     'ziontee113/neo-minimap',
-    event = 'BufEnter',
+    ft = { 'typescript', 'typescriptreact' },
     config = function()
       local nm = require('neo-minimap')
 

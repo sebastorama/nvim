@@ -1,7 +1,7 @@
 return {
   {
     'SmiteshP/nvim-navbuddy',
-    event = 'BufEnter',
+    cmd = 'NavBuddy',
     dependencies = {
       'neovim/nvim-lspconfig',
       'SmiteshP/nvim-navic',

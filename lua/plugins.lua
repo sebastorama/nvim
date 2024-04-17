@@ -4,21 +4,32 @@ return {
   { 'mfussenegger/nvim-lint', event = 'VeryLazy' },
   { 'tamago324/nlsp-settings.nvim', event = 'VeryLazy' }, -- language server settings defined in json for
   'nvim-lua/plenary.nvim',
-  { 'jose-elias-alvarez/typescript.nvim', event = 'VeryLazy' },
-  { 'github/copilot.vim', event = 'InsertEnter' },
+  {
+    'jose-elias-alvarez/typescript.nvim',
+    ft = { 'typescript', 'javascript', 'typescriptreact' },
+    config = function()
+      require('typescript').setup {
+        server = { -- pass options to lspconfig's setup method
+          on_attach = require('user.lsp.handlers').on_attach,
+          capabilities = require('user.lsp.handlers').capabilities,
+        },
+      }
+    end,
+  },
 
   -- DX
+  { 'github/copilot.vim', event = 'InsertEnter' },
   { 'kazhala/close-buffers.nvim', event = 'BufRead' },
   { 'tpope/vim-surround', event = 'InsertEnter' },
-  { 'folke/zen-mode.nvim', opts = {}, event = 'VeryLazy' },
+  { 'folke/zen-mode.nvim', opts = {}, cmd = 'ZenMode' },
   {
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
     end,
   },
-  { 'junegunn/vim-easy-align', event = 'VeryLazy' },
-  { 'mhinz/vim-grepper', event = 'VeryLazy' },
+  { 'junegunn/vim-easy-align', cmd = 'EasyAlign' },
+  { 'mhinz/vim-grepper', cmd = 'Grepper' },
   {
     'kyazdani42/nvim-tree.lua',
     event = 'VeryLazy',

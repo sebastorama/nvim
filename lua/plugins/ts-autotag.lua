@@ -1,28 +1,28 @@
+local filetypes = {
+  'html',
+  'javascript',
+  'typescript',
+  'javascriptreact',
+  'typescriptreact',
+  'svelte',
+  'vue',
+  'tsx',
+  'jsx',
+  'rescript',
+  'xml',
+  'php',
+  'markdown',
+  'glimmer',
+  'handlebars',
+  'hbs',
+}
+
 return {
   {
     'windwp/nvim-ts-autotag',
-    event = 'VeryLazy',
+    ft = filetypes,
     config = function()
       local autotag = require('nvim-ts-autotag')
-
-      local filetypes = {
-        'html',
-        'javascript',
-        'typescript',
-        'javascriptreact',
-        'typescriptreact',
-        'svelte',
-        'vue',
-        'tsx',
-        'jsx',
-        'rescript',
-        'xml',
-        'php',
-        'markdown',
-        'glimmer',
-        'handlebars',
-        'hbs',
-      }
 
       local skip_tags = {
         'area',

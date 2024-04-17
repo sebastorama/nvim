@@ -3,7 +3,7 @@ return {
     'TimUntersberger/neogit',
     dependencies = 'nvim-lua/plenary.nvim',
     branch = 'nightly',
-    event = 'VeryLazy',
+    cmd = 'Neogit',
     config = function()
       local neogit = require('neogit')
 

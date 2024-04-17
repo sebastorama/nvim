@@ -2,7 +2,6 @@ return {
   {
     'nvim-lualine/lualine.nvim',
     lazy = false,
-    priority = 999,
     config = function()
       local lualine = require('lualine')
       -- Color table for highlights

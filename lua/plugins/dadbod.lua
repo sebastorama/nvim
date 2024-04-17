@@ -1,7 +1,9 @@
+local filetypes = { 'sql', 'mysql', 'plsql' }
+
 return {
   {
     'tpope/vim-dadbod',
-    ft = { 'sql', 'mysql', 'plsql' },
+    ft = filetypes,
     config = function()
       vim.g.db_ui_use_nerd_fonts = 1
       vim.cmd [[
@@ -9,7 +11,7 @@ return {
       ]]
     end,
   },
-  { 'kristijanhusak/vim-dadbod-ui', event = 'VeryLazy' },
-  { 'kristijanhusak/vim-dadbod-completion', event = 'VeryLazy' },
-  { 'vim-scripts/dbext.vim', event = 'VeryLazy' },
+  { 'kristijanhusak/vim-dadbod-ui', ft = filetypes },
+  { 'kristijanhusak/vim-dadbod-completion', ft = filetypes },
+  { 'vim-scripts/dbext.vim', ft = filetypes },
 }

@@ -79,6 +79,8 @@ keymap('n', ',p', ':let @* = expand("%")<cr>', opts)
 keymap('n', '[b', ':bp<CR>', opts)
 keymap('n', ']b', ':bn<CR>', opts)
 
+keymap('n', '<localleader>z', ':ZenMode<CR>', opts)
+
 -- VISUAL
 
 -- Stay in ident mode

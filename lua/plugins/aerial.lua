@@ -1,7 +1,7 @@
 return {
   {
     'stevearc/aerial.nvim',
-    event = 'BufEnter',
+    cmd = { 'AerialOpen', 'AerialClose' },
     config = function()
       local aerial = require('aerial')
       aerial.setup {

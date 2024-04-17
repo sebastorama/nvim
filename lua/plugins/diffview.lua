@@ -2,7 +2,7 @@ return {
   {
     'sindrets/diffview.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
-    event = 'VeryLazy',
+    cmd = { 'DiffviewOpen', 'DiffviewClose', 'DiffviewFileHistory' },
     config = function()
       local diffview = require 'diffview'
       local diffview_config = require 'diffview.config'
