@@ -4,8 +4,8 @@ end
 
 PB = function(inspectable)
   local buffer = vim.api.nvim_create_buf(true, true)
-  vim.api.nvim_buf_set_lines(buffer, 0, 0, true, vim.split(string.rep(vim.inspect(inspectable), 1), "\n"))
-  vim.cmd([[vsplit]])
+  vim.api.nvim_buf_set_lines(buffer, 0, 0, true, vim.split(string.rep(vim.inspect(inspectable), 1), '\n'))
+  vim.cmd [[vsplit]]
   vim.api.nvim_win_set_buf(0, buffer)
 end
 
@@ -34,14 +34,14 @@ function shell_cmd_to_buf(cmd, bufno)
     if data then
       vim.api.nvim_buf_set_lines(bufno, -1, -1, false, data)
       vim.api.nvim_buf_call(bufno, function()
-        vim.cmd("$")
+        vim.cmd '$'
       end)
     end
   end
 
   local tail_buffer = function()
     vim.api.nvim_buf_call(bufno, function()
-      vim.cmd("$")
+      vim.cmd '$'
     end)
   end
 

@@ -1,13 +1,13 @@
 local M = {}
-local navbuddy = require("nvim-navbuddy")
+local navbuddy = require('nvim-navbuddy')
 
 -- TODO: backfill this to template
 M.setup = function()
   local signs = {
-    { name = "DiagnosticSignError", text = "", numhl = "DiagError" },
-    { name = "DiagnosticSignWarn", text = "", numhl = "DiagWarn" },
-    { name = "DiagnosticSignHint", text = "", numhl = "DiagHint" },
-    { name = "DiagnosticSignInfo", text = "", numhl = "DiagInfo" },
+    { name = 'DiagnosticSignError', text = '', numhl = 'DiagError' },
+    { name = 'DiagnosticSignWarn', text = '', numhl = 'DiagWarn' },
+    { name = 'DiagnosticSignHint', text = '', numhl = 'DiagHint' },
+    { name = 'DiagnosticSignInfo', text = '', numhl = 'DiagInfo' },
   }
 
   for _, sign in ipairs(signs) do
@@ -26,22 +26,22 @@ M.setup = function()
     severity_sort = true,
     float = {
       focusable = true,
-      style = "minimal",
-      border = "rounded",
-      source = "always",
-      header = "",
-      prefix = "",
+      style = 'minimal',
+      border = 'rounded',
+      source = 'always',
+      header = '',
+      prefix = '',
     },
   }
 
   vim.diagnostic.config(config)
 
-  vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-    border = "rounded",
+  vim.lsp.handlers['textDocument/hover'] = vim.lsp.with(vim.lsp.handlers.hover, {
+    border = 'rounded',
   })
 
-  vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-    border = "rounded",
+  vim.lsp.handlers['textDocument/signatureHelp'] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+    border = 'rounded',
   })
 end
 
@@ -71,33 +71,33 @@ end
 
 local function lsp_keymaps(bufnr)
   local opts = { noremap = true, silent = true, buffer = bufnr }
-  vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
-  vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-  vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-  vim.keymap.set("n", "<C-K>", vim.lsp.buf.signature_help, opts)
-  vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, opts)
-  vim.keymap.set("n", "gr", "<cmd>Telescope lsp_references<CR>", opts)
-  vim.keymap.set("n", "<leader>.", vim.lsp.buf.code_action, opts)
+  vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
+  vim.keymap.set('n', 'gd', vim.lsp.buf.definition, opts)
+  vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
+  vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
+  vim.keymap.set('n', '<C-K>', vim.lsp.buf.signature_help, opts)
+  vim.keymap.set('n', '<leader>r', vim.lsp.buf.rename, opts)
+  vim.keymap.set('n', 'gr', '<cmd>Telescope lsp_references<CR>', opts)
+  vim.keymap.set('n', '<leader>.', vim.lsp.buf.code_action, opts)
 
-  vim.keymap.set("n", "<c-p>", function()
-    vim.diagnostic.goto_prev({ border = "rounded" })
+  vim.keymap.set('n', '<c-p>', function()
+    vim.diagnostic.goto_prev({ border = 'rounded' })
   end, opts)
 
-  vim.keymap.set("n", "gl", function()
-    vim.diagnostic.open_float({ border = "rounded" })
+  vim.keymap.set('n', 'gl', function()
+    vim.diagnostic.open_float({ border = 'rounded' })
   end, opts)
 
-  vim.keymap.set("n", "<c-n>", function()
-    vim.diagnostic.goto_next({ border = "rounded" })
+  vim.keymap.set('n', '<c-n>', function()
+    vim.diagnostic.goto_next({ border = 'rounded' })
   end, opts)
 
-  vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, opts)
-  vim.cmd([[ command! Format execute "lua vim.lsp.buf.format({ async = true })" ]])
+  vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
+  vim.cmd [[ command! Format execute "lua vim.lsp.buf.format({ async = true })" ]]
 end
 
 local attach_navbuddy = function(client, bufnr)
-  local navbuddyClients = { "tsserver" }
+  local navbuddyClients = { 'tsserver' }
 
   for _, v in ipairs(navbuddyClients) do
     if client.name == v then
