@@ -1,7 +1,7 @@
 return {
   {
     'stevearc/conform.nvim',
-    event = 'BufWritePre',
+    ft = { 'javascript', 'typescript', 'typescriptreact', 'javascriptreact', 'python', 'lua' },
     opts = {},
     config = function()
       local conform = require('conform')
