@@ -18,7 +18,20 @@ return {
   },
 
   -- DX
-  { 'github/copilot.vim', event = 'InsertEnter' },
+  --  { 'github/copilot.vim', event = 'InsertEnter' },
+  {
+    'supermaven-inc/supermaven-nvim',
+    event = 'InsertEnter',
+    config = function()
+      require('supermaven-nvim').setup({
+        keymaps = {
+          accept_suggestion = '<M-i>',
+          accept_word = '<M-o>',
+          clear_suggestion = '<C-]>',
+        },
+      })
+    end,
+  },
   { 'kazhala/close-buffers.nvim', event = 'BufRead' },
   { 'tpope/vim-surround', event = 'InsertEnter' },
   { 'folke/zen-mode.nvim', opts = {}, cmd = 'ZenMode' },
@@ -34,7 +47,11 @@ return {
     'kyazdani42/nvim-tree.lua',
     event = 'VeryLazy',
     config = function()
-      require('nvim-tree').setup {}
+      require('nvim-tree').setup {
+        view = {
+          side = 'right',
+        },
+      }
     end,
   },
   { 'kyazdani42/nvim-web-devicons', event = 'VeryLazy' },
