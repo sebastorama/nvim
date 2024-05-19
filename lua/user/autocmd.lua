@@ -13,6 +13,10 @@ local function nvim_create_augroups(definitions)
 end
 
 local autocmds = {
+  global = {
+    { 'BufRead', 'env.*', 'setlocal filetype=sh' },
+    { 'BufNewFile', 'env.*', 'setlocal filetype=sh' },
+  },
   terminal_job = {
     { 'TermOpen', '*', [[tnoremap <buffer> <Esc> <c-\><c-n>]] },
     { 'TermOpen', '*', 'startinsert' },
