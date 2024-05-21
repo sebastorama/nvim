@@ -2,7 +2,6 @@ return {
   {
     'TimUntersberger/neogit',
     dependencies = 'nvim-lua/plenary.nvim',
-    branch = 'nightly',
     cmd = 'Neogit',
     config = function()
       local neogit = require('neogit')

@@ -23,9 +23,9 @@ return {
           floats = 'transparent', -- style for floating windows
         },
         sidebars = { 'qf', 'help' }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
-        day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
+        day_brightness = 0.1, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
         hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
-        dim_inactive = false, -- dims inactive windows
+        dim_inactive = true, -- dims inactive windows
         lualine_bold = false, -- When `true`, section headers in the lualine theme will be bold
         --- You can override specific color groups to use other groups or a hex color
         --- function will be called with a ColorScheme table
@@ -41,8 +41,7 @@ return {
       }
 
       vim.cmd [[set bg=dark]]
-      -- require("colorbuddy").colorscheme("gruvbuddy")
-      vim.cmd [[colorscheme tokyonight-storm]]
+      vim.cmd [[colorscheme tokyonight-moon]]
       vim.cmd [[hi TablineFill guibg=#222436]]
       vim.cmd [[hi TablineSel guifg=#e0af68 guibg=#222436]]
       vim.cmd [[hi Tabline guifg=#6874A9 guibg=#222436]]

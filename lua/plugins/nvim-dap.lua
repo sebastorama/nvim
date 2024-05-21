@@ -44,6 +44,7 @@ return {
             name = 'Launch Chrome with "localhost"',
             url = 'http://localhost:3000',
             webRoot = '${workspaceFolder}',
+            runtimeArgs = { '--disable-gpu' },
           },
           {
             type = 'pwa-node',
