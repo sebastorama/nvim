@@ -61,6 +61,7 @@ keymap('n', '<Left>', ':cp<CR>', opts)
 keymap('n', '<Right>', ':cn<CR>', opts)
 keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
 keymap('n', '<localleader><localleader>', ':nohl<CR>', opts)
+keymap('n', '<localleader>=', '<c-w>=', opts)
 keymap('n', '<leader><leader>s', ':source ~/.config/nvim/lua/user/luasnip.lua<CR>', opts)
 keymap('n', '<leader><leader>r', ':luafile %<CR>', opts)
 keymap(
@@ -75,7 +76,7 @@ keymap('n', '<localleader>cd', ':Copilot disable<CR>', opts)
 keymap('n', '<localleader>ce', ':Copilot enable<CR>', opts)
 keymap('n', '<localleader>e', ':Exp<CR>', opts)
 keymap('n', '<localleader>t', ':tabe term://zsh<CR>', opts)
-keymap('n', ',p', ':let @* = expand("%")<cr>', opts)
+keymap('n', ',p', ':let @+ = expand("%")<cr>', opts)
 keymap('n', '[b', ':bp<CR>', opts)
 keymap('n', ']b', ':bn<CR>', opts)
 
@@ -101,10 +102,10 @@ keymap('i', '<M-b>', '<Esc>bi', opts)
 keymap('i', '<M-d>', '<Esc>dw', opts)
 
 -- Copilot Mapping
--- vim.api.nvim_set_keymap('i', '<M-i>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
--- vim.g.copilot_no_tab_map = true
--- vim.g.copilot_assume_mapped = true
--- vim.g.copilot_tab_fallback = ''
+vim.api.nvim_set_keymap('i', '<M-i>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ''
 
 -- Mouse
 vim.api.nvim_set_keymap(
