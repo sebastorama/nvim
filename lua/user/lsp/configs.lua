@@ -14,13 +14,14 @@ local servers = {
   'html',
   'jsonls',
   'lua_ls',
+  'nil_ls',
   'tailwindcss',
   'tsserver',
 }
 
---[[ mason_lspconfig.setup({
+ mason_lspconfig.setup({
   ensure_installed = servers,
-}) ]]
+})
 
 -- Emmet support
 -- lsp_installer.setup({ ensure_installed = "emmet_ls" })

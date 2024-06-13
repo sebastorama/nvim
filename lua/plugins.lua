@@ -1,7 +1,7 @@
 return {
   -- LSP & TreeSitter
-  { 'neovim/nvim-lspconfig', event = 'VeryLazy' }, -- enable LSP
-  { 'mfussenegger/nvim-lint', event = 'VeryLazy' },
+  { 'neovim/nvim-lspconfig',        event = 'VeryLazy' }, -- enable LSP
+  { 'mfussenegger/nvim-lint',       event = 'VeryLazy' },
   { 'tamago324/nlsp-settings.nvim', event = 'VeryLazy' }, -- language server settings defined in json for
   'nvim-lua/plenary.nvim',
   {
@@ -18,7 +18,7 @@ return {
   },
 
   -- DX
-  { 'github/copilot.vim', event = 'InsertEnter' },
+  { 'github/copilot.vim',         event = 'InsertEnter' },
   -- {
   --   'supermaven-inc/supermaven-nvim',
   --   event = 'InsertEnter',
@@ -33,8 +33,8 @@ return {
   --   end,
   -- },
   { 'kazhala/close-buffers.nvim', event = 'BufRead' },
-  { 'tpope/vim-surround', event = 'InsertEnter' },
-  { 'folke/zen-mode.nvim', opts = {}, cmd = 'ZenMode' },
+  { 'tpope/vim-surround',         event = 'InsertEnter' },
+  { 'folke/zen-mode.nvim',        opts = {},            cmd = 'ZenMode' },
   {
     'numToStr/Comment.nvim',
     config = function()
@@ -42,7 +42,7 @@ return {
     end,
   },
   { 'junegunn/vim-easy-align', cmd = 'EasyAlign' },
-  { 'mhinz/vim-grepper', cmd = 'Grepper' },
+  { 'mhinz/vim-grepper',       cmd = 'Grepper' },
   {
     'kyazdani42/nvim-tree.lua',
     event = 'VeryLazy',
