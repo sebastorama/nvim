@@ -36,7 +36,7 @@ return {
         --- You can override specific highlights to use other groups or a hex color
         --- function will be called with a Highlights and ColorScheme table
         on_highlights = function(hl, colors)
-          local lines_fg = colors.gray;
+          local lines_fg = "#666666";
           hl.LineNr = {
             fg = colors.yellow
           }
@@ -46,7 +46,6 @@ return {
           hl.LineNrBelow = {
             fg = lines_fg
           }
-
           hl.GitGutterAddLineNr = {
             fg = lines_fg
           }
