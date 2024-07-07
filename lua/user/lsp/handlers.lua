@@ -1,25 +1,18 @@
 local M = {}
 local navbuddy = require('nvim-navbuddy')
 
--- TODO: backfill this to template
 M.setup = function()
-  local signs = {
-    { name = 'DiagnosticSignError', text = '', numhl = 'DiagError' },
-    { name = 'DiagnosticSignWarn', text = '', numhl = 'DiagWarn' },
-    { name = 'DiagnosticSignHint', text = '', numhl = 'DiagHint' },
-    { name = 'DiagnosticSignInfo', text = '', numhl = 'DiagInfo' },
-  }
-
-  for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name, { texthl = sign.name, text = sign.text, numhl = sign.numhl })
-  end
-
   local config = {
     -- enable/disable virtual text
     virtual_text = false,
     -- show signs
     signs = {
-      active = signs,
+      text = {
+        [vim.diagnostic.severity.ERROR] = "",
+        [vim.diagnostic.severity.WARN] = "",
+        [vim.diagnostic.severity.INFO] = "",
+        [vim.diagnostic.severity.HINT] = "",
+      }
     },
     update_in_insert = true,
     underline = true,
@@ -81,15 +74,15 @@ local function lsp_keymaps(bufnr)
   vim.keymap.set('n', '<leader>.', vim.lsp.buf.code_action, opts)
 
   vim.keymap.set('n', '<c-p>', function()
-    vim.diagnostic.goto_prev({ border = 'rounded' })
+    vim.diagnostic.jump({ count = -1, float = true })
   end, opts)
 
   vim.keymap.set('n', 'gl', function()
-    vim.diagnostic.open_float({ border = 'rounded' })
+    vim.diagnostic.open_float(nil, { focus = false })
   end, opts)
 
   vim.keymap.set('n', '<c-n>', function()
-    vim.diagnostic.goto_next({ border = 'rounded' })
+    vim.diagnostic.jump({ count = 1, float = true })
   end, opts)
 
   vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)

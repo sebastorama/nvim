@@ -19,8 +19,10 @@ local servers = {
   'tsserver',
 }
 
- mason_lspconfig.setup({
-  ensure_installed = servers,
+mason_lspconfig.setup({
+  ensure_installed = vim.tbl_filter(function(server)
+    return server ~= 'nil_ls' -- nil_ls installed by nix
+  end, servers),
 })
 
 -- Emmet support
