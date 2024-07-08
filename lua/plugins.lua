@@ -34,7 +34,7 @@ return {
   },
   { 'kazhala/close-buffers.nvim', event = 'BufRead' },
   { 'tpope/vim-surround',         event = 'InsertEnter' },
-  { 'folke/zen-mode.nvim',        opts = {},            cmd = 'ZenMode' },
+  { 'folke/zen-mode.nvim',        opts = { window = { width = 100 } }, cmd = 'ZenMode' },
   {
     'numToStr/Comment.nvim',
     config = function()
