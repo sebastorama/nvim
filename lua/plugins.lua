@@ -43,17 +43,6 @@ return {
   },
   { 'junegunn/vim-easy-align', cmd = 'EasyAlign' },
   { 'mhinz/vim-grepper', cmd = 'Grepper' },
-  {
-    'kyazdani42/nvim-tree.lua',
-    event = 'VeryLazy',
-    config = function()
-      require('nvim-tree').setup {
-        view = {
-          side = 'right',
-        },
-      }
-    end,
-  },
   { 'kyazdani42/nvim-web-devicons', event = 'VeryLazy' },
   {
     'norcalli/nvim-colorizer.lua',

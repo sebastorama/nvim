@@ -59,7 +59,7 @@ keymap('n', '+', ':vertical resize +3<CR>', opts)
 -- Misc Actions
 keymap('n', '<Left>', ':cp<CR>', opts)
 keymap('n', '<Right>', ':cn<CR>', opts)
-keymap('n', '<leader>e', ':NvimTreeToggle<CR>', opts)
+keymap('n', '<leader>e', ':Neotree toggle position=right<CR>', opts)
 keymap('n', '<localleader><localleader>', ':nohl<CR>', opts)
 keymap('n', '<localleader>=', '<c-w>=', opts)
 keymap('n', '<leader><leader>s', ':source ~/.config/nvim/lua/user/luasnip.lua<CR>', opts)

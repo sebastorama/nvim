@@ -181,7 +181,7 @@ return {
       },
       {
         ',b',
-        '<cmd>buffers<CR>',
+        '<cmd>Neotree toggle source=buffers position=right<CR>',
         desc = 'Buffers (neovim native)',
       },
       { ',d', group = 'Diffview' },
