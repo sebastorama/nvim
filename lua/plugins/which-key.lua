@@ -168,12 +168,6 @@ return {
         '<cmd>ObsidianRename<CR>',
         desc = 'Rename Note',
       },
-      { '<leader>t', group = 'Typescript' },
-      {
-        '<leader>to',
-        '<cmd>TypescriptOrganizeImports<CR>',
-        desc = 'Organize Imports',
-      },
       {
         ',a',
         '<cmd>AerialToggle<CR>',

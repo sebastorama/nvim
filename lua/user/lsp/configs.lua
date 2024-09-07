@@ -44,5 +44,9 @@ for _, server in pairs(servers) do
   if has_custom_opts then
     opts = vim.tbl_deep_extend('force', server_custom_opts, opts)
   end
-  lspconfig[server].setup(opts)
+  if server == 'tsserver' then
+    lspconfig['ts_ls'].setup(opts)
+  else
+    lspconfig[server].setup(opts)
+  end
 end
