@@ -90,7 +90,7 @@ local function lsp_keymaps(bufnr)
 end
 
 local attach_navbuddy = function(client, bufnr)
-  local navbuddyClients = { 'tsserver' }
+  local navbuddyClients = { 'ts_ls' }
 
   for _, v in ipairs(navbuddyClients) do
     if client.name == v then
