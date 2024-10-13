@@ -101,6 +101,9 @@ keymap('i', '<M-f>', '<Esc>wwi', opts)
 keymap('i', '<M-b>', '<Esc>bi', opts)
 keymap('i', '<M-d>', '<Esc>dw', opts)
 
+-- Terminal
+keymap('t', '<C-\\><C-\\>', '<C-\\><C-n><Esc>', opts)
+
 -- Copilot Mapping
 -- vim.api.nvim_set_keymap('i', '<M-i>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
 -- vim.g.copilot_no_tab_map = true
