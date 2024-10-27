@@ -42,7 +42,9 @@ return {
             type = 'pwa-chrome',
             request = 'launch',
             name = 'Launch Chrome with "localhost"',
-            url = 'http://localhost:3000',
+            url = function()
+              return vim.fn.input('Enter the url to open: ')
+            end,
             webRoot = '${workspaceFolder}',
             runtimeArgs = { '--disable-gpu' },
           },
