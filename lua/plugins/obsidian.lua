@@ -25,5 +25,8 @@ return {
         path = '~/obsidian/Main',
       },
     },
+    ui = {
+      enable = false,
+    },
   },
 }
