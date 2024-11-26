@@ -12,8 +12,8 @@ return {
           -- Conform will run multiple formatters sequentially
           python = { 'isort', 'black' },
           -- Use a sub-list to run only the first available formatter
-          javascript = { 'prettierd', 'eslintd' },
-          typescript = { 'prettierd', 'eslintd' },
+          javascript = { 'prettierd', 'eslint_d' },
+          typescript = { 'prettierd', 'eslint_d' },
           typescriptreact = { 'prettierd', 'eslint_d' },
           javascriptreact = { 'prettierd', 'eslint_d' },
         },
