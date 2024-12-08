@@ -11,12 +11,6 @@ keymap('c', '<C-o>', '%:p:h', opts)
 keymap('', '<F1>', '<Nop>', opts)
 keymap('n', '<F5>', ':cclose <cr>', opts)
 
--- Better window navigation
-keymap('n', '<C-h>', '<C-w>h', opts)
-keymap('n', '<C-j>', '<C-w>j', opts)
-keymap('n', '<C-k>', '<C-w>k', opts)
-keymap('n', '<C-l>', '<C-w>l', opts)
-
 keymap('n', '<leader>S', ':setlocal spell!<CR>', opts)
 
 -- Navigate tabs and buffers

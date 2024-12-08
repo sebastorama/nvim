@@ -12,14 +12,14 @@ return {
           -- Conform will run multiple formatters sequentially
           python = { 'isort', 'black' },
           -- Use a sub-list to run only the first available formatter
-          javascript = { 'prettierd', 'eslint_d' },
-          typescript = { 'prettierd', 'eslint_d' },
-          typescriptreact = { 'prettierd', 'eslint_d' },
-          javascriptreact = { 'prettierd', 'eslint_d' },
+          javascript = { 'prettier', 'eslint_d' },
+          typescript = { 'prettier', 'eslint_d' },
+          typescriptreact = { 'prettier', 'eslint_d' },
+          javascriptreact = { 'prettier', 'eslint_d' },
         },
         format_on_save = {
           -- These options will be passed to conform.format()
-          lsp_fallback = true,
+          lsp_fallback = false,
         },
       }
 
