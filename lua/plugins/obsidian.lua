@@ -18,15 +18,31 @@ return {
 
     -- see below for full list of optional dependencies 👇
   },
-  opts = {
-    workspaces = {
-      {
-        name = 'Main',
-        path = '~/obsidian/Main',
+
+  config = function()
+    require('obsidian').setup({
+      workspaces = {
+        {
+          name = 'Main',
+          path = '~/obsidian/Main',
+        },
       },
-    },
-    ui = {
-      enable = false,
-    },
-  },
+      ui = {
+        enable = false,
+      },
+    })
+
+    local opts = { noremap = true, silent = true }
+
+    Keymap('n', '<leader>ob', ':ObsidianBacklinks<CR>', opts)
+
+    -- gf follows links, or is passed through to the next handler if not a link
+    vim.keymap.set('n', 'gf', function()
+      if require('obsidian').util.cursor_on_markdown_link() then
+        return ':ObsidianFollowLink<CR>'
+      else
+        return 'gf'
+      end
+    end, opts)
+  end,
 }

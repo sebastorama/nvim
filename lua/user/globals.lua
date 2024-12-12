@@ -52,3 +52,5 @@ function shell_cmd_to_buf(cmd, bufno)
     on_exit = tail_buffer,
   })
 end
+
+Keymap = vim.api.nvim_set_keymap
