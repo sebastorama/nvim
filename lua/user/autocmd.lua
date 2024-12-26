@@ -16,6 +16,7 @@ local autocmds = {
   global = {
     { 'BufRead', 'env.*', 'setlocal filetype=sh' },
     { 'BufNewFile', 'env.*', 'setlocal filetype=sh' },
+    { 'CmdWinEnter', '*', 'startinsert' },
   },
   terminal_job = {
     { 'TermOpen', '*', [[tnoremap <buffer> <Esc> <c-\><c-n>]] },
