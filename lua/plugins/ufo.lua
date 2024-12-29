@@ -12,9 +12,10 @@ return {
       vim.o.foldlevelstart = 99
       vim.o.foldenable = true
 
+      local treesitter_fts = { 'norg', 'lua', 'markdown' }
       ufo.setup {
         provider_selector = function(bufnr, filetype, buftype)
-          if filetype == 'norg' or filetype == 'lua' then
+          if vim.tbl_contains(treesitter_fts, filetype) then
             return 'treesitter'
           end
           return { 'lsp', 'indent' }
