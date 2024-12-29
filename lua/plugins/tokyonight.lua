@@ -2,7 +2,7 @@ return {
   {
     'folke/tokyonight.nvim',
     lazy = false,
-    enabled = true,
+    enabled = false,
     config = function()
       local tokyonight = require('tokyonight')
 
