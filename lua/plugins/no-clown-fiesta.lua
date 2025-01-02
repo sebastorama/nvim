@@ -18,5 +18,5 @@ return {
   priority = 1000,
   config = config,
   lazy = false,
-  enabled = true,
+  enabled = false,
 }

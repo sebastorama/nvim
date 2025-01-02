@@ -2,7 +2,7 @@ return {
   {
     'folke/tokyonight.nvim',
     lazy = false,
-    enabled = false,
+    enabled = true,
     config = function()
       local tokyonight = require('tokyonight')
 
@@ -51,11 +51,7 @@ return {
           }
         end,
       }
-
-      vim.cmd [[set bg=dark]]
-      vim.cmd [[colorscheme tokyonight-moon]]
       vim.cmd [[hi Substitute guibg=#ffaaaa guifg=#666666]]
-
       vim.cmd [[hi RustInlayHints guifg=#535C7E]]
     end,
   },
