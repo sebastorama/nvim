@@ -19,8 +19,8 @@ Keymap('n', '<S-Left>', ':bn<CR>', opts)
 Keymap('n', '<S-Right>', ':bp<CR>', opts)
 
 -- Arrow keys for resizing
-Keymap('n', '<Up>', ':resize +3<CR>', opts)
-Keymap('n', '<Down>', ':resize -3<CR>', opts)
+Keymap('n', '<M-Up>', ':resize +3<CR>', opts)
+Keymap('n', '<M-Down>', ':resize -3<CR>', opts)
 
 -- Buffers
 Keymap('n', '<leader>bb', "<cmd>lua require('telescope.builtin').buffers({ layout_config={ width=0.5 }})<CR>", opts)
@@ -49,8 +49,6 @@ Keymap('n', '_', ':vertical resize -3<CR>', opts)
 Keymap('n', '+', ':vertical resize +3<CR>', opts)
 
 -- Misc Actions
-Keymap('n', '<Left>', ':cp<CR>', opts)
-Keymap('n', '<Right>', ':cn<CR>', opts)
 Keymap('n', '<leader>e', ':Neotree toggle<CR>', opts)
 Keymap('n', '<localleader><localleader>', ':nohl<CR>', opts)
 Keymap('n', '<localleader>=', '<c-w>=', opts)
