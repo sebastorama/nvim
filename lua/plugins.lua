@@ -21,7 +21,13 @@ return {
     end,
   },
   { 'kazhala/close-buffers.nvim', event = 'BufRead' },
-  { 'tpope/vim-surround', event = 'InsertEnter' },
+  {
+    'echasnovski/mini.surround',
+    version = false,
+    config = function()
+      require('mini.surround').setup()
+    end,
+  },
   { 'folke/zen-mode.nvim', opts = { window = { width = 100 } }, cmd = 'ZenMode' },
   {
     'numToStr/Comment.nvim',
