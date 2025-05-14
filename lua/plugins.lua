@@ -39,7 +39,7 @@ return {
   { 'mhinz/vim-grepper', cmd = 'Grepper' },
   { 'kyazdani42/nvim-web-devicons', event = 'VeryLazy' },
   {
-    'norcalli/nvim-colorizer.lua',
+    'catgoose/nvim-colorizer.lua',
     event = 'VeryLazy',
     config = function()
       require('colorizer').setup()
