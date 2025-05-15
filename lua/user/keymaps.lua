@@ -45,6 +45,8 @@ Keymap('n', '<localleader>9', ':set foldlevel=99<CR>', opts)
 -- Resize with arrows
 Keymap('n', '<C-S-Up>', ':resize +3<CR>', opts)
 Keymap('n', '<C-S-Down>', ':resize -3<CR>', opts)
+Keymap('n', '<C-S-Left>', ':vertical resize -3<CR>', opts)
+Keymap('n', '<C-S-Right>', ':vertical resize +3<CR>', opts)
 Keymap('n', '_', ':vertical resize -3<CR>', opts)
 Keymap('n', '+', ':vertical resize +3<CR>', opts)
 
