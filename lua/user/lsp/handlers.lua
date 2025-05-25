@@ -127,4 +127,32 @@ capabilities.textDocument.foldingRange = {
 
 M.capabilities = capabilities
 
+-- Function to manually detach duplicate LSP clients
+M.detach_duplicates = function()
+  local bufnr = vim.api.nvim_get_current_buf()
+  local clients = vim.lsp.get_clients({ bufnr = bufnr })
+  local seen_clients = {}
+  local detached = {}
+
+  for _, client in ipairs(clients) do
+    if seen_clients[client.name] then
+      vim.lsp.buf_detach_client(bufnr, client.id)
+      table.insert(detached, string.format('%s (id: %d)', client.name, client.id))
+    else
+      seen_clients[client.name] = true
+    end
+  end
+
+  if #detached > 0 then
+    vim.notify('Detached duplicate LSP clients: ' .. table.concat(detached, ', '), vim.log.levels.INFO)
+  else
+    vim.notify('No duplicate LSP clients found', vim.log.levels.INFO)
+  end
+end
+
+-- Create user command for manual duplicate cleanup
+vim.api.nvim_create_user_command('LspDetachDuplicates', M.detach_duplicates, {
+  desc = 'Detach duplicate LSP clients from current buffer',
+})
+
 return M
