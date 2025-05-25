@@ -1,5 +1,5 @@
 local mason = require('mason')
-local mason_lspconfig = require('mason-lspconfig')
+-- local mason_lspconfig = require('mason-lspconfig')
 local lspconfig = require('lspconfig')
 
 mason.setup()
@@ -19,11 +19,11 @@ local servers = {
   'ts_ls',
 }
 
-mason_lspconfig.setup({
-  ensure_installed = vim.tbl_filter(function(server)
-    return server ~= 'nil_ls' -- nil_ls installed by nix
-  end, servers),
-})
+-- mason_lspconfig.setup({
+--   ensure_installed = vim.tbl_filter(function(server)
+--     return server ~= 'nil_ls' -- nil_ls installed by nix
+--   end, servers),
+-- })
 
 -- Emmet support
 -- lsp_installer.setup({ ensure_installed = "emmet_ls" })
