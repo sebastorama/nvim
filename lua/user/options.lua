@@ -1,6 +1,7 @@
 -- :help options
 
 vim.g.markdown_recommended_style = 0 -- disable markdown expandtab
+vim.opt.autoread = true -- auto read when changed
 vim.opt.backup = false -- creates a backup file
 vim.opt.cmdheight = 1 -- stick to the standard thing
 vim.opt.completeopt = { 'menuone', 'noselect' } -- mostly just for cmp
@@ -44,6 +45,17 @@ vim.opt.writebackup = false -- if a file is being edited by another program (or 
 vim.opt.shortmess:append { I = true }
 vim.o.winbar = '%f%m%=%n'
 vim.o.laststatus = 3
+
+-- Timer to check for file changes every 500ms
+-- to use with external llm coding like claude code
+local timer = vim.loop.new_timer()
+timer:start(
+  500,
+  500,
+  vim.schedule_wrap(function()
+    vim.cmd('checktime')
+  end)
+)
 
 vim.cmd [[
   let g:vimwiki_list = [{ "path": "~/Dropbox/vimwiki/", "syntax": "markdown", "ext": ".md" }]
