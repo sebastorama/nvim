@@ -64,8 +64,8 @@ Keymap(
 )
 Keymap('n', '<leader><leader>/', ":lua require('spectre').open()<CR>", opts)
 Keymap('n', '<leader><leader>e', ':e <C-r>=expand("%:p:h")<CR>/', opts)
-Keymap('n', '<localleader>cd', ':Copilot disable<CR>', opts)
-Keymap('n', '<localleader>ce', ':Copilot enable<CR>', opts)
+-- Keymap('n', '<localleader>cd', ':Copilot disable<CR>', opts)
+-- Keymap('n', '<localleader>ce', ':Copilot enable<CR>', opts)
 Keymap('n', '<localleader>e', ':Oil<CR>', opts)
 Keymap('n', '<localleader>t', ':tabe term://zsh<CR>', opts)
 Keymap('n', ',p', ':let @+ = expand("%")<cr>', opts)
@@ -93,8 +93,13 @@ Keymap('i', '<M-f>', '<Esc>wwi', opts)
 Keymap('i', '<M-b>', '<Esc>bi', opts)
 Keymap('i', '<M-d>', '<Esc>dw', opts)
 
--- Terminal
-Keymap('t', '<C-\\><C-\\>', '<C-\\><C-n><Esc>', opts)
+-- Claude Code
+Keymap('n', '<F9>', ':ClaudeCode<CR>', opts)
+Keymap('i', '<F9>', '<Esc>:ClaudeCode<CR>', opts)
+Keymap('v', '<F9>', '<Esc>:ClaudeCode<CR>', opts)
+Keymap('t', '<F9>', '<C-\\><C-n>:ClaudeCode<CR>', opts)
+-- Copy filename and line range to * register
+Keymap('v', '<localleader>c', ':<C-u>let @* = "@" . expand("%:~:.") . "#L" . line("\'<") . "-" . line("\'>")<CR>', opts)
 
 -- Copilot Mapping
 -- vim.api.nvim_set_keymap('i', '<M-i>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
