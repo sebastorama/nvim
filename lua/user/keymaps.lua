@@ -98,8 +98,12 @@ Keymap('n', '<F9>', ':ClaudeCode<CR>', opts)
 Keymap('i', '<F9>', '<Esc>:ClaudeCode<CR>', opts)
 Keymap('v', '<F9>', '<Esc>:ClaudeCode<CR>', opts)
 Keymap('t', '<F9>', '<C-\\><C-n>:ClaudeCode<CR>', opts)
+
 -- Copy filename and line range to * register
 Keymap('v', '<localleader>c', ':<C-u>let @* = "@" . expand("%:~:.") . "#L" . line("\'<") . "-" . line("\'>")<CR>', opts)
+
+-- Convert tag to JSX Fragment
+Keymap('n', '<leader>jf', '%ldiw<C-o>diw', { noremap = false, silent = true })
 
 -- Copilot Mapping
 -- vim.api.nvim_set_keymap('i', '<M-i>', 'copilot#Accept("<CR>")', { silent = true, expr = true })
