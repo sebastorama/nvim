@@ -30,4 +30,32 @@ local autocmds = {
 }
 
 nvim_create_augroups(autocmds)
+
+-- Auto-reload routeTree.gen.ts when changed externally
+vim.api.nvim_create_autocmd("FileChangedShell", {
+  pattern = "**/src/routeTree.gen.ts",
+  callback = function()
+    -- Automatically choose to load the file
+    vim.v.fcs_choice = "reload"
+    -- Notify LSP about the file change
+    vim.schedule(function()
+      vim.cmd("silent! edit")
+      -- Force LSP to re-analyze the file
+      vim.lsp.buf_notify(0, "textDocument/didChange", {
+        textDocument = {
+          uri = vim.uri_from_bufnr(0),
+          version = vim.lsp.util.buf_versions[0] or 0
+        }
+      })
+    end)
+  end,
+})
+
+-- Also handle when the file is changed while we're focused on it
+vim.api.nvim_create_autocmd({"FocusGained", "BufEnter"}, {
+  pattern = "**/src/routeTree.gen.ts",
+  callback = function()
+    vim.cmd("silent! checktime")
+  end,
+})
 -- autocommands END
