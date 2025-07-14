@@ -67,30 +67,6 @@ return {
 
       --- option+k
       vim.api.nvim_set_keymap('n', '<M-CR>', "<cmd>lua require('dapui').eval()<CR>", { noremap = true, silent = true })
-      vim.api.nvim_set_keymap(
-        'n',
-        '<M-S-h>',
-        "<cmd>lua require('dap').continue()<CR>",
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        'n',
-        '<M-S-j>',
-        "<cmd>lua require('dap').step_into()<CR>",
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        'n',
-        '<M-S-k>',
-        "<cmd>lua require('dap').step_out()<CR>",
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        'n',
-        '<M-S-l>',
-        "<cmd>lua require('dap').step_over()<CR>",
-        { noremap = true, silent = true }
-      )
     end,
   },
 }

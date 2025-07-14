@@ -89,9 +89,9 @@ Keymap('i', '<C-f>', '<Right>', opts)
 Keymap('i', '<C-b>', '<Left>', opts)
 
 -- Option Do stuff like emacs in insert mode
-Keymap('i', '<M-f>', '<Esc>wwi', opts)
+Keymap('i', '<M-f>', '<Esc>lwwi', opts)
 Keymap('i', '<M-b>', '<Esc>bi', opts)
-Keymap('i', '<M-d>', '<Esc>dw', opts)
+Keymap('i', '<M-d>', '<Esc>ldwi', opts)
 
 -- Claude Code
 Keymap('n', '<F9>', ':ClaudeCode<CR>', opts)

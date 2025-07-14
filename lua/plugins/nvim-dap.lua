@@ -87,6 +87,13 @@ return {
         'DapStopped',
         { text = '', texthl = 'DapStoppedNum', linehl = 'DapStoppedLine', numhl = 'DapStoppedNum' }
       )
+
+      -- Keymaps
+      local opts = { noremap = true, silent = true }
+      Keymap('n', '<M-S-h>', "<cmd>lua require('dap').continue()<CR>", { noremap = true, silent = true })
+      Keymap('n', '<M-S-j>', "<cmd>lua require('dap').step_into()<CR>", { noremap = true, silent = true })
+      Keymap('n', '<M-S-k>', "<cmd>lua require('dap').step_out()<CR>", { noremap = true, silent = true })
+      Keymap('n', '<M-S-l>', "<cmd>lua require('dap').step_over()<CR>", { noremap = true, silent = true })
     end,
   },
 }
