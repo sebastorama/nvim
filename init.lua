@@ -21,4 +21,4 @@ require('user.commands')
 require('lazy').setup('plugins')
 require('user.lsp')
 
-vim.cmd [[colorscheme tokyonight ]]
+vim.cmd [[colorscheme carbonfox]]
