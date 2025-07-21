@@ -71,3 +71,12 @@ vim.cmd [[set foldmethod=indent]]
 
 vim.cmd [[let g:ftplugin_sql_omni_key = '<C-s>']]
 vim.cmd [[packadd cfilter]]
+
+-- Make matching braces more visible
+vim.opt.showmatch = true -- Show matching brackets/parenthesis
+vim.opt.matchtime = 2 -- Tenths of a second to show the matching brace
+
+-- Highlight matching brackets with better visibility
+vim.cmd [[
+  highlight MatchParen cterm=bold ctermbg=none ctermfg=red guibg=#44475a guifg=#ff79c6
+]]

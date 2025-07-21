@@ -156,6 +156,31 @@ end
       luasnip.add_snippets('all', {
         s('ck', fmt('{}', t('✅'))),
         s('uck', fmt('{}', t('❌'))),
+        s(
+          'dmy',
+          fmt(
+            '{}',
+            f(function()
+              local date = os.date('%d/%m/%Y')
+              print(date) -- This will print to Neovim's messages
+              return date
+            end)
+          )
+        ),
+        s(
+          'isod',
+          fmt(
+            '{}',
+            c(1, {
+              f(function()
+                return os.date('%Y-%m-%d')
+              end),
+              f(function()
+                return os.date('%Y%m%d')
+              end),
+            })
+          )
+        ),
       })
     end,
   },

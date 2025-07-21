@@ -1,6 +1,4 @@
 require('user.globals')
-
-require('user.options')
 -- Lazy nvim setup
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
@@ -19,6 +17,6 @@ require('user.keymaps')
 require('user.autocmd')
 require('user.commands')
 require('lazy').setup('plugins')
+vim.cmd [[colorscheme tokyonight]]
+require('user.options')
 require('user.lsp')
-
-vim.cmd [[colorscheme carbonfox]]
