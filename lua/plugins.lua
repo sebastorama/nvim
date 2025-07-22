@@ -36,7 +36,7 @@ return {
     end,
   },
   { 'junegunn/vim-easy-align', cmd = 'EasyAlign' },
-  { 'mhinz/vim-grepper', cmd = 'Grepper' },
+  { 'mhinz/vim-grepper', event = 'VeryLazy' },
   { 'kyazdani42/nvim-web-devicons', event = 'VeryLazy' },
   {
     'catgoose/nvim-colorizer.lua',
