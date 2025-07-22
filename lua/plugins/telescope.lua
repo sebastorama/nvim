@@ -1,3 +1,5 @@
+local WIDTH_THRESHOLD = 140
+
 return {
   {
     'nvim-telescope/telescope.nvim',
@@ -15,10 +17,15 @@ return {
           -- Default configuration for telescope goes here:
           -- config_key = value,
           layout_config = {
-            horizontal = { width = 0.99 },
-            -- other layout configuration here
+            vertical = {
+              width = 0.9,
+              height = 0.9,
+              preview_cutoff = 1,
+              prompt_position = 'bottom',
+              mirror = false,
+            },
           },
-          layout_strategy = 'horizontal',
+          layout_strategy = 'vertical',
           mappings = {},
           border = true,
           vimgrep_arguments = {
@@ -45,10 +52,7 @@ return {
             previewer = false,
             border = true,
           },
-          lsp_references = {
-            disable_coordinates = true,
-            show_line = false,
-          },
+
           -- Default configuration for builtin pickers goes here:
           -- picker_name = {
           --   picker_config_key = value,
