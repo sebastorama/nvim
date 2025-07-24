@@ -51,6 +51,7 @@ Keymap('n', '_', ':vertical resize -3<CR>', opts)
 Keymap('n', '+', ':vertical resize +3<CR>', opts)
 
 -- Misc Actions
+Keymap('n', '<localleader>a', ':AerialToggle<CR>', opts)
 Keymap('n', '<leader>e', ':Neotree toggle<CR>', opts)
 Keymap('n', '<localleader><localleader>', ':nohl<CR>', opts)
 Keymap('n', '<localleader>=', '<c-w>=', opts)
