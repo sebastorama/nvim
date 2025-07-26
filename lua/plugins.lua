@@ -38,11 +38,4 @@ return {
   { 'junegunn/vim-easy-align', cmd = 'EasyAlign' },
   { 'mhinz/vim-grepper', event = 'VeryLazy' },
   { 'kyazdani42/nvim-web-devicons', event = 'VeryLazy' },
-  {
-    'catgoose/nvim-colorizer.lua',
-    event = 'VeryLazy',
-    config = function()
-      require('colorizer').setup()
-    end,
-  },
 }
