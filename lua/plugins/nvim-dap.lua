@@ -30,6 +30,19 @@ return {
         args = { vim.fn.stdpath('data') .. '/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js', '${port}' },
       }
 
+      dap.adapters['pwa-msedge'] = {
+        type = 'server',
+        host = 'localhost',
+        port = '${port}',
+        executable = {
+          command = 'node',
+          args = {
+            vim.fn.stdpath('data') .. '/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js',
+            '${port}',
+          },
+        },
+      }
+
       for i, ext in ipairs(exts) do
         dap.configurations[ext] = {
           {
@@ -37,6 +50,17 @@ return {
             request = 'attach',
             name = 'Auto Attach',
             cwd = vim.fn.getcwd(),
+          },
+          {
+            type = 'pwa-msedge',
+            request = 'launch',
+            name = 'Launch Edge with "localhost"',
+            url = function()
+              return vim.fn.input('Enter the url to open: ')
+            end,
+            webRoot = '${workspaceFolder}',
+            runtimeExecutable = '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
+            runtimeArgs = { '--disable-gpu' },
           },
           {
             type = 'pwa-chrome',
