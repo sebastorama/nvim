@@ -56,7 +56,11 @@ return {
             request = 'launch',
             name = 'Launch Edge with "localhost"',
             url = function()
-              return vim.fn.input('Enter the url to open: ')
+              local url = vim.fn.input('Enter the url to open: ', 'http://localhost:3000')
+              if not url:match('^https?://') then
+                url = 'http://' .. url
+              end
+              return url
             end,
             webRoot = '${workspaceFolder}',
             runtimeExecutable = '/Applications/Microsoft Edge.app/Contents/MacOS/Microsoft Edge',
@@ -67,7 +71,11 @@ return {
             request = 'launch',
             name = 'Launch Chrome with "localhost"',
             url = function()
-              return vim.fn.input('Enter the url to open: ')
+              local url = vim.fn.input('Enter the url to open: ', 'http://localhost:3000')
+              if not url:match('^https?://') then
+                url = 'http://' .. url
+              end
+              return url
             end,
             webRoot = '${workspaceFolder}',
             runtimeArgs = { '--disable-gpu' },
