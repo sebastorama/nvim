@@ -160,12 +160,12 @@ return {
       { '<leader>o', group = 'Obsidian' },
       {
         '<leader>on',
-        '<cmd>ObsidianNew<CR>',
+        '<cmd>Obsidian new<CR>',
         desc = 'New Note',
       },
       {
         '<leader>or',
-        '<cmd>ObsidianRename<CR>',
+        '<cmd>Obsidian rename<CR>',
         desc = 'Rename Note',
       },
       {

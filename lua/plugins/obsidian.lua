@@ -31,17 +31,19 @@ return {
       daily_notes = {
         folder = 'daily/',
       },
+
+      legacy_commands = false,
     })
 
     local opts = { noremap = true, silent = true }
 
-    Keymap('n', '<leader>ob', ':ObsidianBacklinks<CR>', opts)
-    Keymap('n', '<leader>od', ':ObsidianDailies<CR>', opts)
+    Keymap('n', '<leader>ob', ':Obsidian backlinks<CR>', opts)
+    Keymap('n', '<leader>od', ':Obsidian dailies<CR>', opts)
 
     -- gf follows links, or is passed through to the next handler if not a link
     vim.keymap.set('n', 'gf', function()
       if require('obsidian').util.cursor_on_markdown_link() then
-        return ':ObsidianFollowLink<CR>'
+        return ':Obsidian follow_link<CR>'
       else
         return 'gf'
       end
