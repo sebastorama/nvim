@@ -1,6 +1,6 @@
 local mason = require('mason')
 -- local mason_lspconfig = require('mason-lspconfig')
-local lspconfig = require('lspconfig')
+local lsp = vim.lsp
 
 mason.setup()
 
@@ -27,11 +27,12 @@ local servers = {
 
 -- Emmet support
 -- lsp_installer.setup({ ensure_installed = "emmet_ls" })
-lspconfig.emmet_ls.setup {
+lsp.config('emmet_ls', {
   on_attach = require('user.lsp.handlers').on_attach,
   capabilities = require('user.lsp.handlers').capabilities,
   filetypes = { 'html', 'typescriptreact', 'javascriptreact', 'css', 'sass', 'scss', 'less' },
-}
+})
+lsp.enable('emmet_ls')
 
 for _, server in pairs(servers) do
   local opts = {
@@ -44,5 +45,6 @@ for _, server in pairs(servers) do
   if has_custom_opts then
     opts = vim.tbl_deep_extend('force', server_custom_opts, opts)
   end
-  lspconfig[server].setup(opts)
+  lsp.config(server, opts)
+  lsp.enable(server)
 end
