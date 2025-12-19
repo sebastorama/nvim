@@ -4,6 +4,9 @@ return {
     opts = {
       -- add any options here
       cli = {
+        nes = {
+          enabled = false,
+        },
         mux = {
           backend = 'tmux',
           enabled = true,
