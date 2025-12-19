@@ -1,7 +1,9 @@
 return {
   {
     'nvim-treesitter/nvim-treesitter',
-    lazy = 'false',
+    branch = 'master',  -- Use stable master branch instead of rewritten main
+    build = ':TSUpdate',
+    lazy = false,
     config = function()
       local configs = require('nvim-treesitter.configs')
 
