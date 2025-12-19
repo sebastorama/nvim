@@ -13,8 +13,6 @@
   "cmp-spell": { "branch": "master", "commit": "694a4e50809d6d645c1ea29015dad0c293f019d6" },
   "cmp_luasnip": { "branch": "master", "commit": "98d9cb5c2c38532bd9bdb481067b20fea8f32e90" },
   "conform.nvim": { "branch": "master", "commit": "9b8fa5e0b78168f68bee9bf886dc20f287c61e02" },
-  "copilot-lsp": { "branch": "main", "commit": "884034b23c3716d55b417984ad092dc2b011115b" },
-  "copilot.lua": { "branch": "master", "commit": "508d8b00390ff3046323f61187a57069910c6e17" },
   "dbext.vim": { "branch": "master", "commit": "14f3d530b6189dc3f97edfa70b7a36006e21148c" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
   "gitsigns.nvim": { "branch": "main", "commit": "5813e4878748805f1518cee7abb50fd7205a3a48" },
