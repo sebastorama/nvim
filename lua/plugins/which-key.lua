@@ -76,6 +76,11 @@ return {
         desc = 'Find File',
       },
       {
+        '<leader>f ',
+        '<cmd>Telescope find_files hidden=true no_ignore=true<CR>',
+        desc = 'Find File',
+      },
+      {
         '<leader>fg',
         '<cmd>Telescope git_files hidden=true<CR>',
         desc = 'Find GIT files',
