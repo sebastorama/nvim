@@ -27,8 +27,6 @@ Keymap('n', '<leader>bb', "<cmd>lua require('telescope.builtin').buffers({ layou
 Keymap('n', '<leader>bd', ':bp | sp | bn | bd<CR>', opts)
 Keymap('n', '<localleader>d', ':bp | sp | bn | bd<CR>', opts)
 Keymap('n', '<leader>bD', ':%bd|e#<CR>', opts)
-Keymap('n', '<localleader>n', ':bn<CR>', opts)
-Keymap('n', '<localleader>p', ':bp<CR>', opts)
 Keymap('n', '<localleader>b', ':BDelete ', opts)
 
 -- Folding
@@ -69,7 +67,7 @@ Keymap('n', '<leader><leader>e', ':e <C-r>=expand("%:p:h")<CR>/', opts)
 -- Keymap('n', '<localleader>ce', ':Copilot enable<CR>', opts)
 Keymap('n', '<localleader>e', ':Oil<CR>', opts)
 Keymap('n', '<localleader>t', ':tabe term://zsh<CR>', opts)
-Keymap('n', ',p', ':let @+ = expand("%")<cr>', opts)
+Keymap('n', '<localleader>p', ':let @+ = expand("%")<cr>', opts)
 Keymap('n', '[b', ':bp<CR>', opts)
 Keymap('n', ']b', ':bn<CR>', opts)
 
