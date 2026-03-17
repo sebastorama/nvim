@@ -19,9 +19,11 @@ local autocmds = {
     { 'CmdWinEnter', '*', 'startinsert' },
   },
   terminal_job = {
-    { 'TermOpen', '*', [[tnoremap <buffer> <Esc> <c-\><c-n>]] },
+    { 'TermOpen', '*', [[tnoremap <buffer> <Esc><Esc> <c-\><c-n>]] },
     { 'TermOpen', '*', 'startinsert' },
     { 'TermOpen', '*', 'setlocal listchars= nonumber norelativenumber' },
+    { 'TermEnter', '*', 'setlocal timeoutlen=100' },
+    { 'TermLeave', '*', 'set timeoutlen=1000' },
   },
   remember_folds = {
     { 'BufwinLeave', '*.*', 'mkview' },
