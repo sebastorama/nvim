@@ -8,6 +8,7 @@ vim.api.nvim_create_user_command('Dfh', function(values)
 end, { nargs = '*' })
 
 vim.api.nvim_create_user_command('Dc', 'DiffviewClose', { nargs = 0 })
+vim.api.nvim_create_user_command('Dd', 'DiffviewToggleFiles', { nargs = 0 })
 
 vim.api.nvim_create_user_command('Do', function(values)
   if values.args == nil then

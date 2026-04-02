@@ -61,13 +61,5 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter' }, {
   end,
 })
 
--- Fold Level 0 on aerial buffer open
--- ft=aerial
-vim.api.nvim_create_autocmd({ 'BufEnter' }, {
-  callback = function()
-    if vim.bo.ft == 'aerial' then
-      vim.cmd('setlocal foldlevel=0')
-    end
-  end,
-})
+
 -- autocommands END
