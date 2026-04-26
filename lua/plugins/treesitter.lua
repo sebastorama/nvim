@@ -18,6 +18,14 @@ return {
       }
       require('nvim-treesitter').install(parsers)
 
+      -- Drop the latex injection from markdown_inline so $...$ doesn't
+      -- get re-highlighted by the latex parser (collides with R$ currency).
+      vim.treesitter.query.set('markdown_inline', 'injections', [[
+((html_tag) @injection.content
+  (#set! injection.language "html")
+  (#set! injection.combined))
+      ]])
+
       vim.api.nvim_create_autocmd('FileType', {
         callback = function(ev)
           local ft = ev.match
