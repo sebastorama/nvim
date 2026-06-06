@@ -22,7 +22,7 @@ local autocmds = {
     { 'TermOpen', '*', [[tnoremap <buffer> <Esc><Esc> <c-\><c-n>]] },
     { 'TermOpen', '*', 'startinsert' },
     { 'TermOpen', '*', 'setlocal listchars= nonumber norelativenumber' },
-    { 'TermEnter', '*', 'setlocal timeoutlen=100' },
+    { 'TermEnter', '*', 'setlocal timeoutlen=300' },
     { 'TermLeave', '*', 'set timeoutlen=1000' },
   },
   remember_folds = {
