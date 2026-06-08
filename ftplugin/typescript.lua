@@ -4,7 +4,7 @@ vim.cmd [[set foldmethod=expr]]
 local function fix_all_eslint()
   -- Ensure eslint LSP client is attached before requesting actions
   local has_eslint = false
-  for _, client in ipairs(vim.lsp.get_active_clients({ bufnr = 0 })) do
+  for _, client in ipairs(vim.lsp.get_clients({ bufnr = 0 })) do
     if client.name == 'eslint' then
       has_eslint = true
       break
