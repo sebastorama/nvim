@@ -24,10 +24,16 @@ return {
       }
 
       dap.adapters['pwa-chrome'] = {
-        type = 'executable',
-        command = 'node',
+        type = 'server',
+        host = 'localhost',
         port = '${port}',
-        args = { vim.fn.stdpath('data') .. '/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js', '${port}' },
+        executable = {
+          command = 'node',
+          args = {
+            vim.fn.stdpath('data') .. '/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js',
+            '${port}',
+          },
+        },
       }
 
       dap.adapters['pwa-msedge'] = {
