@@ -1,3 +1,7 @@
+local function stage_selected_hunk()
+  require('gitsigns').stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+end
+
 return {
   {
     'folke/which-key.nvim',
@@ -103,8 +107,25 @@ return {
       },
       {
         '<leader>gs',
-        '<cmd>DiffviewOpen<CR>',
-        desc = 'File History',
+        '<cmd>Gitsigns stage_hunk<CR>',
+        desc = 'Stage Hunk',
+      },
+      {
+        '<leader>gs',
+        stage_selected_hunk,
+        desc = 'Stage Selected Hunk',
+        mode = 'v',
+      },
+      {
+        '<leader>gu',
+        '<cmd>Gitsigns stage_hunk<CR>',
+        desc = 'Unstage Hunk',
+      },
+      {
+        '<leader>gu',
+        stage_selected_hunk,
+        desc = 'Unstage Selected Hunk',
+        mode = 'v',
       },
       {
         '<leader>gx',

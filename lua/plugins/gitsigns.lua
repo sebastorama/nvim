@@ -4,6 +4,22 @@ return {
     event = 'BufEnter',
     config = function()
       local gitsigns = require('gitsigns')
+      local color = require('gitsigns.color')
+
+      local function highlight_staged_signs()
+        local visual_background = vim.api.nvim_get_hl(0, { name = 'Visual', link = false }).bg
+        local normal_background = vim.api.nvim_get_hl(0, { name = 'Normal', link = false }).bg
+          or vim.api.nvim_get_color_by_name(vim.g.terminal_color_0 or '#000000')
+        local staged_background =
+          color.rgb_to_int(color.blend(color.int_to_rgb(normal_background), color.int_to_rgb(visual_background), 0.45))
+
+        for _, type in ipairs { 'Add', 'Change', 'Delete', 'Topdelete', 'Changedelete' } do
+          local highlight = vim.api.nvim_get_hl(0, { name = 'GitSigns' .. type, link = false })
+          highlight.bg = staged_background
+          highlight.bold = true
+          vim.api.nvim_set_hl(0, 'GitSignsStaged' .. type, highlight)
+        end
+      end
 
       gitsigns.setup {
         signs = {
@@ -14,6 +30,14 @@ return {
           changedelete = { text = '~' },
           untracked = { text = '┆' },
         },
+        signs_staged = {
+          add = { text = '┃' },
+          change = { text = '┃' },
+          delete = { text = '▁' },
+          topdelete = { text = '▔' },
+          changedelete = { text = '≈' },
+        },
+        signs_staged_enable = true,
         signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
         numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
         linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
@@ -44,6 +68,12 @@ return {
           col = 1,
         },
       }
+
+      highlight_staged_signs()
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        group = vim.api.nvim_create_augroup('gitsigns_staged_highlights', { clear = true }),
+        callback = highlight_staged_signs,
+      })
     end,
   },
 }
