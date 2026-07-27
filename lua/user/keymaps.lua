@@ -120,9 +120,11 @@ vim.api.nvim_set_keymap(
   '<LeftMouse><cmd>lua vim.lsp.buf.hover({border = "single"})<CR>',
   { noremap = true, silent = true }
 )
-vim.api.nvim_set_keymap(
-  'n',
-  '<RightMouse>',
-  '<LeftMouse><cmd>lua vim.lsp.buf.definition()<CR>',
-  { noremap = true, silent = true }
-)
+vim.cmd [[
+  nnoremenu <silent> .10 PopUp.Stage\ Hunk <Cmd>Gitsigns stage_hunk<CR>
+  nnoremenu <silent> .20 PopUp.Unstage\ Hunk <Cmd>Gitsigns stage_hunk<CR>
+  nnoremenu <silent> .30 PopUp.Preview\ Hunk\ Inline <Cmd>Gitsigns preview_hunk_inline<CR>
+  vnoremenu <silent> .10 PopUp.Stage\ Selected\ Hunk <Cmd>lua require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })<CR>
+  vnoremenu <silent> .20 PopUp.Unstage\ Selected\ Hunk <Cmd>lua require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })<CR>
+  vnoremenu <silent> .30 PopUp.Preview\ Hunk\ Inline <Cmd>Gitsigns preview_hunk_inline<CR>
+]]

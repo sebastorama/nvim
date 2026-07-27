@@ -18,6 +18,7 @@ vim.opt.ignorecase = false -- ignore case in search patterns
 vim.opt.list = true
 vim.opt.listchars = { trail = '‿', tab = ' ⇝', eol = '¬' }
 vim.opt.mouse = 'a' -- allow the mouse to be used in neovim
+vim.opt.mousemodel = 'popup_setpos' -- move the cursor and open PopUp on right-click
 vim.opt.number = true -- set numbered lines
 vim.opt.relativenumber = true -- set relative numbered lines
 vim.opt.numberwidth = 2 -- set number column width to 2 {default 4}
