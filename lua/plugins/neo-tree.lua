@@ -8,6 +8,37 @@ return {
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   config = function()
+    local context_state
+
+    vim.api.nvim_create_user_command('NeoTreeContextAction', function(args)
+      local state = context_state
+      local action = state and state.commands[args.args]
+      if not action then
+        return
+      end
+
+      -- Menu actions run while :popup is still active. Defer them until it closes,
+      -- otherwise commands that prompt or change windows fail with E565.
+      vim.schedule(function()
+        if not vim.api.nvim_win_is_valid(state.winid) then
+          return
+        end
+
+        vim.api.nvim_set_current_win(state.winid)
+        action(state)
+      end)
+    end, { nargs = 1, force = true })
+
+    vim.cmd [[
+      silent! aunmenu PopUp.How-to\ disable\ mouse
+      silent! aunmenu ]NeoTree
+      nnoremenu <silent> .10 ]NeoTree.Stage <Cmd>NeoTreeContextAction git_add_file<CR>
+      nnoremenu <silent> .20 ]NeoTree.Unstage <Cmd>NeoTreeContextAction git_unstage_file<CR>
+      nnoremenu <silent> .30 ]NeoTree.Rename <Cmd>NeoTreeContextAction rename<CR>
+      nnoremenu <silent> .40 ]NeoTree.Delete <Cmd>NeoTreeContextAction delete<CR>
+      nnoremenu <silent> .50 ]NeoTree.Refresh <Cmd>NeoTreeContextAction refresh<CR>
+    ]]
+
     require('neo-tree').setup({
       close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
       popup_border_style = 'NC', -- or "" to use 'winborder' on Neovim v0.11+
@@ -114,7 +145,25 @@ return {
       -- A list of functions, each representing a global custom command
       -- that will be available in all sources (if not overridden in `opts[source_name].commands`)
       -- see `:h neo-tree-custom-commands-global`
-      commands = {},
+      commands = {
+        context_menu = function(state)
+          local mouse = vim.fn.getmousepos()
+          if mouse.winid ~= state.winid or mouse.line < 1 then
+            return
+          end
+
+          vim.api.nvim_set_current_win(mouse.winid)
+          vim.api.nvim_win_set_cursor(mouse.winid, { mouse.line, math.max(mouse.column - 1, 0) })
+
+          local node = state.tree:get_node()
+          if not node or node.type == 'message' then
+            return
+          end
+
+          context_state = state
+          vim.cmd 'popup! ]NeoTree'
+        end,
+      },
       window = {
         position = 'left',
         width = 40,
@@ -238,6 +287,7 @@ return {
         -- instead of relying on nvim autocmd events.
         window = {
           mappings = {
+            ['<RightMouse>'] = 'context_menu',
             ['<bs>'] = 'navigate_up',
             ['.'] = 'set_root',
             ['H'] = 'toggle_hidden',
