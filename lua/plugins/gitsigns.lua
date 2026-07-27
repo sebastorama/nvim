@@ -25,17 +25,17 @@ return {
         signs = {
           add = { text = '│' },
           change = { text = '│' },
-          delete = { text = '_' },
-          topdelete = { text = '‾' },
-          changedelete = { text = '~' },
+          delete = { text = '▾', show_count = true },
+          topdelete = { text = '▴', show_count = true },
+          changedelete = { text = '~', show_count = true },
           untracked = { text = '┆' },
         },
         signs_staged = {
           add = { text = '┃' },
           change = { text = '┃' },
-          delete = { text = '▁' },
-          topdelete = { text = '▔' },
-          changedelete = { text = '≈' },
+          delete = { text = '▼', show_count = true },
+          topdelete = { text = '▲', show_count = true },
+          changedelete = { text = '≈', show_count = true },
         },
         signs_staged_enable = true,
         signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
