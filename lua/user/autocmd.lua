@@ -26,7 +26,7 @@ local autocmds = {
     { 'TermLeave', '*', 'set timeoutlen=1000' },
   },
   remember_folds = {
-    { 'BufwinLeave', '*.*', 'mkview' },
+    { 'BufwinLeave', '*.*', 'silent! mkview' },
     { 'BufWinEnter', '*.*', 'silent! loadview' },
   },
 }
@@ -60,6 +60,5 @@ vim.api.nvim_create_autocmd({ 'FocusGained', 'BufEnter' }, {
     vim.cmd('silent! checktime')
   end,
 })
-
 
 -- autocommands END

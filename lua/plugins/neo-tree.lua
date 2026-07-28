@@ -8,36 +8,7 @@ return {
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   config = function()
-    local context_state
-
-    vim.api.nvim_create_user_command('NeoTreeContextAction', function(args)
-      local state = context_state
-      local action = state and state.commands[args.args]
-      if not action then
-        return
-      end
-
-      -- Menu actions run while :popup is still active. Defer them until it closes,
-      -- otherwise commands that prompt or change windows fail with E565.
-      vim.schedule(function()
-        if not vim.api.nvim_win_is_valid(state.winid) then
-          return
-        end
-
-        vim.api.nvim_set_current_win(state.winid)
-        action(state)
-      end)
-    end, { nargs = 1, force = true })
-
-    vim.cmd [[
-      silent! aunmenu PopUp.How-to\ disable\ mouse
-      silent! aunmenu ]NeoTree
-      nnoremenu <silent> .10 ]NeoTree.Stage <Cmd>NeoTreeContextAction git_add_file<CR>
-      nnoremenu <silent> .20 ]NeoTree.Unstage <Cmd>NeoTreeContextAction git_unstage_file<CR>
-      nnoremenu <silent> .30 ]NeoTree.Rename <Cmd>NeoTreeContextAction rename<CR>
-      nnoremenu <silent> .40 ]NeoTree.Delete <Cmd>NeoTreeContextAction delete<CR>
-      nnoremenu <silent> .50 ]NeoTree.Refresh <Cmd>NeoTreeContextAction refresh<CR>
-    ]]
+    require('user.context_menu').setup_neo_tree()
 
     require('neo-tree').setup({
       close_if_last_window = false, -- Close Neo-tree if it is the last window left in the tab
@@ -147,21 +118,13 @@ return {
       -- see `:h neo-tree-custom-commands-global`
       commands = {
         context_menu = function(state)
-          local mouse = vim.fn.getmousepos()
-          if mouse.winid ~= state.winid or mouse.line < 1 then
-            return
-          end
+          require('user.context_menu').open_neo_tree(state, true)
+        end,
 
-          vim.api.nvim_set_current_win(mouse.winid)
-          vim.api.nvim_win_set_cursor(mouse.winid, { mouse.line, math.max(mouse.column - 1, 0) })
-
-          local node = state.tree:get_node()
-          if not node or node.type == 'message' then
-            return
-          end
-
-          context_state = state
-          vim.cmd 'popup! ]NeoTree'
+        -- Keyboard equivalent: acts on the node under the cursor, ignoring the
+        -- (stale) mouse position.
+        context_menu_cursor = function(state)
+          require('user.context_menu').open_neo_tree(state, false)
         end,
       },
       window = {
@@ -176,6 +139,9 @@ return {
             'toggle_node',
             nowait = false, -- disable `nowait` if you have existing combos starting with this char that you want to use
           },
+          -- Keyboard twin of <RightMouse>; `<space>` above sets nowait = false so
+          -- this combo gets a chance to resolve.
+          ['<space><space>'] = 'context_menu_cursor',
           ['<2-LeftMouse>'] = 'open',
           ['<cr>'] = 'open',
           ['<esc>'] = 'cancel', -- close preview or floating neo-tree window
@@ -283,7 +249,7 @@ return {
         -- "open_current",  -- netrw disabled, opening a directory opens within the
         -- window like netrw would, regardless of window.position
         -- "disabled",    -- netrw left alone, neo-tree does not handle opening dirs
-        use_libuv_file_watcher = false, -- This will use the OS level file watchers to detect changes
+        use_libuv_file_watcher = true, -- This will use the OS level file watchers to detect changes
         -- instead of relying on nvim autocmd events.
         window = {
           mappings = {

@@ -27,6 +27,16 @@ vim.api.nvim_create_user_command('Gr', function(args)
   vim.cmd('GrepperRg ' .. args.args)
 end, { nargs = '*' })
 
+vim.api.nvim_create_user_command('GitHunksQf', function(args)
+  require('user.git_hunks_qf').open(args.args ~= '' and args.args or nil)
+end, {
+  nargs = '?',
+  complete = function()
+    return { 'all', 'staged', 'unstaged' }
+  end,
+  desc = 'Put repository Git hunks in quickfix',
+})
+
 vim.api.nvim_create_user_command('Bov', function()
   local visible = {}
   for _, win in ipairs(vim.api.nvim_list_wins()) do

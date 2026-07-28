@@ -70,6 +70,18 @@ Keymap('n', '<localleader>t', ':tabe term://zsh<CR>', opts)
 Keymap('n', '<localleader>p', ':let @+ = expand("%")<cr>', opts)
 Keymap('n', '[b', ':bp<CR>', opts)
 Keymap('n', ']b', ':bn<CR>', opts)
+Keymap(
+  'n',
+  '[h',
+  '<Cmd>Gitsigns nav_hunk prev target=all<CR>',
+  { noremap = true, silent = true, desc = 'Previous Git hunk' }
+)
+Keymap(
+  'n',
+  ']h',
+  '<Cmd>Gitsigns nav_hunk next target=all<CR>',
+  { noremap = true, silent = true, desc = 'Next Git hunk' }
+)
 
 Keymap('n', '<localleader>z', ':ZenMode<CR>', opts)
 
@@ -120,11 +132,12 @@ vim.api.nvim_set_keymap(
   '<LeftMouse><cmd>lua vim.lsp.buf.hover({border = "single"})<CR>',
   { noremap = true, silent = true }
 )
-vim.cmd [[
-  nnoremenu <silent> .10 PopUp.Stage\ Hunk <Cmd>Gitsigns stage_hunk<CR>
-  nnoremenu <silent> .20 PopUp.Unstage\ Hunk <Cmd>Gitsigns stage_hunk<CR>
-  nnoremenu <silent> .30 PopUp.Preview\ Hunk\ Inline <Cmd>Gitsigns preview_hunk_inline<CR>
-  vnoremenu <silent> .10 PopUp.Stage\ Selected\ Hunk <Cmd>lua require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })<CR>
-  vnoremenu <silent> .20 PopUp.Unstage\ Selected\ Hunk <Cmd>lua require('gitsigns').stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })<CR>
-  vnoremenu <silent> .30 PopUp.Preview\ Hunk\ Inline <Cmd>Gitsigns preview_hunk_inline<CR>
-]]
+
+-- Right-click uses Neovim's native PopUp menu ('mousemodel=popup_setpos'): no
+-- <RightMouse> mapping, the entries are built from the MenuPopup autocommand.
+require('user.context_menu').setup()
+
+-- Double-tap <Space> opens the same context menu from the keyboard. In Visual mode
+-- the selection is kept, so Stage/Unstage act on it just like a right-click.
+Keymap('n', '<Space><Space>', "<cmd>lua require('user.context_menu').open()<CR>", opts)
+Keymap('x', '<Space><Space>', "<cmd>lua require('user.context_menu').open()<CR>", opts)

@@ -44,7 +44,7 @@ vim.opt.updatetime = 300 -- faster completion (4000ms default)
 vim.opt.wrap = false -- display lines as one long line
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.shortmess:append { I = true }
-vim.o.winbar = '%f%m%=%n'
+vim.o.winbar = '%f%m%=%{%v:lua.require("user.winbar").git_status()%} %n'
 vim.o.laststatus = 3
 
 -- Timer to check for file changes every 500ms

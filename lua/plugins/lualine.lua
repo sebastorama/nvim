@@ -4,6 +4,13 @@ return {
     lazy = false,
     config = function()
       local lualine = require('lualine')
+
+      local function show_git_context_menu(_, button)
+        if button == 'r' then
+          require('user.context_menu').open_hunks_qf(true)
+        end
+      end
+
       -- Color table for highlights
       -- stylua: ignore start
       local dark_colors = {
@@ -165,6 +172,7 @@ return {
         'filename',
         cond = conditions.buffer_not_empty,
         color = { fg = colors.magenta, gui = 'bold' },
+        on_click = show_git_context_menu,
       }
 
       ins_left { 'location' }
@@ -230,6 +238,7 @@ return {
         'branch',
         icon = '',
         color = { fg = colors.violet, gui = 'bold' },
+        on_click = show_git_context_menu,
       }
 
       ins_right {
@@ -242,6 +251,7 @@ return {
           removed = { fg = colors.red },
         },
         cond = conditions.hide_in_width,
+        on_click = show_git_context_menu,
       }
 
       -- Now don't forget to initialize lualine
