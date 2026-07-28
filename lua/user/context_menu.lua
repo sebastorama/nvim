@@ -54,8 +54,16 @@ end
 ---
 --- `anoremenu` defines the `PopUp` entries for every mode, so they work in normal,
 --- visual, quickfix and command-line contexts without per-mode duplicates.
+---
+--- Stock Neovim ships conditional `PopUp` entries (Go to definition, diagnostics,
+--- Open in web browser) managed by its `nvim.popupmenu` MenuPopup handler. Our
+--- LSP block supersedes "Go to definition", and removing an entry makes the stock
+--- handler error (its `amenu disable` is not `silent!`), so we clear that augroup
+--- and manage the surviving stock entries in `update_stock_items` instead.
 local function define_static()
+  vim.api.nvim_create_augroup('nvim.popupmenu', { clear = true })
   vim.cmd [[
+    silent! aunmenu PopUp.Go\ to\ definition
     anoremenu <silent> .30 PopUp.󰁨\ Git\ Hunks\ to\ Quickfix… <Cmd>lua require('user.context_menu').open_hunks_qf(false)<CR>
     anoremenu <silent> .39 PopUp.-GitQuickfixEnd- <Nop>
 
@@ -109,6 +117,69 @@ function M.stage()
   require('gitsigns').stage_hunk(selection)
 end
 
+-- LSP entries, present only when an attached client supports the method.
+local lsp_items = {
+  { method = 'textDocument/definition', priority = 20, name = [[󰁔\ Go\ to\ Definition]], cmd = 'lua vim.lsp.buf.definition()' },
+  { method = 'textDocument/references', priority = 21, name = [[󰈞\ Find\ References]], cmd = [[lua require('user.context_menu').references()]] },
+}
+
+local function clear_lsp_items()
+  for _, item in ipairs(lsp_items) do
+    unmenu('PopUp.' .. item.name)
+  end
+  unmenu 'PopUp.-LspEnd-'
+end
+
+local function add_lsp_items(bufnr)
+  local added = false
+  for _, item in ipairs(lsp_items) do
+    if next(vim.lsp.get_clients { bufnr = bufnr, method = item.method }) then
+      vim.cmd(('anoremenu <silent> .%d PopUp.%s <Cmd>%s<CR>'):format(item.priority, item.name, item.cmd))
+      added = true
+    end
+  end
+
+  if added then
+    vim.cmd 'anoremenu <silent> .29 PopUp.-LspEnd- <Nop>'
+  end
+end
+
+--- Open the references picker from a menu item. Deferred because Telescope
+--- opens its windows synchronously, which hits textlock (E565) while the
+--- popup is still up.
+function M.references()
+  vim.schedule(function()
+    vim.cmd 'Telescope lsp_references'
+  end)
+end
+
+--- Enable the stock conditional entries that apply to the current context,
+--- mirroring the `nvim.popupmenu` handler that `define_static` cleared.
+local function update_stock_items()
+  vim.cmd [[
+    amenu disable PopUp.Open\ in\ web\ browser
+    anoremenu disable PopUp.Show\ Diagnostics
+    anoremenu disable PopUp.Show\ All\ Diagnostics
+    anoremenu disable PopUp.Configure\ Diagnostics
+  ]]
+
+  local url = require('vim.ui')._get_urls()[1]
+  if url and vim.startswith(url, 'http') then
+    vim.cmd [[amenu enable PopUp.Open\ in\ web\ browser]]
+  end
+
+  local diagnostic = next(vim.diagnostic.get(0, { lnum = vim.fn.line '.' - 1 })) ~= nil
+  if diagnostic then
+    vim.cmd [[anoremenu enable PopUp.Show\ Diagnostics]]
+  end
+  if diagnostic or next(vim.diagnostic.count(0)) ~= nil then
+    vim.cmd [[
+      anoremenu enable PopUp.Show\ All\ Diagnostics
+      anoremenu enable PopUp.Configure\ Diagnostics
+    ]]
+  end
+end
+
 --- Grey out entries that have no mapping for `mode`.
 --- Activating such an entry is what raises "E335: Menu not defined for <mode> mode";
 --- Neovim's stock PopUp has Visual-only items (Cut/Copy/Delete) and a Normal/Insert-only
@@ -134,6 +205,7 @@ local function on_menu_popup(args)
   local mode = args.match
 
   clear_hunk_items()
+  clear_lsp_items()
 
   if mode == 'n' or mode == 'v' then
     if mode == 'v' then
@@ -148,6 +220,11 @@ local function on_menu_popup(args)
     end
   end
 
+  if mode == 'n' then
+    add_lsp_items(vim.api.nvim_get_current_buf())
+  end
+
+  update_stock_items()
   disable_for_mode(mode)
 end
 
@@ -187,8 +264,10 @@ end
 --- `group` names the block (it labels the trailing separator); each item is
 --- `{ name = <label>, cmd = <ex command>, priority = <menu priority> }`.
 ---
+--- Decades .10-.39 are reserved for the built-in blocks; use .40 and up.
+---
 ---     require('user.context_menu').attach('XmlFormat', {
----       { name = '󰗀 Format XML', cmd = 'FormatXml', priority = 20 },
+---       { name = '󰗀 Format XML', cmd = 'FormatXml', priority = 40 },
 ---     })
 function M.attach(group, items)
   local terminator = ('PopUp.-%sEnd-'):format(group)
@@ -297,6 +376,7 @@ end
 function M.setup()
   define_static()
   clear_hunk_items()
+  clear_lsp_items()
 
   vim.api.nvim_create_autocmd('MenuPopup', {
     group = vim.api.nvim_create_augroup('user_context_menu', { clear = true }),

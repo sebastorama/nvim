@@ -46,5 +46,5 @@ vim.api.nvim_buf_create_user_command(0, 'FormatXml', format_xml, {
 })
 
 require('user.context_menu').attach('XmlFormat', {
-  { name = '󰗀 Format XML', cmd = 'FormatXml', priority = 20 },
+  { name = '󰗀 Format XML', cmd = 'FormatXml', priority = 40 },
 })
