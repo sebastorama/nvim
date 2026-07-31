@@ -66,6 +66,8 @@ local function define_static()
     silent! aunmenu PopUp.Go\ to\ definition
     anoremenu <silent> .30 PopUp.󰁨\ Git\ Hunks\ to\ Quickfix… <Cmd>lua require('user.context_menu').open_hunks_qf(false)<CR>
     anoremenu <silent> .39 PopUp.-GitQuickfixEnd- <Nop>
+    anoremenu <silent> .40 PopUp.󰚀\ Toggle\ Zen\ Mode <Cmd>ZenMode<CR>
+    anoremenu <silent> .49 PopUp.-ZenModeEnd- <Nop>
 
     silent! aunmenu ]GitHunksQf
     anoremenu <silent> .10 ]GitHunksQf.󰄛\ All      <Cmd>GitHunksQf all<CR>
@@ -264,10 +266,10 @@ end
 --- `group` names the block (it labels the trailing separator); each item is
 --- `{ name = <label>, cmd = <ex command>, priority = <menu priority> }`.
 ---
---- Decades .10-.39 are reserved for the built-in blocks; use .40 and up.
+--- Decades .10-.49 are reserved for the built-in blocks; use .50 and up.
 ---
 ---     require('user.context_menu').attach('XmlFormat', {
----       { name = '󰗀 Format XML', cmd = 'FormatXml', priority = 40 },
+---       { name = '󰗀 Format XML', cmd = 'FormatXml', priority = 50 },
 ---     })
 function M.attach(group, items)
   local terminator = ('PopUp.-%sEnd-'):format(group)
