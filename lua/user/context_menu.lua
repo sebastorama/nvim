@@ -52,8 +52,8 @@ end
 --- in any mode and so fails with E335. `PopUp` therefore gets a single leaf entry
 --- that opens `]GitHunksQf` as a second popup.
 ---
---- `anoremenu` defines the `PopUp` entries for every mode, so they work in normal,
---- visual, quickfix and command-line contexts without per-mode duplicates.
+--- `anoremenu` defines the shared `PopUp` entries for every mode, while Copy
+--- Location Reference is Visual-only because it operates on the selected lines.
 ---
 --- Stock Neovim ships conditional `PopUp` entries (Go to definition, diagnostics,
 --- Open in web browser) managed by its `nvim.popupmenu` MenuPopup handler. Our
@@ -64,6 +64,8 @@ local function define_static()
   vim.api.nvim_create_augroup('nvim.popupmenu', { clear = true })
   vim.cmd [[
     silent! aunmenu PopUp.Go\ to\ definition
+    xnoremenu <silent> .01 PopUp.󰆏\ Copy\ Location\ Reference <Cmd>lua require('user.context_menu').copy_location_reference()<CR>
+    xnoremenu <silent> .09 PopUp.-CopyLocationEnd- <Nop>
     anoremenu <silent> .30 PopUp.󰁨\ Git\ Hunks\ to\ Quickfix… <Cmd>lua require('user.context_menu').open_hunks_qf(false)<CR>
     anoremenu <silent> .39 PopUp.-GitQuickfixEnd- <Nop>
     anoremenu <silent> .40 PopUp.󰚀\ Toggle\ Zen\ Mode <Cmd>ZenMode<CR>
@@ -119,10 +121,37 @@ function M.stage()
   require('gitsigns').stage_hunk(selection)
 end
 
+--- Copy a reference to the selected lines, matching the `<localleader>c` mapping.
+function M.copy_location_reference()
+  if not selection then
+    return
+  end
+
+  local first = math.min(selection[1], selection[2])
+  local last = math.max(selection[1], selection[2])
+  vim.fn.setreg('*', ('@%s#L%d-%d'):format(vim.fn.expand '%:~:.', first, last))
+end
+
 -- LSP entries, present only when an attached client supports the method.
 local lsp_items = {
-  { method = 'textDocument/definition', priority = 20, name = [[󰁔\ Go\ to\ Definition]], cmd = 'lua vim.lsp.buf.definition()' },
-  { method = 'textDocument/references', priority = 21, name = [[󰈞\ Find\ References]], cmd = [[lua require('user.context_menu').references()]] },
+  {
+    method = 'textDocument/definition',
+    priority = 20,
+    name = [[󰁔\ Go\ to\ Definition]],
+    cmd = 'lua vim.lsp.buf.definition()',
+  },
+  {
+    method = 'textDocument/definition',
+    priority = 21,
+    name = [[󰁔\ Go\ to\ Definition\ (vsplit)]],
+    cmd = [[lua require('user.context_menu').definition_vsplit()]],
+  },
+  {
+    method = 'textDocument/references',
+    priority = 22,
+    name = [[󰈞\ Find\ References]],
+    cmd = [[lua require('user.context_menu').references()]],
+  },
 }
 
 local function clear_lsp_items()
@@ -144,6 +173,15 @@ local function add_lsp_items(bufnr)
   if added then
     vim.cmd 'anoremenu <silent> .29 PopUp.-LspEnd- <Nop>'
   end
+end
+
+--- Open the definition in a vertical split. Deferred because creating a window
+--- synchronously while the popup is still up hits textlock (E565).
+function M.definition_vsplit()
+  vim.schedule(function()
+    vim.cmd 'vsplit'
+    vim.lsp.buf.definition()
+  end)
 end
 
 --- Open the references picker from a menu item. Deferred because Telescope
