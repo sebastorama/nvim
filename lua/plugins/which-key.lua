@@ -2,6 +2,17 @@ local function stage_selected_hunk()
   require('gitsigns').stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
 end
 
+local function toggle_quickfix()
+  for _, window in ipairs(vim.fn.getwininfo()) do
+    if window.quickfix == 1 and window.loclist == 0 then
+      vim.cmd.cclose()
+      return
+    end
+  end
+
+  vim.cmd.copen()
+end
+
 return {
   {
     'folke/which-key.nvim',
@@ -19,13 +30,8 @@ return {
       { '<leader>c', group = 'Quickfix' },
       {
         '<leader>cc',
-        '<cmd>ccl<CR>',
-        desc = 'Close Quickfix',
-      },
-      {
-        '<leader>co',
-        '<cmd>copen<CR>',
-        desc = 'Open Quickfix',
+        toggle_quickfix,
+        desc = 'Toggle Quickfix',
       },
       { '<leader>d', group = 'Debug' },
       {

@@ -281,16 +281,18 @@ function M.open_hunks_qf(mouse)
   end)
 end
 
---- Open `PopUp` at the cursor from the keyboard.
+--- Open the mode-specific `PopUp` menu at the cursor from the keyboard.
 --- `:popup` does not fire `MenuPopup`, so trigger it ourselves first to get the
---- same context-dependent entries a right-click would build.
+--- same context-dependent entries a right-click would build. Using `PopUpn` or
+--- `PopUpv` also avoids mixing another mode's separators into the menu: Neovim
+--- displays those separators but does not count them when executing a selection.
 --- Plain `:popup` (no `!`) anchors to the cursor; `:popup!` would use the mouse
 --- pointer, which on this path is wherever it was last left.
 function M.open()
   local mode = vim.fn.mode():sub(1, 1)
   mode = (mode == 'v' or mode == 'V' or mode == '\22') and 'v' or mode
   vim.api.nvim_exec_autocmds('MenuPopup', { pattern = mode })
-  vim.cmd 'popup PopUp'
+  vim.cmd('popup PopUp' .. mode)
 end
 
 --------------------------------------------------------------------------------

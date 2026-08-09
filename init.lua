@@ -18,6 +18,6 @@ require('user.keymaps')
 require('user.autocmd')
 require('user.commands')
 require('lazy').setup('plugins')
-vim.cmd [[colorscheme tokyonight-night]]
+vim.cmd [[colorscheme carbonfox]]
 require('user.options')
 require('user.lsp')
