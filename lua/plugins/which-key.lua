@@ -13,6 +13,13 @@ local function toggle_quickfix()
   vim.cmd.copen()
 end
 
+local function find_workspace_symbol_under_cursor()
+  require('telescope.builtin').lsp_workspace_symbols {
+    bufnr = vim.w.lsp_floating_bufnr or 0,
+    query = vim.fn.expand '<cword>',
+  }
+end
+
 return {
   {
     'folke/which-key.nvim',
@@ -188,6 +195,11 @@ return {
         '<leader>ls',
         '<cmd>Telescope lsp_document_symbols<CR>',
         desc = 'Find Document Symbols',
+      },
+      {
+        '<leader>lt',
+        find_workspace_symbol_under_cursor,
+        desc = 'Find Cursor Symbol in Workspace',
       },
       { '<leader>o', group = 'Obsidian' },
       {
