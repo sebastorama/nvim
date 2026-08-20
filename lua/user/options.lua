@@ -44,7 +44,29 @@ vim.opt.updatetime = 300 -- faster completion (4000ms default)
 vim.opt.wrap = false -- display lines as one long line
 vim.opt.writebackup = false -- if a file is being edited by another program (or was written to file while editing with another program), it is not allowed to be edited
 vim.opt.shortmess:append { I = true }
-vim.o.winbar = '%f%m%=%{%v:lua.require("user.winbar").git_status()%} %n'
+local in_t3code = vim.env.__CFBundleIdentifier == 'com.t3tools.t3code'
+
+-- T3 Code floats its pane controls over the terminal's top-right corner
+-- (~100px wide); pad the winbar so its right-aligned content stays visible.
+local t3_pad = in_t3code and string.rep(' ', 16) or ''
+vim.o.winbar = '%f%m%=%{%v:lua.require("user.winbar").git_status()%} %n' .. t3_pad
+
+-- T3 Code's terminal misencodes shifted keys under the kitty keyboard
+-- protocol (pingdotgg/t3code#5276), so pop the protocol entry nvim pushes and
+-- fall back to legacy encoding. Deferred twice because nvim only pushes after
+-- the terminal answers its startup CSI ? u query, which can arrive late;
+-- popping an empty stack is a no-op, so the second pop is harmless.
+if in_t3code then
+  vim.api.nvim_create_autocmd({ 'UIEnter', 'VimResume' }, {
+    callback = function()
+      for _, delay in ipairs { 250, 1500 } do
+        vim.defer_fn(function()
+          io.stdout:write '\27[<u'
+        end, delay)
+      end
+    end,
+  })
+end
 vim.o.laststatus = 3
 
 -- Timer to check for file changes every 500ms
