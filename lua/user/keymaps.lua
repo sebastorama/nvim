@@ -113,8 +113,8 @@ Keymap('t', '<F9>', '<C-\\><C-n>:ClaudeCode<CR>', opts)
 -- Exit terminal mode with double Esc
 Keymap('t', '<Esc><Esc>', '<C-\\><C-n>', opts)
 
--- Copy filename and line range to * register
-Keymap('v', '<localleader>c', ':<C-u>let @* = "@" . expand("%:~:.") . "#L" . line("\'<") . "-" . line("\'>")<CR>', opts)
+-- Copy filename and line range to the clipboard (+ register)
+Keymap('v', '<localleader>c', ':<C-u>let @+ = "@" . expand("%:~:.") . "#L" . line("\'<") . "-" . line("\'>")<CR>', opts)
 
 -- Convert tag to JSX Fragment
 Keymap('n', '<leader>jf', '%ldiw<C-o>diw', { noremap = false, silent = true })

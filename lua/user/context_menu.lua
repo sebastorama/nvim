@@ -129,7 +129,7 @@ function M.copy_location_reference()
 
   local first = math.min(selection[1], selection[2])
   local last = math.max(selection[1], selection[2])
-  vim.fn.setreg('*', ('@%s#L%d-%d'):format(vim.fn.expand '%:~:.', first, last))
+  vim.fn.setreg('+', ('@%s#L%d-%d'):format(vim.fn.expand '%:~:.', first, last))
 end
 
 -- LSP entries, present only when an attached client supports the method.
