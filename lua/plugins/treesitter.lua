@@ -12,11 +12,12 @@ return {
       local parsers = {
         'bash', 'c', 'comment', 'cpp', 'css', 'diff', 'dockerfile',
         'go', 'gomod', 'gosum', 'gowork', 'graphql', 'html', 'javascript',
-        'jsdoc', 'json', 'jsonc', 'lua', 'luadoc', 'luap', 'make',
+        'jsdoc', 'json', 'lua', 'luadoc', 'luap', 'make',
         'markdown', 'markdown_inline', 'python', 'query', 'regex', 'rust',
         'scss', 'sql', 'toml', 'tsx', 'typescript', 'vim', 'vimdoc', 'yaml',
       }
       require('nvim-treesitter').install(parsers)
+      vim.treesitter.language.register('json', 'jsonc')
 
       -- Drop the latex injection from markdown_inline so $...$ doesn't
       -- get re-highlighted by the latex parser (collides with R$ currency).
