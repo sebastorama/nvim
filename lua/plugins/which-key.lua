@@ -1,5 +1,7 @@
 local function stage_selected_hunk()
+  local view = vim.fn.winsaveview()
   require('gitsigns').stage_hunk { vim.fn.line '.', vim.fn.line 'v' }
+  vim.fn.winrestview(view)
 end
 
 local function toggle_quickfix()
@@ -165,6 +167,13 @@ return {
         desc = 'Rename with LSP',
         remap = true,
         silent = false,
+      },
+      {
+        '<leader>lD',
+        function()
+          require('user.definition_vsplit').open()
+        end,
+        desc = 'Find Definitions in Vertical Split',
       },
       {
         '<leader>ld',
